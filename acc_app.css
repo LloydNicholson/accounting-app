@@ -1,0 +1,134 @@
+html {
+  background-color: #fff;
+  text-align: center;
+  font-family: 'Lato';
+  padding-bottom: 100px;
+}
+
+div {
+  padding: 4px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+.header {
+  font-size: 20px;
+  color: #385555;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.header_image {
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Upload and input area css*/
+.upload_area {
+  position: relative;
+  margin: 0px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  height: 200px;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: italic;
+  color: #385555;
+}
+
+.upload_area button {
+  height: 30px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #9b9db5;
+}
+
+.input:-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.input {
+  content: 'Choose file';
+  width: 250px;
+  height: 30px;
+  padding-top: 10px;
+  border: 1px solid gray;
+  background-color: lightgray;
+  border-radius: 20px;
+  outline: none;
+  text-shadow: 1px 1px #fff;
+  color: black;
+}
+
+.input:hover {
+  border-color: black;
+  background-color: gray;
+  cursor: pointer;
+}
+
+/* Transaction area css*/
+.transactionList {
+  position: relative;
+  margin: 0px;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 18px;
+  border: 4px solid gray;
+  border-radius: 10px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.transactionList h2 {
+  font-size: 26px;
+  color: #4a4f63;
+}
+
+.transactionList p {
+  font-size: 20px;
+}
+
+/* Download area css*/
+.download_area button {
+  margin: 0px;
+  font-size: 20px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  background-color: lightgray;
+  text-align: center;
+  padding: 10px;
+}
+
+.download_area a {
+  margin: 0px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.download_area button:hover {
+  background-color: gray;
+  border-color: black;
+  outline: none;
+  cursor: pointer;
+}
