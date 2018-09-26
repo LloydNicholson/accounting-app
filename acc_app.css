@@ -57,6 +57,7 @@ h3 {
 
 .upload_area input {
   font-size: 18px;
+  position: relative;
 }
 
 .upload_area button {
