@@ -49,15 +49,24 @@ h3 {
 }
 
 .upload_area input::-webkit-file-upload-button {
-  position: relative;
-  top: -4px;
-  width: 150px;
-  height: 100px;
+  visibility: hidden;
+  font-size: 0px;
 }
 
-.upload_area input {
-  font-size: 18px;
-  position: relative;
+.upload_area input::before {
+  visibility: visible;
+  content: 'Choose File';
+  background: #d9b866 none repeat scroll 0 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: none;
+  color: #fff;
+  font-family: "Josefin Sans",sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 9px 15px;
+  text-shadow: none;
+
 }
 
 .upload_area button {
