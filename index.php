@@ -26,9 +26,8 @@
   <div class="upload_area">
     <form action="upload.php" method="post" enctype="multipart/form-data">
     <p>Download and fill in the sheet by hand or on your computer and send it back when completed. Remember to add your name inside the excel spreedsheet.</p>
-    <label for="file">Choose a file to upload </label>
+    <label for="file">Choose a file to upload: </label>
     <input type="file" name="file">
-    |
     <button type="submit" name="submit">Upload</button>
     </form>
   </div>

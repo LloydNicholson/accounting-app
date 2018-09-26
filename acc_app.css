@@ -40,34 +40,38 @@ h3 {
 
 /* Upload and input area css*/
 .upload_area {
+  width: 1000px;
   height: 200px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 22px;
-}
-
-.upload_area label {
-
+  font-size: 24px;
+  color: #385555;
 }
 
 .upload_area input::-webkit-file-upload-button {
-  font-size: 50px;
+  position: relative;
+  top: -4px;
   width: 150px;
-
+  height: 100px;
 }
 
-.upload_div {
+.upload_area input {
+  font-size: 18px;
+}
+
+.upload_area button {
   position: relative;
+  top: -4px;
   height: 30px;
-  width: 250px;
+  width: 200px;
   border: 1px solid black;
   border-radius: 20px;
-  background-color: #9b9db5;
 }
 
-.upload_div:hover {
-  background-color: #4a4f63;
+.upload_area button:hover {
+  background-color: #385555;
   cursor: pointer;
+  color: white;
 }
 
 /* Transaction area css*/
