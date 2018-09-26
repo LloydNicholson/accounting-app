@@ -37,7 +37,7 @@
 
     <!--Heading-->
     <h2><script type="text/javascript">
-        createHeading("Rusty's Traders", "General Ledger");
+        createHeading("General Ledger");
       </script></h2>
     <!--Transaction list-->
     <p>
@@ -48,6 +48,7 @@
           createExpense(1, 1000, 4),
           createAsset(1, 5000, 7),
           createLiability(1, 20000, 9),
+          createDrawings(1, 28000, 11),
           createIncome(1, 4000, 13),
           createExpense(1, 700, 15),
           createIncome(1, 4000, 20),
