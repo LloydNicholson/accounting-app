@@ -56,17 +56,12 @@ h3 {
 .upload_area input::before {
   visibility: visible;
   content: 'Choose File';
-  background: #d9b866 none repeat scroll 0 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: none;
-  color: #fff;
-  font-family: "Josefin Sans",sans-serif;
-  font-size: 16px;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 24px;
   font-weight: normal;
-  padding: 9px 15px;
-  text-shadow: none;
-
+  padding: 10px;
 }
 
 .upload_area button {
