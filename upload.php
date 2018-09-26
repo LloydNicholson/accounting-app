@@ -19,8 +19,8 @@ if (isset($_POST['submit'])) {
         $fileNameNew = uniqid('', true).".".$fileActualExt;
         $fileDestination = 'Uploads/'.$fileNameNew;
         move_uploaded_file($fileTmpName, $fileDestination);
-        header("Location: index.php?uploadsuccess");
-        echo "Your upload was successful!";
+        echo "Upload successful";
+        echo "<script>setTimeout(\"location.href = 'index.php';\",1000);</script>";
       } else {
         echo "Your file is too large!";
       }
