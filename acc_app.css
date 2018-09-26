@@ -38,41 +38,22 @@ h3 {
     margin-right: auto;
 }
 
-
 /* Upload and input area css*/
 .upload_area {
-  position: relative;
-  padding: 20px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
-  width: 1000px;
-  height: 200px;
   font-size: 22px;
-  font-weight: bold;
-  font-style: italic;
-  color: #385555;
 }
 
-.input_div input[type-file]:-webkit-file-upload-button {
-  visibility: hidden;
+.upload_area label {
+
 }
 
-.input_div {
-  content: 'Choose file';
-  width: 250px;
-  height: 30px;
-  padding-top: 10px;
-  border: 1px solid gray;
-  background-color: lightgray;
-  border-radius: 20px;
-  color: black;
-}
+.upload_area input::-webkit-file-upload-button {
+  font-size: 50px;
+  width: 150px;
 
-.input_div:hover {
-  border-color: black;
-  background-color: gray;
-  cursor: pointer;
 }
 
 .upload_div {
