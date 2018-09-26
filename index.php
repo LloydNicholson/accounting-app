@@ -22,18 +22,20 @@
     <h3>Refresh your page to generate a new set of examples.</h3>
   </div>
 
+  <!--Form retrieving-->
   <div class="upload_area">
-    <!--Form retrieving-->
     <form action="upload.php" method="post" enctype="multipart/form-data">
     <p>Download and fill in the sheet by hand or on your computer and send it back when completed. Remember to add your name inside the excel spreedsheet.</p>
-    <label for="file">Choose file to upload</label>
-    <div><input class="input" type="file" name="file"></div>
-    <div><button type="submit" name="submit">Upload</button></div>
+    <label for="file">Choose a file to upload </label>
+    <input type="file" name="file">
+    |
+    <button type="submit" name="submit">Upload</button>
     </form>
   </div>
 
+  <!--Transaction list creation area-->
   <div class="transactionList">
-    <!--Transaction list creation area-->
+
     <!--Heading-->
     <h2><script type="text/javascript">
         createHeading("Rusty's Traders", "General Ledger");
@@ -50,8 +52,8 @@
           createIncome(1, 4000, 13),
           createExpense(1, 700, 15),
           createIncome(1, 4000, 20),
-          createAsset(1, 8000, 24),
-          createIncome(1, 900, 26)
+          createAsset(1, 8000, 22),
+          createIncome(1, 900, 25)
       );
       </script>
     </p>
