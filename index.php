@@ -25,13 +25,16 @@
   <div class="upload_area">
     <!--Form retrieving-->
     <form action="upload.php" method="post" enctype="multipart/form-data">
-    <p>Download and fill in the sheet by hand or on your computer and send it back when completed. Remember to add your name inside the excel spreedsheet.</p>
-    <label for="file">Choose file to upload</label>
-    <div><input class="input" type="file" name="file"></div>
-    <div><button type="submit" name="submit">Upload</button></div>
+      <p>Download and fill in the sheet by hand or on your computer and send it back when completed. Remember to add your name inside the excel spreedsheet.</p>
+      <label for="file">Choose file to upload</label>
+      <div class="input_div">
+        <input type="file" name="file">
+      </div>
+      <div class="upload_div">
+        <button type="submit" name="submit">Upload</button>
+      </div>
     </form>
   </div>
-
   <div class="transactionList">
     <!--Transaction list creation area-->
     <!--Heading-->

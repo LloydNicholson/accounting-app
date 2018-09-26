@@ -7,7 +7,7 @@ html {
 
 div {
   padding: 4px;
-  margin: 0px;
+  margin: 12px;
 }
 
 h1 {
@@ -42,10 +42,10 @@ h3 {
 /* Upload and input area css*/
 .upload_area {
   position: relative;
-  margin: 0px;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   width: 1000px;
   height: 200px;
   font-size: 22px;
@@ -54,19 +54,11 @@ h3 {
   color: #385555;
 }
 
-.upload_area button {
-  height: 30px;
-  width: 250px;
-  border: 1px solid black;
-  border-radius: 20px;
-  background-color: #9b9db5;
-}
-
-.input:-webkit-file-upload-button {
+.input_div input[type-file]:-webkit-file-upload-button {
   visibility: hidden;
 }
 
-.input {
+.input_div {
   content: 'Choose file';
   width: 250px;
   height: 30px;
@@ -74,21 +66,32 @@ h3 {
   border: 1px solid gray;
   background-color: lightgray;
   border-radius: 20px;
-  outline: none;
-  text-shadow: 1px 1px #fff;
   color: black;
 }
 
-.input:hover {
+.input_div:hover {
   border-color: black;
   background-color: gray;
   cursor: pointer;
 }
 
+.upload_div {
+  position: relative;
+  height: 30px;
+  width: 250px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #9b9db5;
+}
+
+.upload_div:hover {
+  background-color: #4a4f63;
+  cursor: pointer;
+}
+
 /* Transaction area css*/
 .transactionList {
-  position: relative;
-  margin: 0px;
+  position: absolute;
   padding: 10px 20px;
   text-align: left;
   font-size: 18px;
@@ -127,8 +130,5 @@ h3 {
 }
 
 .download_area button:hover {
-  background-color: gray;
-  border-color: black;
-  outline: none;
-  cursor: pointer;
+  background-color: #62686f;
 }
