@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (isset($_POST['submit'])) {
   $file = $_FILES['file'];
 
@@ -32,5 +31,4 @@ if (isset($_POST['submit'])) {
     echo "You cannot upload files of this type!";
   }
 }
-exit;
 ?>
