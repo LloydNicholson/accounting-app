@@ -55,8 +55,8 @@
           createAsset(1, 5000, 7),
           createLiability(1, 20000, 9),
           createDrawings(1, 28000, 11),
-          createIncome(1, 4000, 13),
-          createExpense(1, 700, 15),
+          createIncome(1, 4000, 12),
+          createExpense(1, 700, 14),
           createIncome(1, 4000, 20),
           createAsset(1, 8000, 22),
           createIncome(1, 900, 25)
@@ -88,7 +88,7 @@
         <th class="credit" id="amount">Amount</th>
       </tr>
       <tr class="row" id="one">
-        <td class="debit" id="month"><form><input type="text" name="month" id="month"></form></td>
+        <td class="debit" id="month"><form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form></td>
         <td class="debit" id="day"></td>
         <td class="debit" id="details"></td>
         <td class="debit" id="folio"></td>
@@ -166,7 +166,7 @@
         <td class="debit" id="folio"></td>
         <td class="debit" id="amount"></td>
 
-        <td class="credit" id="month"><form><input type="text" name="month" id="month"></form></td>
+        <td class="credit" id="month"><form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form></td>
         <td class="credit" id="day"></td>
         <td class="credit" id="details"></td>
         <td class="credit" id="folio"></td>

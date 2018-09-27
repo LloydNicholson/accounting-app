@@ -132,9 +132,9 @@ for (let i = firstDay; i < lastDay; i++) {
 }
 
 // Create an expense transaction
-function createExpense(num, amount, date = "") {
+function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date + ". ";
+    let transaction = day + ". ";
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
@@ -145,9 +145,9 @@ function createExpense(num, amount, date = "") {
 }
 
 // Create an income transaction
-function createIncome(num, amount, date = "") {
+function createIncome(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date
+    let transaction = day;
     transaction += ". " + ourBusiness[0];
     transaction += " " + receiveMethod[0];
     transaction += " " + randomWord(accountType.incomes);
@@ -160,9 +160,9 @@ function createIncome(num, amount, date = "") {
 }
 
 // Create an asset transaction
-function createAsset(num, amount, date = "") {
+function createAsset(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date + ". ";
+    let transaction = day + ". ";
     transaction += "Our business ";
     transaction += " " + paymentMethod[1];
     transaction += " " + randomWord(accountType.assets);
@@ -175,9 +175,9 @@ function createAsset(num, amount, date = "") {
 };
 
 // Create an liability transaction
-function createLiability(num, amount, date = "") {
+function createLiability(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date + ". ";
+    let transaction = day + ". ";
     transaction += "The business ";
     transaction += " " + receiveMethod[1];
     transaction += " " + randomWord(accountType.liabilities);
@@ -189,9 +189,9 @@ function createLiability(num, amount, date = "") {
 }
 
 // Create an capital transaction
-function createCapital(num, amount, date = "") {
+function createCapital(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date + ". ";
+    let transaction = day + ". ";
     transaction += "The owner, " + owner[0];
     transaction += " " + randomWord(receiveMethod.slice(2, 4));
     transaction += ", a capital contribution";
@@ -202,9 +202,9 @@ function createCapital(num, amount, date = "") {
 }
 
 // Create an drawings transaction
-function createDrawings(num, amount, date = "") {
+function createDrawings(num, amount, day) {
   for (i = 0; i < num; i++) {
-    let transaction = date + ". ";
+    let transaction = day + ". ";
     transaction += owner[0];
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
