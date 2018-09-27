@@ -72,7 +72,7 @@
   <!--Answer form area-->
   <div class="answer_section">
     <h3>General Ledger Format</h3>
-    <table>
+    <table class="bank">
       <tr class="heading">
         <th class="debit" id="month">Month</th>
         <th class="debit" id="day">Day</th>
@@ -87,13 +87,85 @@
         <th class="credit" id="amount">Amount</th>
       </tr>
       <tr class="row" id="one">
-        <td class="debit" id="month"><form><input type="text" name="firstname"></form></td>
+        <td class="debit" id="month"><form><input type="text" name="month" value="value"></form></td>
         <td class="debit" id="day"></td>
         <td class="debit" id="details"></td>
         <td class="debit" id="folio"></td>
         <td class="debit" id="amount"></td>
 
         <td class="credit" id="month"></td>
+        <td class="credit" id="day"></td>
+        <td class="credit" id="details"></td>
+        <td class="credit" id="folio"></td>
+        <td class="credit" id="amount"></td>
+      </tr>
+
+      <tr class="row" id="two">
+        <td class="debit" id="month"></td>
+        <td class="debit" id="day"></td>
+        <td class="debit" id="details"></td>
+        <td class="debit" id="folio"></td>
+        <td class="debit" id="amount"></td>
+
+        <td class="credit" id="month"></td>
+        <td class="credit" id="day"></td>
+        <td class="credit" id="details"></td>
+        <td class="credit" id="folio"></td>
+        <td class="credit" id="amount"></td>
+      </tr>
+
+      <tr class="row" id="three">
+        <td class="debit" id="month"></td>
+        <td class="debit" id="day"></td>
+        <td class="debit" id="details"></td>
+        <td class="debit" id="folio"></td>
+        <td class="debit" id="amount"></td>
+
+        <td class="credit" id="month"></td>
+        <td class="credit" id="day"></td>
+        <td class="credit" id="details"></td>
+        <td class="credit" id="folio"></td>
+        <td class="credit" id="amount"></td>
+      </tr>
+
+      <tr class="row" id="four">
+        <td class="debit" id="month"></td>
+        <td class="debit" id="day"></td>
+        <td class="debit" id="details"></td>
+        <td class="debit" id="folio"></td>
+        <td class="debit" id="amount"></td>
+
+        <td class="credit" id="month"></td>
+        <td class="credit" id="day"></td>
+        <td class="credit" id="details"></td>
+        <td class="credit" id="folio"></td>
+        <td class="credit" id="amount"></td>
+      </tr>
+
+    </table>
+
+    <table class="trading_stock">
+      <tr class="heading">
+        <th class="debit" id="month">Month</th>
+        <th class="debit" id="day">Day</th>
+        <th class="debit" id="details">Details</th>
+        <th class="debit" id="folio">Fol</th>
+        <th class="debit" id="amount">Amount</th>
+
+        <th class="credit" id="month">Month</th>
+        <th class="credit" id="day">Day</th>
+        <th class="credit" id="details">Details</th>
+        <th class="credit" id="folio">Fol</th>
+        <th class="credit" id="amount">Amount</th>
+      </tr>
+      <tr class="row" id="one">
+        <td class="debit" id="month"></td>
+        <td class="debit" id="day"></td>
+        <td class="debit" id="details"></td>
+        <td class="debit" id="folio"></td>
+        <td class="debit" id="amount"></td>
+
+        <td class="credit" id="month"><form><input type="text" name="month" value="value"></form></td>
         <td class="credit" id="day"></td>
         <td class="credit" id="details"></td>
         <td class="credit" id="folio"></td>

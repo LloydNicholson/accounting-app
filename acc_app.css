@@ -148,3 +148,9 @@ h3 {
 #month.credit {
   border-left: 10px solid gray;
 }
+
+input {
+  width: 120px;
+  height: 40px;
+  margin: 0px;
+}
