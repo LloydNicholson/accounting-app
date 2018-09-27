@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="acc_app.css">
 
   <!--Javascript reference-->
-  <script src="site.js"></script>
+  <script src="site_content.js"></script>
+  <script src="T_account.js"></script>
 
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -87,7 +88,7 @@
         <th class="credit" id="amount">Amount</th>
       </tr>
       <tr class="row" id="one">
-        <td class="debit" id="month"><form><input type="text" name="month" value="value"></form></td>
+        <td class="debit" id="month"><form><input type="text" name="month" id="month"></form></td>
         <td class="debit" id="day"></td>
         <td class="debit" id="details"></td>
         <td class="debit" id="folio"></td>
@@ -165,7 +166,7 @@
         <td class="debit" id="folio"></td>
         <td class="debit" id="amount"></td>
 
-        <td class="credit" id="month"><form><input type="text" name="month" value="value"></form></td>
+        <td class="credit" id="month"><form><input type="text" name="month" id="month"></form></td>
         <td class="credit" id="day"></td>
         <td class="credit" id="details"></td>
         <td class="credit" id="folio"></td>

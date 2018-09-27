@@ -149,8 +149,20 @@ h3 {
   border-left: 10px solid gray;
 }
 
+#month, #day, #folio {
+  width: 80px;
+}
+
+#details{
+  width: 200px;
+}
+
+#amount {
+  width: 160px;
+}
+
+
 input {
-  width: 120px;
   height: 40px;
   margin: 0px;
 }

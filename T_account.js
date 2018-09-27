@@ -1,4 +1,4 @@
-function createTable()
+function createTable(num_rows, num_cols)
 {
     var num_rows = document.getElementById('rows').value;
     var num_cols = document.getElementById('cols').value;
