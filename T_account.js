@@ -1,9 +1,9 @@
-function drawLedger(num_rows, num_cols) {
+function drawLedger(num_rows, num_cols, information) {
 
   let table_start = "<table class='table'>";
-
-  let row_head = "<tr class='row'>";
-  let col_head = "<td class='col'>";
+  let table_head = "<th class='table_head'>" + information + "</th>";
+  let row_head = "<tr class='table_row'>";
+  let col_head = "<td class='table_col'>";
 
   let row_foot = "</tr>";
   let col_foot = "</td>";
@@ -11,5 +11,5 @@ function drawLedger(num_rows, num_cols) {
   let table_end = "</table>";
   let table = row_head + (col_head + col_foot).repeat(num_cols) + row_foot;
 
-  return table_start + table.repeat(num_rows) + table_end;
+  return table_start + table_head + table.repeat(num_rows) + table_end;
 }

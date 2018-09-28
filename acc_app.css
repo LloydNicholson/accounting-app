@@ -174,12 +174,16 @@ input {
   margin-right: auto;
 }
 
-.col {
+.table_head {
+  text-align: center;
+}
+
+.table_col {
   border: 1px solid black;
   width: 50px;
   height: 20px;
 }
 
-.row {
+.table_row {
   border: 1px solid black;
 }
