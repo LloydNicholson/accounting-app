@@ -73,6 +73,7 @@
   <!--Answer form area-->
   <div class="answer_section">
     <h3>General Ledger Format</h3>
+    <h4>Bank</h4>
     <table class="bank">
       <tr class="heading">
         <th class="debit" id="month">Month</th>
@@ -88,7 +89,7 @@
         <th class="credit" id="amount">Amount</th>
       </tr>
       <tr class="row" id="one">
-        <td class="debit" id="month"><form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form></td>
+        <td class="debit" id="month"><!--<form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form>--></td>
         <td class="debit" id="day"></td>
         <td class="debit" id="details"></td>
         <td class="debit" id="folio"></td>
@@ -145,6 +146,7 @@
 
     </table>
 
+    <h4>Trading Stock</h4>
     <table class="trading_stock">
       <tr class="heading">
         <th class="debit" id="month">Month</th>
