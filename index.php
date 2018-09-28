@@ -168,7 +168,7 @@
         <td class="debit" id="folio"></td>
         <td class="debit" id="amount"></td>
 
-        <td class="credit" id="month"><form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form></td>
+        <td class="credit" id="month"><!--<form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form>--></td>
         <td class="credit" id="day"></td>
         <td class="credit" id="details"></td>
         <td class="credit" id="folio"></td>
@@ -219,5 +219,10 @@
 
     </table>
   </div>
+
+  <script type="text/javascript">
+      document.write(drawLedger(2, 10));
+  </script>
+
 </body>
 </html>

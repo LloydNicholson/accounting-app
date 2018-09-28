@@ -166,3 +166,20 @@ input {
   height: 40px;
   margin: 0px;
 }
+
+/* Table area css*/
+.table {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+}
+
+.row {
+  border: 1px solid black;
+}
