@@ -1,10 +1,14 @@
 // Different business names
 const ourBusiness = [
-  "Eric's Retailers",
-  "Mandy's Traders",
-  "Christine's Lawnmowers",
-  "Annabel's Gardening",
-  "Reeve's Accounting Firm"
+  "Rancid Retailers",
+  "Trusted Traders",
+  "Lawdy Lawnmowers",
+  "Garbage Gardening",
+  "Anti Accounting Firm",
+  "B-e-a-utiful Beauty Salon",
+  "Handy Hairsylists",
+  "Ordinary Orthodontists",
+  "Daily Dentists"
 ];
 
 // Set business 0 name to randomise
@@ -15,11 +19,17 @@ const owner = [
   'Douglas',
   'Evelyn',
   'Alice',
-  'Rosemary',
-  'George',
-  'Frederick',
-  'Klaus',
-  'Lee'
+  "Rosemary",
+  "George",
+  "Frederick",
+  "Klaus",
+  "Lee",
+  "Mark",
+  "Ivy",
+  "Isabel",
+  "Marie",
+  "Patricia",
+  "Jessie"
 ];
 
 // Set owner 0 name to randomise everytime
