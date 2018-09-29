@@ -8,7 +8,9 @@ const ourBusiness = [
   "B-e-a-utiful Beauty Salon",
   "Handy Hairsylists",
   "Ordinary Orthodontists",
-  "Daily Dentists"
+  "Daily Dentists",
+  "Silly Sweets",
+  "XYZ Stationers"
 ];
 
 // Set business 0 name to randomise
@@ -16,9 +18,9 @@ ourBusiness[0] = randomWord(ourBusiness);
 
 // Different owners names
 const owner = [
-  'Douglas',
-  'Evelyn',
-  'Alice',
+  "Douglas",
+  "Evelyn",
+  "Alice",
   "Rosemary",
   "George",
   "Frederick",
@@ -29,7 +31,10 @@ const owner = [
   "Isabel",
   "Marie",
   "Patricia",
-  "Jessie"
+  "Jessie",
+  "Kerry",
+  "Martin",
+  "Chris"
 ];
 
 // Set owner 0 name to randomise everytime
@@ -76,7 +81,8 @@ const bank = [
     "FNB",
     "Standard Bank",
     "Discovery Bank",
-    "Capitec"
+    "Capitec",
+    "Bidvest"
 ];
 
 // Different account types and sub-accounts

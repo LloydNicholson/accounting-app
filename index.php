@@ -220,11 +220,5 @@
     </table>
   </div>
 
-  <script type="text/javascript">
-      document.write(
-        drawLedger(10, 10, "Hello")
-      );
-  </script>
-
 </body>
 </html>
