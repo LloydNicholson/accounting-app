@@ -1,5 +1,5 @@
 // Different business names
-const ourBusiness = [
+const businesses = [
   "Rancid Retailers",
   "Trusted Traders",
   "Lawdy Lawnmowers",
@@ -10,14 +10,18 @@ const ourBusiness = [
   "Ordinary Orthodontists",
   "Daily Dentists",
   "Silly Sweets",
-  "XYZ Stationers"
+  "XYZ Stationers",
+  "Sporty Sports Gear",
+  "Freedom Flowers",
+  "Enlightened Engineers",
+  "Trendy Tutors"
 ];
 
-// Set business 0 name to randomise
-ourBusiness[0] = randomWord(ourBusiness);
+// Set business name to randomise
+ourBusiness = randomWord(businesses);
 
 // Different owners names
-const owner = [
+const owners = [
   "Douglas",
   "Evelyn",
   "Alice",
@@ -37,11 +41,11 @@ const owner = [
   "Chris"
 ];
 
-// Set owner 0 name to randomise everytime
-owner[0] = randomWord(owner);
+// Set owner name to randomise everytime
+owner = randomWord(owners);
 
 // Month array
-const month = [
+const months = [
   'January',
   'February',
   'March',
@@ -56,11 +60,14 @@ const month = [
   'December'
 ];
 
+month = randomWord(months);
+
 // Initialise year array
-var year = [];
+var years = [];
 for (let i = 2000; i < 2019; i++) {
-  year.push(i);
+  years.push(i);
 }
+year = randomWord(years);
 
 const payee = [
   "Joe's Traders",
@@ -130,7 +137,7 @@ const option = ['cash', '', 'on credit'];
 
 // Create heading for entire transaction list
 function createHeading(questionType) {
-  document.write("Use the following information to complete the " + questionType + " of " + ourBusiness[0] + " for the month of " + randomWord(month) + " " + randomWord(year) + "<br>" + "<br>");
+  document.write("Use the following information to complete the " + questionType + " of " + ourBusiness + " for the month of " + month + " " + year + "<br>" + "<br>");
   document.write('Transaction list' + "<br>");
 }
 
@@ -164,7 +171,7 @@ function createExpense(num, amount, day) {
 function createIncome(num, amount, day) {
   for (i = 0; i < num; i++) {
     let transaction = day;
-    transaction += ". " + ourBusiness[0];
+    transaction += ". " + ourBusiness;
     transaction += " " + receiveMethod[0];
     transaction += " " + randomWord(accountType.incomes);
     transaction += " amounting to R" + Math.ceil(Math.random() * amount);
@@ -208,7 +215,7 @@ function createLiability(num, amount, day) {
 function createCapital(num, amount, day) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
-    transaction += "The owner, " + owner[0];
+    transaction += "The owner, " + owner;
     transaction += " " + randomWord(receiveMethod.slice(2, 4));
     transaction += ", a capital contribution";
     transaction += " of R" + Math.ceil(Math.random() * amount) + ".";
@@ -221,7 +228,7 @@ function createCapital(num, amount, day) {
 function createDrawings(num, amount, day) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
-    transaction += owner[0];
+    transaction += owner;
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
     transaction += " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
