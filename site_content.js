@@ -129,7 +129,7 @@ const accountType = {
   incomes: ['current income', 'rent', 'donations', 'commission', 'cash sales']
 };
 
-const paymentMethod = ['paid', 'purchased', 'bought', 'widthdrew'];
+const paymentMethod = ['paid for', 'purchased', 'bought', 'widthdrew'];
 
 const receiveMethod = ['received', 'acquired', 'deposited into the businesses bank account', 'deposited into the the current account of the business'];
 
@@ -195,7 +195,7 @@ function createAsset(num, amount, day) {
 
     return transaction + "<br>";
   }
-};
+}
 
 // Create an liability transaction
 function createLiability(num, amount, day) {
