@@ -66,7 +66,7 @@
 
     <!--Form giving-->
     <div class="download_area">
-      <button><a href="" download>To download Cash Receipts Journal Template, click here!</a></button>
+      <button><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download Cash Receipts Journal Template, click here!</a></button>
       <br><br>
       <button><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download General Ledger Template, click here!</a></button>
 
