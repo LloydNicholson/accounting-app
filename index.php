@@ -79,18 +79,17 @@
     <h4>Cash Receipts Journal</h4>
     <table class="cash_receipts_journal">
       <tr class="heading">
-        <th class="doc">Doc</th>
-        <th class="day">Day</th>
-        <th class="details">Details</th>
-        <th class="folio1">Fol</th>
-        <th class="analysis">Analysis of receipts</th>
-        <th class="acc1">Bank</th>
-        <th class="acc2">Current Income</th>
+        <th class="doc" rowspan="2">Doc</th>
+        <th class="day" rowspan="2">Day</th>
+        <th class="details" rowspan="2">Details</th>
+        <th class="folio1" rowspan="2">Fol</th>
+        <th class="analysis" rowspan="2">Analysis of receipts</th>
+        <th class="acc1" rowspan="2">Bank</th>
+        <th class="acc2" rowspan="2">Current Income</th>
         <th class="sundry" colspan="3">Sundry</th>
       </tr>
 
       <tr class="heading2">
-        <th class="blank_space" colspan="7"></th>
         <th class="amount">Amount</th>
         <th class="folio2">Fol</th>
         <th class="details">Details</th>

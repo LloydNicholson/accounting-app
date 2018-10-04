@@ -31,6 +31,7 @@ table {
   border-collapse: collapse;
 }
 
+
 /* Header of page */
 .header {
   font-size: 20px;
@@ -182,13 +183,18 @@ table {
   padding: 10px 20px;
 }
 
+.heading2 th {
+  border: 1px solid gray;
+}
+
 .cash_receipts_journal {
   border: 2px solid gray;
   width: 1000px;
 }
 
-.cash_receipts_journal .heading th {
-  border: 1px solid gray;
+.heading th, .heading2 th {
+  border: 2px solid gray;
+  background-color: lightgray;
 }
 
 .cash_receipts_journal .row td {
@@ -196,6 +202,9 @@ table {
   border: 1px solid gray;
 }
 
+.analysis, .acc2, .acc1 {
+  width: 100px;
+}
 
 /* Table area css*/
 .table {
