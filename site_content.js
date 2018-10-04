@@ -14,7 +14,8 @@ const businesses = [
   "Sporty Sports Gear",
   "Freedom Flowers",
   "Enlightened Engineers",
-  "Trendy Tutors"
+  "Trendy Tutors",
+  "Fresh Fellers"
 ];
 
 // Set business name to randomise
@@ -46,18 +47,18 @@ owner = randomWord(owners);
 
 // Month array
 const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 
 month = randomWord(months);
@@ -83,67 +84,85 @@ const payee = [
 ];
 
 const bank = [
-    "Nedbank",
-    "ABSA bank",
-    "FNB",
-    "Standard Bank",
-    "Discovery Bank",
-    "Capitec",
-    "Bidvest"
+  "Nedbank",
+  "ABSA bank",
+  "FNB",
+  "Standard Bank",
+  "Discovery Bank",
+  "Capitec",
+  "Bidvest"
 ];
 
 // Different account types and sub-accounts
 const accountType = {
   // All assets
   assets: [
-    'trading stock', 'vehicles', 'equipment', 'machinery', 'land and buildings'
+    "trading stock",
+    "vehicles",
+    "equipment",
+    "machinery",
+    "land and buildings"
   ],
   // All liabilities
-  liabilities: [
-    'a loan', 'a mortgage bond', 'a bank overdraft'
-  ],
-  drawings: ['drawings'],
-  capital: ['capital'],
+  liabilities: ["a loan", "a mortgage bond", "a bank overdraft"],
+  drawings: ["drawings"],
+  capital: ["capital"],
   // All expenses
   expenses: [
-    'salaries',
-    'wages',
-    'repairs to the motor vehicle',
-    'advertising',
-    'the telephone account',
-    'telephone',
-    'stationery',
-    'water and electricity',
-    'insurance',
-    'packing material',
-    'fuel',
-    'bank charges',
-    'consumable goods',
-    'the interest on our overdrawn bank account',
-    'interest on loan',
-    'postage',
-    'donations',
-    'rent'
+    "salaries",
+    "wages",
+    "repairs to the motor vehicle",
+    "advertising",
+    "the telephone account",
+    "telephone",
+    "stationery",
+    "water and electricity",
+    "insurance",
+    "packing material",
+    "fuel",
+    "bank charges",
+    "consumable goods",
+    "the interest on our overdrawn bank account",
+    "interest on loan",
+    "postage",
+    "donations",
+    "rent"
   ],
   // All incomes
-  incomes: ['current income', 'rent', 'donations', 'commission', 'cash sales']
+  incomes: ["current income", "rent", "donations", "commission", "cash sales"]
 };
 
-const paymentMethod = ['paid for', 'purchased', 'bought', 'widthdrew'];
+const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
 
-const receiveMethod = ['received', 'acquired', 'deposited into the businesses bank account', 'deposited into the the current account of the business'];
+const receiveMethod = [
+  "received",
+  "acquired",
+  "deposited into the businesses bank account",
+  "deposited into the the current account of the business"
+];
 
-const option = ['cash', '', 'on credit'];
+const option = ["cash", "", "on credit"];
 
 // Create heading for entire transaction list
 function createHeading(questionType) {
-  document.write("Use the following information to complete the " + questionType + " of " + ourBusiness + " for the month of " + month + " " + year + "<br>" + "<br>");
-  document.write('Transaction list' + "<br>");
+  document.write(
+    "Use the following information to complete the " +
+      questionType +
+      " of " +
+      ourBusiness +
+      " for the month of " +
+      month +
+      " " +
+      year +
+      "<br>" +
+      "<br>"
+  );
+  document.write("Transaction list" + "<br>");
 }
 
 // Create a random word
 function randomWord(item) {
-  return (item[Math.floor(Math.random() * item.length)]);
+  return item[Math.floor(Math.random() * item.length)];
 }
 
 // Create the day for the transaction
@@ -161,9 +180,10 @@ function createExpense(num, amount, day) {
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
-    transaction += " to the value of R" + Math.ceil(Math.random() * amount) + ".";
+    transaction +=
+      " to the value of R" + Math.ceil(Math.random() * amount) + ".";
 
-    return (transaction + "<br>");
+    return transaction + "<br>";
   }
 }
 
@@ -231,7 +251,8 @@ function createDrawings(num, amount, day) {
     transaction += owner;
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
-    transaction += " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
+    transaction +=
+      " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
 
     return transaction + "<br>";
   }
