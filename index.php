@@ -66,12 +66,79 @@
 
     <!--Form giving-->
     <div class="download_area">
+      <button><a href="" download>To download Cash Receipts Journal Template, click here!</a></button>
+      <br><br>
       <button><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download General Ledger Template, click here!</a></button>
+
     </div>
   </div>
 
   <!--Answer form area-->
-  <div class="answer_section">
+  <div class="journal">
+    <h3>Journal Format</h3>
+    <h4>Cash Receipts Journal</h4>
+    <table class="cash_receipts_journal">
+      <tr class="heading">
+        <th class="doc">Doc</th>
+        <th class="day">Day</th>
+        <th class="details">Details</th>
+        <th class="folio1">Fol</th>
+        <th class="analysis">Analysis of receipts</th>
+        <th class="acc1">Bank</th>
+        <th class="acc2">Current Income</th>
+        <th class="sundry" colspan="3">Sundry</th>
+      </tr>
+
+      <tr class="heading2">
+        <th class="blank_space" colspan="7"></th>
+        <th class="amount">Amount</th>
+        <th class="folio2">Fol</th>
+        <th class="details">Details</th>
+      </tr>
+
+
+      <tr class="row" id="one">
+        <td class="doc"></td>
+        <td class="day"></td>
+        <td class="details"></td>
+        <td class="folio"></td>
+        <td class="analysis"></td>
+        <td class="acc1"></td>
+        <td class="acc2"></td>
+        <td class="amount"></td>
+        <td class="folio2"></td>
+        <td class="details"></td>
+      </tr>
+
+      <tr class="row" id="two">
+        <td class="doc"></td>
+        <td class="day"></td>
+        <td class="details"></td>
+        <td class="folio"></td>
+        <td class="analysis"></td>
+        <td class="acc1"></td>
+        <td class="acc2"></td>
+        <td class="amount"></td>
+        <td class="folio2"></td>
+        <td class="details"></td>
+      </tr>
+
+      <tr class="row" id="three">
+        <td class="doc"></td>
+        <td class="day"></td>
+        <td class="details"></td>
+        <td class="folio"></td>
+        <td class="analysis"></td>
+        <td class="acc1"></td>
+        <td class="acc2"></td>
+        <td class="amount"></td>
+        <td class="folio2"></td>
+        <td class="details"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
     <table class="bank">
