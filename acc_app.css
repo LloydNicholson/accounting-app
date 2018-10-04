@@ -129,8 +129,8 @@ table {
   background-color: #62686f;
 }
 
-/* Answer area css*/
-.answer_section {
+/* General ledger area css*/
+.general_ledger {
   border: 4px solid gray;
   border-radius: 20px;
   width: 1000px;
@@ -170,6 +170,32 @@ table {
 #amount {
   width: 160px;
 }
+
+/* Journal area css*/
+.journal {
+  border: 4px solid gray;
+  border-radius: 20px;
+  width: 1000px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+}
+
+.cash_receipts_journal {
+  border: 2px solid gray;
+  width: 1000px;
+}
+
+.cash_receipts_journal .heading th {
+  border: 1px solid gray;
+}
+
+.cash_receipts_journal .row td {
+  height: 40px;
+  border: 1px solid gray;
+}
+
 
 /* Table area css*/
 .table {
