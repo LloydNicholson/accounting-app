@@ -42,7 +42,7 @@
 
     <!--Heading-->
     <h2><script type="text/javascript">
-        createHeading("General Ledger");
+        createHeading("General Ledger or Journal");
       </script></h2>
 
     <!--Transaction list-->
