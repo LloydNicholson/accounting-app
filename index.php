@@ -11,6 +11,8 @@
   <script src="js/site_content.js"></script>
   <script src="js/T_account.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery_code.js"></script>
+
   
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
