@@ -3,17 +3,17 @@ $(document).ready(function(){
   $(".general_ledger").hide();
   $(".ledger_toggle").click(function() {
     /* Act on the event */
-    $(".general_ledger").slideToggle();
+    $(".general_ledger").slideToggle(800);
   });
 
   // Show/hide journal
   $(".journal").hide();
   $(".journal_toggle").click(function() {
     /* Act on the event */
-    $(".journal").slideToggle();
+    $(".journal").slideToggle(800);
   });
 
-  
+
 
 
 });
