@@ -257,3 +257,7 @@ function createDrawings(num, amount, day) {
     return transaction + "<br>";
   }
 }
+
+$(function() {
+  $(".cash_receipts_journal_toggle").fadeTo(1000, 0.5);
+});
