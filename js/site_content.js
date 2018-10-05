@@ -257,8 +257,3 @@ function createDrawings(num, amount, day) {
     return transaction + "<br>";
   }
 }
-
-$(function() {
-  $(".journal").hide();
-  $(".general_ledger").hide();
-});

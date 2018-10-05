@@ -173,8 +173,18 @@ table {
 }
 
 /* Journal area css*/
+.journal {
+  border: 4px solid gray;
+  border-radius: 20px;
+  width: 1000px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+}
+
 .cash_receipts_journal_toggle, .ledger_toggle {
-  width: 200px;
+  width: 300px;
   border: 1px solid gray;
   border-radius: 10px;
   background-color: lightgray;
@@ -186,16 +196,6 @@ table {
   cursor: pointer;
   background-color: gray;
   color: white;
-}
-
-.journal {
-  border: 4px solid gray;
-  border-radius: 20px;
-  width: 1000px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
 }
 
 .heading2 th {

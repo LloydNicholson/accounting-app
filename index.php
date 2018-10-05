@@ -11,7 +11,7 @@
   <script src="js/site_content.js"></script>
   <script src="js/T_account.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
-
+  
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
@@ -76,7 +76,7 @@
 
   <!--Answer form area-->
   <h2>Formats of Accounting activities</h2>
-  <div class="cash_receipts_journal_toggle">Cash Receipts Journal</div>
+  <div class="cash_receipts_journal_toggle">Show/Hide Cash Receipts Journal format</div>
   <div class="journal">
     <h3>Journal Format</h3>
     <h4>Cash Receipts Journal</h4>
@@ -140,7 +140,7 @@
     </table>
   </div>
 
-  <div class="ledger_toggle">General Ledger</div>
+  <div class="ledger_toggle">Show/Hide General Ledger format</div>
   <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
