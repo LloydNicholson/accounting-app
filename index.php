@@ -74,6 +74,8 @@
   </div>
 
   <!--Answer form area-->
+  <h2>Formats of Accounting activities</h2>
+  <button class="cash_receipts_journal_toggle">Cash Receipts Journal</button>
   <div class="journal">
     <h3>Journal Format</h3>
     <h4>Cash Receipts Journal</h4>
@@ -137,6 +139,7 @@
     </table>
   </div>
 
+  <button class="journal_toggle">General Ledger</button>
   <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
