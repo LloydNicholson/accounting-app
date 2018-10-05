@@ -183,7 +183,7 @@ table {
   padding: 10px 20px;
 }
 
-.cash_receipts_journal_toggle, .ledger_toggle {
+.CRJ_toggle, .ledger_toggle {
   width: 300px;
   border: 1px solid gray;
   border-radius: 10px;
@@ -192,7 +192,7 @@ table {
   margin-right: auto;
 }
 
-.cash_receipts_journal_toggle:hover, .ledger_toggle:hover {
+.CRJ_toggle:hover, .ledger_toggle:hover {
   cursor: pointer;
   background-color: gray;
   color: white;

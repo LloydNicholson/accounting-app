@@ -13,7 +13,6 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery_code.js"></script>
 
-  
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
@@ -78,7 +77,7 @@
 
   <!--Answer form area-->
   <h2>Formats of Accounting activities</h2>
-  <div class="cash_receipts_journal_toggle">Show/Hide Cash Receipts Journal format</div>
+  <div class="CRJ_toggle">Show/Hide Cash Receipts Journal format</div>
   <div class="journal">
     <h3>Journal Format</h3>
     <h4>Cash Receipts Journal</h4>
