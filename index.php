@@ -76,73 +76,86 @@
   </div>
 
   <!--Answer form area-->
-  <h2>Formats of Accounting activities</h2>
-  <div class="CRJ_toggle">Show/Hide Cash Receipts Journal format</div>
-  <div class="journal">
-    <h3>Journal Format</h3>
-    <h4>Cash Receipts Journal</h4>
-    <table class="cash_receipts_journal">
-      <tr class="heading">
-        <th class="doc" rowspan="2">Doc</th>
-        <th class="day" rowspan="2">Day</th>
-        <th class="details" rowspan="2">Details</th>
-        <th class="folio1" rowspan="2">Fol</th>
-        <th class="analysis" rowspan="2">Analysis of receipts</th>
-        <th class="acc1" rowspan="2">Bank</th>
-        <th class="acc2" rowspan="2">Current Income</th>
-        <th class="sundry" colspan="3">Sundry</th>
-      </tr>
+  <div class="format_area">
+    <h2>Formats of Accounting activities</h2>
+    <div class="journal">
+      <h3>Journal Format</h3>
+      <h4>Cash Receipts Journal</h4>
+      <table class="cash_receipts_journal">
+        <tr class="heading">
+          <th class="doc" rowspan="2">Doc</th>
+          <th class="day" rowspan="2">Day</th>
+          <th class="details" rowspan="2">Details</th>
+          <th class="folio1" rowspan="2">Fol</th>
+          <th class="analysis" rowspan="2">Analysis of receipts</th>
+          <th class="acc1" rowspan="2">Bank</th>
+          <th class="acc2" rowspan="2">Current Income</th>
+          <th class="sundry" colspan="3">Sundry</th>
+        </tr>
 
-      <tr class="heading2">
-        <th class="amount">Amount</th>
-        <th class="folio2">Fol</th>
-        <th class="details">Details</th>
-      </tr>
+        <tr class="heading2">
+          <th class="amount">Amount</th>
+          <th class="folio2">Fol</th>
+          <th class="details">Details</th>
+        </tr>
 
 
-      <tr class="row" id="one">
-        <td class="doc"></td>
-        <td class="day"></td>
-        <td class="details"></td>
-        <td class="folio"></td>
-        <td class="analysis"></td>
-        <td class="acc1"></td>
-        <td class="acc2"></td>
-        <td class="amount"></td>
-        <td class="folio2"></td>
-        <td class="details"></td>
-      </tr>
+        <tr class="row" id="one">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="analysis"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
 
-      <tr class="row" id="two">
-        <td class="doc"></td>
-        <td class="day"></td>
-        <td class="details"></td>
-        <td class="folio"></td>
-        <td class="analysis"></td>
-        <td class="acc1"></td>
-        <td class="acc2"></td>
-        <td class="amount"></td>
-        <td class="folio2"></td>
-        <td class="details"></td>
-      </tr>
+        <tr class="row" id="two">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="analysis"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
 
-      <tr class="row" id="three">
-        <td class="doc"></td>
-        <td class="day"></td>
-        <td class="details"></td>
-        <td class="folio"></td>
-        <td class="analysis"></td>
-        <td class="acc1"></td>
-        <td class="acc2"></td>
-        <td class="amount"></td>
-        <td class="folio2"></td>
-        <td class="details"></td>
-      </tr>
-    </table>
-  </div>
+        <tr class="row" id="three">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="analysis"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
 
-  <div class="ledger_toggle">Show/Hide General Ledger format</div>
-  <div class="general_ledger">
+        <tr class="row" id="three">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="analysis"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="journal_toggle">Show/Hide Journal format</div>
+
+    <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
     <table class="bank">
@@ -290,6 +303,7 @@
 
     </table>
   </div>
-
+    <div class="ledger_toggle">Show/Hide General Ledger format</div>
+  </div>
 </body>
 </html>

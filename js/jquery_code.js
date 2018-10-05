@@ -8,11 +8,12 @@ $(document).ready(function(){
 
   // Show/hide journal
   $(".journal").hide();
-  $(".CRJ_toggle").click(function() {
+  $(".journal_toggle").click(function() {
     /* Act on the event */
     $(".journal").slideToggle();
   });
 
+  
 
 
 });
