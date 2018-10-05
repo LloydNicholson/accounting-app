@@ -5,11 +5,12 @@
   <meta charset="utf-8">
 
   <!-- Stylesheet reference-->
-  <link rel="stylesheet" href="acc_app.css">
+  <link rel="stylesheet" href="css/acc_app.css">
 
   <!--Javascript reference-->
-  <script src="site_content.js"></script>
-  <script src="T_account.js"></script>
+  <script src="js/site_content.js"></script>
+  <script src="js/T_account.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
 
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -139,7 +140,7 @@
     </table>
   </div>
 
-  <div class="journal_toggle">General Ledger</div>
+  <div class="ledger_toggle">General Ledger</div>
   <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>

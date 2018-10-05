@@ -259,5 +259,6 @@ function createDrawings(num, amount, day) {
 }
 
 $(function() {
-  $(".cash_receipts_journal_toggle").fadeTo(1000, 0.5);
+  $(".journal").hide();
+  $(".general_ledger").hide();
 });
