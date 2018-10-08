@@ -1,15 +1,13 @@
 $(document).ready(function(){
-  // Show/hide ledger
+  // Show/hide ledger format
   $(".general_ledger").hide();
   $(".ledger_toggle").click(function() {
-    /* Act on the event */
     $(".general_ledger").slideToggle(800);
   });
 
-  // Show/hide journal
+  // Show/hide journal format
   $(".journal").hide();
   $(".journal_toggle").click(function() {
-    /* Act on the event */
     $(".journal").slideToggle(800);
   });
 
