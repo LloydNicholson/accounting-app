@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
   // Show/hide ledger format
   $(".general_ledger").hide();
   $(".ledger_toggle").click(function() {
@@ -10,8 +10,5 @@ $(document).ready(function(){
   $(".journal_toggle").click(function() {
     $(".journal").slideToggle(800);
   });
-
-
-
 
 });
