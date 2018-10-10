@@ -147,8 +147,16 @@ function createHeading(questionType) {
 function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
+jdsskajds
 
-sassasaasasassaasasas
+sajksadkjajs
+
+sdjknakjads
+
+
+sdalsasdkjg
+
+sdakjnskdsa
 // Create an expense transaction
 function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
