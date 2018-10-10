@@ -149,14 +149,22 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
+// Randomised date
+const dates = [];
+const firstDay = 1;
+const lastDay = 28;
+for (let i = firstDay; i < lastDay; i++) {
+  dates.push(i);
+}
+
+const sortedDates = dates.sort(function(a, b) {return a-b});
+
+/* Testing account creation with objects
 class TransactionType {
   constructor(type, low_val, high_val) {
     this._type = type;
     this._low_val = low_val;
     this._high_val = high_val;
-    this._date = [];
-    this._firstDay = 1;
-    this._lastDay = 28;
   }
 
   get type() {
@@ -174,29 +182,16 @@ class TransactionType {
   randomisedNum() {
     return Math.floor(Math.random() * this._high_val) + this._low_val;
   }
-
-  get date() {
-    return this._date;
-  }
-
-  // Randomised date
-  randomDate() {
-    for (let i = this._firstDay; i < this._lastDay; i++) {
-      this._date.push(i);
-    }
-      return randomWord(this._date);
-  }
 }
 
 // Create different transaction types
 const assetTransaction = new TransactionType('Asset', 10000, 500000);
 const incomeTransaction = new TransactionType('Income', 10000, 100000);
+const expenseTransaction = new TransactionType('Expense', 800, 15000);
 
-console.log('Random date is: '+ assetTransaction.randomDate());
+console.log(assetTransaction.randomisedNum());
+*/
 
-console.log(
-
-);
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
