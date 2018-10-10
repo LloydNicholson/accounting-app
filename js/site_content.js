@@ -15,7 +15,8 @@ const businesses = [
   "Freedom Flowers",
   "Enlightened Engineers",
   "Trendy Tutors",
-  "Fresh Fellers"
+  "Fresh Fellers",
+  "Feline Friends"
 ];
 
 // Set business name to randomise
@@ -131,6 +132,8 @@ const accountType = {
   // All incomes
   incomes: ["current income", "rent", "donations", "commission", "cash sales"]
 };
+
+
 
 const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
 
