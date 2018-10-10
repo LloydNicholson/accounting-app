@@ -149,6 +149,7 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
+<<<<<<< HEAD
 // Randomised date
 const dates = [];
 const firstDay = 1;
@@ -193,6 +194,8 @@ console.log(assetTransaction.randomisedNum());
 */
 
 
+=======
+>>>>>>> master
 // Create an expense transaction
 function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
