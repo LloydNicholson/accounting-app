@@ -52,7 +52,8 @@
       <script type="text/javascript">
       document.write(
           createExpense(1, 100, 1000),
-          createIncome(1, 200, 300)
+          createIncome(1, 200, 300),
+          createCapital(1, 10000, 15000)
       );
       </script>
     </p>
