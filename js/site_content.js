@@ -143,20 +143,43 @@ function createHeading(questionType) {
   document.write("Transaction list" + "<br>");
 }
 
+// Randomised date
+function date() {
+  date = [];
+  firstDay = 1;
+  lastDay = 28;
+  for (i = firstDay; i < lastDay; i++) {
+    date.push(i);
+  }
+    return randomWord(date);
+}
+
+console.log(date());
+
 // Create a random word
 function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
-jdsskajds
 
-sajksadkjajs
+class TransactionType {
+  constructor(type, amount) {
+    this._type = type;
+    this._amount = amount;
+  }
 
-sdjknakjads
+  get type() {
+    return this._type;
+  }
 
+  get amount() {
+    return this._amount;
+  }
 
-sdalsasdkjg
+}
 
-sdakjnskdsa
+const assetTransaction = new TransactionType('Asset', 1000);
+console.log(assetTransaction);
+
 // Create an expense transaction
 function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
