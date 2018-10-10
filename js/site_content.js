@@ -176,7 +176,7 @@ class AccountingTransaction {
   }
 }
 
-console.log(AccountingTransaction.day);
+
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
