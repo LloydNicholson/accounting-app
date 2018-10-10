@@ -196,11 +196,11 @@ console.log(assetTransaction.randomisedNum());
 // Create an expense transaction
 function createExpense(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
-    transaction += " to the value of R" + Math.ceil(Math.random() * amount) + ".";
+    transaction += " to the value of R" + randomisedNum(low_val, high_val) + ".";
 
     return transaction + "<br>";
   }
@@ -209,11 +209,11 @@ function createExpense(num, low_val, high_val) {
 // Create an income transaction
 function createIncome(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day;
+    let transaction = randomWord(dates) + ". ";
     transaction += ". " + ourBusiness;
     transaction += " " + receiveMethod[0];
     transaction += " " + randomWord(accountType.incomes);
-    transaction += " amounting to R" + Math.ceil(Math.random() * amount);
+    transaction += " amounting to R" + randomisedNum(low_val, high_val);
     transaction += " " + randomWord(option.slice(0, 2));
     transaction += " from " + randomWord(payee) + ".";
 
@@ -224,11 +224,11 @@ function createIncome(num, low_val, high_val) {
 // Create an asset transaction
 function createAsset(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += "Our business ";
     transaction += " " + paymentMethod[1];
     transaction += " " + randomWord(accountType.assets);
-    transaction += " to the value of R" + Math.ceil(Math.random() * amount);
+    transaction += " to the value of R" + randomisedNum(low_val, high_val);
     transaction += " " + randomWord(option.slice(0, 2));
     transaction += " from " + randomWord(payee) + ".";
 
@@ -239,11 +239,11 @@ function createAsset(num, low_val, high_val) {
 // Create an liability transaction
 function createLiability(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += "The business ";
     transaction += " " + receiveMethod[1];
     transaction += " " + randomWord(accountType.liabilities);
-    transaction += " to the value of R" + Math.ceil(Math.random() * amount);
+    transaction += " to the value of R" + randomisedNum(low_val, high_val);
     transaction += " from " + randomWord(bank) + ".";
 
     return transaction + "<br>";
@@ -253,11 +253,11 @@ function createLiability(num, low_val, high_val) {
 // Create an capital transaction
 function createCapital(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += "The owner, " + owner;
     transaction += " " + randomWord(receiveMethod.slice(2, 4));
     transaction += ", a capital contribution";
-    transaction += " of R" + Math.ceil(Math.random() * amount) + ".";
+    transaction += " of R" + randomisedNum(low_val, high_val) + ".";
 
     return transaction + "<br>";
   }
@@ -266,11 +266,11 @@ function createCapital(num, low_val, high_val) {
 // Create an drawings transaction
 function createDrawings(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += owner;
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
-    transaction += " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
+    transaction += " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
 
     return transaction + "<br>";
   }
