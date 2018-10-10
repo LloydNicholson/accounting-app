@@ -143,18 +143,6 @@ function createHeading(questionType) {
   document.write("Transaction list" + "<br>");
 }
 
-// Randomised date
-function date() {
-  date = [];
-  firstDay = 1;
-  lastDay = 28;
-  for (i = firstDay; i < lastDay; i++) {
-    date.push(i);
-  }
-    return randomWord(date);
-}
-
-console.log('Random date is the: '+ date());
 
 // Create a random word
 function randomWord(item) {
@@ -166,6 +154,9 @@ class TransactionType {
     this._type = type;
     this._low_val = low_val;
     this._high_val = high_val;
+    this._date = [];
+    this._firstDay = 1;
+    this._lastDay = 28;
   }
 
   get type() {
@@ -183,11 +174,29 @@ class TransactionType {
   randomisedNum() {
     return Math.floor(Math.random() * this._high_val) + this._low_val;
   }
+
+  get date() {
+    return this._date;
+  }
+
+  // Randomised date
+  randomDate() {
+    for (let i = this._firstDay; i < this._lastDay; i++) {
+      this._date.push(i);
+    }
+      return randomWord(this._date);
+  }
 }
 
+// Create different transaction types
 const assetTransaction = new TransactionType('Asset', 10000, 500000);
-const
-console.log(assetTransaction.randomisedNum());
+const incomeTransaction = new TransactionType('Income', 10000, 100000);
+
+console.log('Random date is: '+ assetTransaction.randomDate());
+
+console.log(
+
+);
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
