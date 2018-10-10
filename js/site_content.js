@@ -149,7 +149,6 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
-<<<<<<< HEAD
 // Randomised date
 const dates = [];
 const firstDay = 1;
@@ -194,10 +193,8 @@ console.log(assetTransaction.randomisedNum());
 */
 
 
-=======
->>>>>>> master
 // Create an expense transaction
-function createExpense(num, amount, day) {
+function createExpense(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
     transaction += "We ";
@@ -210,7 +207,7 @@ function createExpense(num, amount, day) {
 }
 
 // Create an income transaction
-function createIncome(num, amount, day) {
+function createIncome(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day;
     transaction += ". " + ourBusiness;
@@ -225,7 +222,7 @@ function createIncome(num, amount, day) {
 }
 
 // Create an asset transaction
-function createAsset(num, amount, day) {
+function createAsset(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
     transaction += "Our business ";
@@ -240,7 +237,7 @@ function createAsset(num, amount, day) {
 }
 
 // Create an liability transaction
-function createLiability(num, amount, day) {
+function createLiability(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
     transaction += "The business ";
@@ -254,7 +251,7 @@ function createLiability(num, amount, day) {
 }
 
 // Create an capital transaction
-function createCapital(num, amount, day) {
+function createCapital(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
     transaction += "The owner, " + owner;
@@ -267,7 +264,7 @@ function createCapital(num, amount, day) {
 }
 
 // Create an drawings transaction
-function createDrawings(num, amount, day) {
+function createDrawings(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
     let transaction = day + ". ";
     transaction += owner;
