@@ -143,10 +143,55 @@ function createHeading(questionType) {
   document.write("Transaction list" + "<br>");
 }
 
+
 // Create a random word
 function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
+
+// Randomised date
+const dates = [];
+const firstDay = 1;
+const lastDay = 28;
+for (let i = firstDay; i < lastDay; i++) {
+  dates.push(i);
+}
+
+const sortedDates = dates.sort(function(a, b) {return a-b});
+
+/* Testing account creation with objects
+class TransactionType {
+  constructor(type, low_val, high_val) {
+    this._type = type;
+    this._low_val = low_val;
+    this._high_val = high_val;
+  }
+
+  get type() {
+    return this._type;
+  }
+
+  get low_val() {
+    return this._low_val;
+  }
+
+  get high_val() {
+    return this._high_val;
+  }
+
+  randomisedNum() {
+    return Math.floor(Math.random() * this._high_val) + this._low_val;
+  }
+}
+
+// Create different transaction types
+const assetTransaction = new TransactionType('Asset', 10000, 500000);
+const incomeTransaction = new TransactionType('Income', 10000, 100000);
+const expenseTransaction = new TransactionType('Expense', 800, 15000);
+
+console.log(assetTransaction.randomisedNum());
+*/
+
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
