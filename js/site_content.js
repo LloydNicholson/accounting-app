@@ -98,14 +98,12 @@ const bank = [
 const accountType = {
   // All assets
   assets: [
-    "trading stock",
-    "vehicles",
-    "equipment",
-    "machinery",
-    "land and buildings"
+    "trading stock", "vehicles", "equipment", "machinery", "land and buildings"
   ],
   // All liabilities
-  liabilities: ["a loan", "a mortgage bond", "a bank overdraft"],
+  liabilities: [
+    "a loan", "a mortgage bond", "a bank overdraft"
+  ],
   drawings: ["drawings"],
   capital: ["capital"],
   // All expenses
@@ -133,33 +131,15 @@ const accountType = {
   incomes: ["current income", "rent", "donations", "commission", "cash sales"]
 };
 
-
-
 const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
 
-const receiveMethod = [
-  "received",
-  "acquired",
-  "deposited into the businesses bank account",
-  "deposited into the the current account of the business"
-];
+const receiveMethod = ["received", "acquired", "deposited into the businesses bank account", "deposited into the the current account of the business"];
 
 const option = ["cash", "", "on credit"];
 
 // Create heading for entire transaction list
 function createHeading(questionType) {
-  document.write(
-    "Use the following information to complete the " +
-      questionType +
-      " of " +
-      ourBusiness +
-      " for the month of " +
-      month +
-      " " +
-      year +
-      "<br>" +
-      "<br>"
-  );
+  document.write("Use the following information to complete the " + questionType + " of " + ourBusiness + " for the month of " + month + " " + year + "<br>" + "<br>");
   document.write("Transaction list" + "<br>");
 }
 
@@ -168,13 +148,35 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
-// Create the day for the transaction
-var day = [];
-firstDay = 1;
-lastDay = 29;
-for (let i = firstDay; i < lastDay; i++) {
-  day.push(i);
+
+
+
+class AccountingTransaction {
+  constructor(accountType, amount) {
+    this._amount = amount;
+    this._accountType = accountType;
+    this._day = [];
+  }
+
+  get amount() {
+    return this._amount;
+  }
+
+  get accountType() {
+    return this._accountType;
+  }
+
+  day() {
+    // Create the day for the transaction
+    firstDay = 1;
+    lastDay = 29;
+    for (let i = firstDay; i < lastDay; i++) {
+      this._day = day.push(2);
+    }
+  }
 }
+
+console.log(AccountingTransaction.day);
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
@@ -183,8 +185,7 @@ function createExpense(num, amount, day) {
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
-    transaction +=
-      " to the value of R" + Math.ceil(Math.random() * amount) + ".";
+    transaction += " to the value of R" + Math.ceil(Math.random() * amount) + ".";
 
     return transaction + "<br>";
   }
@@ -254,8 +255,7 @@ function createDrawings(num, amount, day) {
     transaction += owner;
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
-    transaction +=
-      " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
+    transaction += " worth R" + Math.ceil(Math.random() * amount) + " for personal use.";
 
     return transaction + "<br>";
   }
