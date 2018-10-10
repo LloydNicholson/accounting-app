@@ -171,7 +171,7 @@ class AccountingTransaction {
     firstDay = 1;
     lastDay = 29;
     for (let i = firstDay; i < lastDay; i++) {
-      this._day = day.push(2);
+      this._day = this._day.push(2);
     }
   }
 }
