@@ -148,36 +148,7 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
-
-
-
-class AccountingTransaction {
-  constructor(accountType, amount) {
-    this._amount = amount;
-    this._accountType = accountType;
-    this._day = [];
-  }
-
-  get amount() {
-    return this._amount;
-  }
-
-  get accountType() {
-    return this._accountType;
-  }
-
-  day() {
-    // Create the day for the transaction
-    firstDay = 1;
-    lastDay = 29;
-    for (let i = firstDay; i < lastDay; i++) {
-      this._day = this._day.push(2);
-    }
-  }
-}
-
-
-
+sassasaasasassaasasas
 // Create an expense transaction
 function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
