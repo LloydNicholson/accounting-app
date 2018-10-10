@@ -148,7 +148,6 @@ function randomWord(item) {
   return item[Math.floor(Math.random() * item.length)];
 }
 
-
 // Create an expense transaction
 function createExpense(num, amount, day) {
   for (i = 0; i < num; i++) {
