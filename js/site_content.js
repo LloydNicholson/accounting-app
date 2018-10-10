@@ -159,6 +159,12 @@ for (let i = firstDay; i < lastDay; i++) {
 
 const sortedDates = dates.sort(function(a, b) {return a-b});
 
+// Create random values between two points
+function randomisedNum(low_val, high_val) {
+  return Math.floor(Math.random() * high_val) + low_val;
+}
+
+
 /* Testing account creation with objects
 class TransactionType {
   constructor(type, low_val, high_val) {
@@ -194,9 +200,9 @@ console.log(assetTransaction.randomisedNum());
 
 
 // Create an expense transaction
-function createExpense(num, amount, day) {
+function createExpense(num, amount) {
   for (i = 0; i < num; i++) {
-    let transaction = day + ". ";
+    let transaction = randomWord(dates) + ". ";
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
@@ -205,6 +211,8 @@ function createExpense(num, amount, day) {
     return transaction + "<br>";
   }
 }
+
+
 
 // Create an income transaction
 function createIncome(num, amount, day) {
