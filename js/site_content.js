@@ -154,7 +154,7 @@ function date() {
     return randomWord(date);
 }
 
-console.log(date());
+console.log('Random date is the: '+ date());
 
 // Create a random word
 function randomWord(item) {
@@ -162,23 +162,32 @@ function randomWord(item) {
 }
 
 class TransactionType {
-  constructor(type, amount) {
+  constructor(type, low_val, high_val) {
     this._type = type;
-    this._amount = amount;
+    this._low_val = low_val;
+    this._high_val = high_val;
   }
 
   get type() {
     return this._type;
   }
 
-  get amount() {
-    return this._amount;
+  get low_val() {
+    return this._low_val;
   }
 
+  get high_val() {
+    return this._high_val;
+  }
+
+  randomisedNum() {
+    return Math.floor(Math.random() * this._high_val) + this._low_val;
+  }
 }
 
-const assetTransaction = new TransactionType('Asset', 1000);
-console.log(assetTransaction);
+const assetTransaction = new TransactionType('Asset', 10000, 500000);
+const
+console.log(assetTransaction.randomisedNum());
 
 // Create an expense transaction
 function createExpense(num, amount, day) {
