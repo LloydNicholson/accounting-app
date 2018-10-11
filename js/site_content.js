@@ -165,7 +165,7 @@ function randomisedNum(low_val, high_val) {
 }
 
 /* Testing account creation with objects
-class TransactionType {
+class Transaction {
   constructor(type, low_val, high_val) {
     this._type = type;
     this._low_val = low_val;
@@ -197,15 +197,19 @@ const expenseTransaction = new TransactionType('Expense', 800, 15000);
 console.log(assetTransaction.randomisedNum());
 */
 
+const transactionList = [];
 
 // Create an expense transaction
 function createExpense(num, low_val, high_val) {
   for (i = 0; i < num; i++) {
+    var dateFound = /\d+/;
     let transaction = randomWord(dates) + ". ";
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
     transaction += " to the value of R" + randomisedNum(low_val, high_val) + ".";
+    var currentDay = transaction.match(dateFound);
+    console.log(currentDay);
 
     return transaction + "<br>";
   }
@@ -280,3 +284,5 @@ function createDrawings(num, low_val, high_val) {
     return transaction + "<br>";
   }
 }
+
+console.log(allTransactions);
