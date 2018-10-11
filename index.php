@@ -51,9 +51,13 @@
     <p>
       <script type="text/javascript">
       document.write(
-          createExpense(1, 100, 1000),
-          createIncome(1, 200, 300),
-          createCapital(1, 10000, 15000)
+          createCapital(1, 1, 100000, 150000),
+          createExpense(3, 1, 2000, 4000),
+          createIncome(4, 2, 1000, 3000),
+          createExpense(10, 1, 500, 1000),
+          createDrawings(11, 1, 6000, 10000),
+          createExpense(13, 1, 4000, 5000),
+          createIncome(19, 1, 9000, 14000)
       );
       </script>
     </p>
