@@ -98,12 +98,14 @@ const bank = [
 const accountType = {
   // All assets
   assets: [
-    "trading stock", "vehicles", "equipment", "machinery", "land and buildings"
+    "trading stock",
+    "vehicles",
+    "equipment",
+    "machinery",
+    "land and buildings"
   ],
   // All liabilities
-  liabilities: [
-    "a loan", "a mortgage bond", "a bank overdraft"
-  ],
+  liabilities: ["a loan", "a mortgage bond", "a bank overdraft"],
   drawings: ["drawings"],
   capital: ["capital"],
   // All expenses
@@ -133,16 +135,31 @@ const accountType = {
 
 const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
 
-const receiveMethod = ["received", "acquired", "deposited into the businesses bank account", "deposited into the the current account of the business"];
+const receiveMethod = [
+  "received",
+  "acquired",
+  "deposited into the businesses bank account",
+  "deposited into the the current account of the business"
+];
 
 const option = ["cash", "", "on credit"];
 
 // Create heading for entire transaction list
 function createHeading(questionType) {
-  document.write("Use the following information to complete the " + questionType + " of " + ourBusiness + " for the month of " + month + " " + year + "<br>" + "<br>");
+  document.write(
+    "Use the following information to complete the " +
+      questionType +
+      " of " +
+      ourBusiness +
+      " for the month of " +
+      month +
+      " " +
+      year +
+      "<br>" +
+      "<br>"
+  );
   document.write("Transaction list" + "<br>");
 }
-
 
 // Create a random word
 function randomWord(item) {
@@ -157,7 +174,9 @@ for (let i = firstDay; i < lastDay; i++) {
   dates.push(i);
 }
 
-const sortedDates = dates.sort(function(a, b) {return a-b});
+const sortedDates = dates.sort(function(a, b) {
+  return a - b;
+});
 
 // Create random values between two points
 function randomisedNum(low_val, high_val) {
@@ -207,7 +226,8 @@ function createExpense(day, num, low_val, high_val) {
     transaction += "We ";
     transaction += " " + paymentMethod[0];
     transaction += " " + randomWord(accountType.expenses);
-    transaction += " to the value of R" + randomisedNum(low_val, high_val) + ".";
+    transaction +=
+      " to the value of R" + randomisedNum(low_val, high_val) + ".";
     var currentDay = transaction.match(dateFound);
     console.log(currentDay);
 
@@ -279,7 +299,8 @@ function createDrawings(day, num, low_val, high_val) {
     transaction += owner;
     transaction += " " + paymentMethod[3];
     transaction += " " + randomWord(accountType.assets);
-    transaction += " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
+    transaction +=
+      " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
 
     return transaction + "<br>";
   }
