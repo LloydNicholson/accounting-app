@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "accounting-app": "babel js/site_content.js -d transpiled_library"
+    "accounting-app": "babel js -d transpiled_library"
   },
   "repository": {
     "type": "git",
