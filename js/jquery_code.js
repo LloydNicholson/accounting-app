@@ -1,14 +1,19 @@
 $(document).ready(function() {
   // Show/hide ledger format
-  $(".general_ledger").hide();
-  $(".ledger_toggle").click(function() {
-    $(".general_ledger").slideToggle(800);
+const $generalLedger = $(".general_ledger");
+const $ledgerToggle = $(".ledger_toggle");
+const $journal = $(".journal");
+const $journalToggle = $(".journal_toggle");
+
+  $generalLedger.hide();
+  $ledgerToggle.on('click', () => {
+    $generalLedger.slideToggle(800);
   });
 
   // Show/hide journal format
-  $(".journal").hide();
-  $(".journal_toggle").click(function() {
-    $(".journal").slideToggle(800);
+  $journal.hide();
+  $journalToggle.on('click', () => {
+    $journal.slideToggle(800);
   });
 
 });
