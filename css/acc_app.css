@@ -42,11 +42,11 @@ table {
 
 .header_image {
     display: block;
-    overflow: hidden;
-    width: 85%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     margin-left: auto;
     margin-right: auto;
+    background-position: center;
 }
 
 /* Upload and input area css*/
@@ -71,18 +71,17 @@ table {
 }
 
 .upload_area button {
-  position: relative;
-  top: -4px;
-  height: 30px;
+  font-size: 20px;
+  border: none;
   width: 200px;
-  border: 1px solid black;
-  border-radius: 20px;
+  text-align: center;
+  background-color: lightgray;
 }
 
 .upload_area button:hover {
-  background-color: #385555;
-  cursor: pointer;
+  background-color: gray;
   color: white;
+  cursor: pointer;
 }
 
 /* Transaction area css*/
@@ -109,42 +108,38 @@ table {
 
 /* Download area css*/
 .download_area button {
-  margin: 0px;
   font-size: 20px;
-  border: 1px solid gray;
-  border-radius: 20px;
-  background-color: lightgray;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  padding: 10px;
+  background-color: lightgray;
 }
 
 .download_area a {
-  margin: 0px;
+  border: none;
   text-decoration: none;
   color: black;
   font-size: 18px;
 }
 
-.download_area button:hover {
-  background-color: #62686f;
+.download_area button:hover, a:hover {
+  background-color: gray;
+  color: white;
 }
 
 /* Journal area css*/
 .journal {
-  border: 4px solid gray;
-  border-radius: 20px;
   width: 1000px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
-  margin-bottom: -25px;
+  margin-bottom: 50px;
 }
 
 .journal_toggle, .ledger_toggle {
-  width: 300px;
-  border: 1px solid gray;
-  border-radius: 10px;
+  width: 1000px;
   background-color: lightgray;
   margin-left: auto;
   margin-right: auto;
@@ -182,14 +177,12 @@ table {
 
 /* General ledger area css*/
 .general_ledger {
-  border: 4px solid gray;
-  border-radius: 20px;
   width: 1000px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 20px;
-  margin-bottom: -25px;
+  margin-bottom: 50px;
 }
 
 .heading .debit, .heading .credit {

@@ -77,6 +77,7 @@
   <!--Answer form area-->
   <div class="format_area">
     <h2>Formats of Accounting activities</h2>
+    <div class="journal_toggle">Show/Hide Journal format</div>
     <div class="journal">
       <h3>Journal Format</h3>
       <h4>Cash Receipts Journal</h4>
@@ -152,8 +153,8 @@
         </tr>
       </table>
     </div>
-    <div class="journal_toggle">Show/Hide Journal format</div>
 
+    <div class="ledger_toggle">Show/Hide General Ledger format</div>
     <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
@@ -299,10 +300,8 @@
         <td class="credit" id="folio"></td>
         <td class="credit" id="amount"></td>
       </tr>
-
     </table>
   </div>
-    <div class="ledger_toggle">Show/Hide General Ledger format</div>
   </div>
 
   <!-- jQuery code loading -->

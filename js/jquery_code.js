@@ -7,6 +7,7 @@ $(document).ready(() => {
   const $transactionList = $(".transactionList");
   const $headerImage = $(".header_image");
 
+
   $generalLedger.hide();
   $ledgerToggle.on('click', () => {
     $generalLedger.slideToggle(800);
@@ -19,16 +20,16 @@ $(document).ready(() => {
   });
 
   // Make transaction list and header image bigger on mouse enter
-  .on('mouseenter', () => {
-    .animate({
+  $headerImage.on('mouseenter', () => {
+    $headerImage.animate({
+      width: '110%',
+      height: '110%'
+    }, 700);
+  }).on('mouseleave', () => {
+      $headerImage.animate({
       width: '100%',
       height: '100%'
-    });
-  }).on('mouseleave', () => {
-      .animate({
-      width: '80%',
-      height: '80%'
-    })
+    }, 700);
   });
 
 });
