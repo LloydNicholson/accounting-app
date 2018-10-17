@@ -22,6 +22,7 @@ $(document).ready(() => {
   });
 
   // Make transaction list and header image bigger on mouse enter
+  /* Trying to make this work with static borders without increasing actual size of image
   $headerImage.on('mouseenter', event => {
     $(event.currentTarget).animate({
       width: '110%',
@@ -32,8 +33,8 @@ $(document).ready(() => {
       width: '100%',
       height: '100%'
     }, 700);
+
   });
-
-
+  */
 
 });
