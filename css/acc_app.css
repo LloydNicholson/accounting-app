@@ -42,6 +42,7 @@ table {
 
 .header_image {
     display: block;
+    overflow: hidden;
     width: 85%;
     height: 70%;
     margin-left: auto;
@@ -241,4 +242,14 @@ table {
 
 .table_row {
   border: 1px solid black;
+}
+
+/* Extra css added through jquery*/
+.grow {
+  width: 1200px;
+}
+
+.zoom {
+  width: 1000px;
+  height: 400px;
 }
