@@ -77,7 +77,8 @@
   <!--Answer form area-->
   <div class="format_area">
     <h2>Formats of Accounting activities</h2>
-    <div class="journal_toggle">Show/Hide Journal format</div>
+    <div class="journal_toggle"><img src="images/arrow.png" alt="arrow" class="arrow"> Show/Hide Journal format
+     <img src="images/arrow.png" alt="arrow" class="arrow"></div>
     <div class="journal">
       <h3>Journal Format</h3>
       <h4>Cash Receipts Journal</h4>
@@ -154,7 +155,8 @@
       </table>
     </div>
 
-    <div class="ledger_toggle">Show/Hide General Ledger format</div>
+    <div class="ledger_toggle"><img src="images/arrow.png" alt="arrow" class="arrow"> Show/Hide General Ledger format
+    <img src="images/arrow.png" alt="arrow" class="arrow"></div>
     <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>

@@ -246,3 +246,8 @@ table {
   width: 1000px;
   height: 400px;
 }
+
+.rotate {
+  transition: 0.2s;
+  transform: rotate(90deg);
+}
