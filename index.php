@@ -67,9 +67,9 @@
 
     <!--Form giving-->
     <div class="download_area">
-      <button><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download Cash Receipts Journal Template, click here!</a></button>
-      <br><br>
-      <button><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download General Ledger Template, click here!</a></button>
+      <div><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download Cash Receipts Journal Template, click here!</a></div>
+      <div><a href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download Cash Payments Journal Template, click here!</a></div>
+      <div><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download General Ledger Template, click here!</a></div>
 
     </div>
   </div>
@@ -77,8 +77,8 @@
   <!--Answer form area-->
   <div class="format_area">
     <h2>Formats of Accounting activities</h2>
-    <div class="journal_toggle"><img src="images/arrow.jpg" alt="arrow" class="arrow"> Show/Hide Journal format
-     <img src="images/arrow.jpg" alt="arrow" class="arrow"></div>
+    <div class="journal_toggle"><img src="Images/arrow.jpg" alt="arrow" class="arrow"> Show/Hide Journal format
+     <img src="Images/arrow.jpg" alt="arrow" class="arrow"></div>
     <div class="journal">
       <h3>Journal Format</h3>
       <h4>Cash Receipts Journal</h4>
@@ -155,8 +155,8 @@
       </table>
     </div>
 
-    <div class="ledger_toggle"><img src="images/arrow.jpg" alt="arrow" class="arrow"> Show/Hide General Ledger format
-    <img src="images/arrow.jpg" alt="arrow" class="arrow"></div>
+    <div class="ledger_toggle"><img src="Images/arrow.jpg" alt="arrow" class="arrow"> Show/Hide General Ledger format
+    <img src="Images/arrow.jpg" alt="arrow" class="arrow"></div>
     <div class="general_ledger">
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>

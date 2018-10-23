@@ -107,23 +107,20 @@ table {
 }
 
 /* Download area css*/
-.download_area button {
-  font-size: 20px;
-  border: none;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: lightgray;
-}
-
 .download_area a {
-  border: none;
+  font-size: 20px;
+  text-align: center;
   text-decoration: none;
   color: black;
-  font-size: 18px;
 }
 
-.download_area button:hover, a:hover {
+.download_area div {
+  border: none;
+  background-color: lightgray;
+  width: 520px;
+}
+
+.download_area a:hover, .download_area div:hover {
   background-color: gray;
   color: white;
 }
@@ -237,14 +234,14 @@ table {
   border: 1px solid black;
 }
 
-/* Extra css added through jquery*/
+/* Extra css added through jQuery*/
 .grow {
   width: 1200px;
 }
 
 .zoom {
-  width: 1000px;
-  height: 400px;
+  width: 110%;
+  max-width: 100%;
 }
 
 .rotate {
