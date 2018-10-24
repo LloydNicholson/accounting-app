@@ -7,19 +7,27 @@ $(document).ready(() => {
   const $transactionList = $(".transactionList");
   const $headerImage = $(".header_image");
   const $arrowImage = $(".arrow");
+  const $downloadArea = $(".download_area");
+  const $downloadLink = $downloadArea.find("div");
+
 
   $generalLedger.hide();
-  $ledgerToggle.on('click', () => {
+  $ledgerToggle.on("click", () => {
     $generalLedger.slideToggle(800);
-    $(event.currentTarget).find('.arrow').toggleClass('rotate');
+    $(event.currentTarget)
+      .find(".arrow")
+      .toggleClass("rotate");
   });
 
   // Show/hide journal format
   $journal.hide();
-  $journalToggle.on('click', () => {
+  $journalToggle.on("click", () => {
     $journal.slideToggle(800);
-    $(event.currentTarget).find('.arrow').toggleClass('rotate');
+    $(event.currentTarget)
+      .find(".arrow")
+      .toggleClass("rotate");
   });
+
 
   // Make transaction list and header image bigger on mouse enter
   /* Trying to make this work with static borders without increasing actual size of image
@@ -36,5 +44,4 @@ $(document).ready(() => {
 
   });
   */
-
 });

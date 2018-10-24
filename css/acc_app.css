@@ -113,15 +113,15 @@ table {
   text-decoration: none;
   color: black;
   padding: 10px;
+  background-color: lightgray;
 }
 
 .download_area div {
-  border: none;
-  background-color: lightgray;
-  width: 520px;
+  position: relative;
+  height: 30px;
 }
 
-.download_area a:hover, .download_area div:hover {
+.download_area a:hover {
   background-color: gray;
   color: white;
 }
