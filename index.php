@@ -153,12 +153,83 @@
           <td class="details"></td>
         </tr>
       </table>
+      <h4>Cash Payments Journal</h4>
+      <table class="cash_payments_journal">
+        <tr class="heading">
+          <th class="doc" rowspan="2">Doc</th>
+          <th class="day" rowspan="2">Day</th>
+          <th class="details" rowspan="2">Details</th>
+          <th class="folio1" rowspan="2">Fol</th>
+          <th class="bank" rowspan="2">Bank</th>
+          <th class="acc1" rowspan="2">Trading Stock</th>
+          <th class="acc2" rowspan="2">Rent Expense</th>
+          <th class="sundry" colspan="3">Sundry</th>
+        </tr>
+
+        <tr class="heading2">
+          <th class="amount">Amount</th>
+          <th class="folio2">Fol</th>
+          <th class="details">Details</th>
+        </tr>
+
+
+        <tr class="row" id="one">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="bank"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
+
+        <tr class="row" id="two">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="bank"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
+
+        <tr class="row" id="three">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="bank"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
+
+        <tr class="row" id="three">
+          <td class="doc"></td>
+          <td class="day"></td>
+          <td class="details"></td>
+          <td class="folio"></td>
+          <td class="bank"></td>
+          <td class="acc1"></td>
+          <td class="acc2"></td>
+          <td class="amount"></td>
+          <td class="folio2"></td>
+          <td class="details"></td>
+        </tr>
+      </table>
     </div>
 
     <div class="ledger_toggle"><img src="Images/Arrow.jpg" alt="arrow" class="arrow"> Show/Hide General Ledger format
     <img src="Images/Arrow.jpg" alt="arrow" class="arrow"></div>
     <div class="general_ledger">
-
     <h3>General Ledger Format</h3>
     <h4>Bank</h4>
     <table class="bank">
@@ -232,7 +303,6 @@
       </tr>
 
     </table>
-
     <h4>Trading Stock</h4>
     <table class="trading_stock">
       <tr class="heading">
