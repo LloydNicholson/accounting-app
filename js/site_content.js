@@ -6,7 +6,7 @@ const businesses = [
   "Garbage Gardening",
   "Anti Accounting Firm",
   "B-e-a-utiful Beauty Salon",
-  "Handy Hairsylists",
+  "Handy Hairstylists",
   "Ordinary Orthodontists",
   "Daily Dentists",
   "Silly Sweets",
