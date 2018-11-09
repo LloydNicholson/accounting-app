@@ -67,9 +67,9 @@
 
     <!--Form giving-->
     <div class="download_area">
-      <div><a class="link" href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download Cash Receipts Journal Template, click here!</a></div>
-      <div><a class="link" href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download Cash Payments Journal Template, click here!</a></div>
-      <div><a class="link" href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download General Ledger Template, click here!</a></div>
+      <div><a class="link" href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Receipts Journal Template, click here!</a></div>
+      <div><a class="link" href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Payments Journal Template, click here!</a></div>
+      <div><a class="link" href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download the General Ledger Template, click here!</a></div>
 
     </div>
   </div>
