@@ -71,6 +71,7 @@
       <div><a class="link" href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Payments Journal Template, click here!</a></div>
       <div><a class="link" href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download the General Ledger Template, click here!</a></div>
 
+
     </div>
   </div>
 

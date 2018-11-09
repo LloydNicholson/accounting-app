@@ -174,13 +174,9 @@ for (let i = firstDay; i < lastDay; i++) {
   dates.push(i);
 }
 
-const sortedDates = dates.sort(function(a, b) {
-  return a - b;
-});
-
 // Create random values between two points
-function randomisedNum(low_val, high_val) {
-  return Math.floor(Math.random() * high_val) + low_val;
+function randomisedNum(low_num, high_num) {
+  return Math.floor(Math.random() * high_num) + Math.floor(low_num);
 }
 
 /* Testing account creation with objects
