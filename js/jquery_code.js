@@ -8,8 +8,15 @@ $(document).ready(() => {
   const $headerImage = $(".header_image");
   const $arrowImage = $(".arrow");
   const $downloadArea = $(".download_area");
-  const $downloadLink = $downloadArea.find("div");
-
+  const $downloadLink = $downloadArea.find(".link");
+  const $CRJTemplate = $(".download_area").find("#CRJ");
+  const $CPJTemplate = $(".download_area").find("#CPJ");
+  const $GLTemplate = $(".download_area").find("#GL");
+  const $AEQTemplate = $(".download_area").find("#AEQ");
+  const $CRJLink = $(".download_area").find("#CRJ_link");
+  const $CPJLink = $(".download_area").find("#CPJ_link");
+  const $GLLink = $(".download_area").find("#GL_link");
+  const $AEQLink = $(".download_area").find("#AEQ_link");
 
   $generalLedger.hide();
   $ledgerToggle.on("click", () => {
@@ -28,7 +35,19 @@ $(document).ready(() => {
       .toggleClass("rotate");
   });
 
-
+  $downloadLink.hide();
+  $CRJTemplate.on("mouseenter", () => {
+    $CRJLink.slideToggle();
+  });
+  $CPJTemplate.on("mouseenter", () => {
+    $CPJLink.slideToggle();
+  });
+  $GLTemplate.on("mouseenter", () => {
+    $GLLink.slideToggle();
+  });
+  $AEQTemplate.on("mouseenter", () => {
+    $AEQLink.slideToggle();
+  });
   // Make transaction list and header image bigger on mouse enter
   /* Trying to make this work with static borders without increasing actual size of image
   $headerImage.on('mouseenter', event => {

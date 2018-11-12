@@ -107,18 +107,39 @@ table {
 }
 
 /* Download area css*/
+.type {
+  display: block;
+  width: 200px;
+  height: 40px;
+  background-color: lightgray;
+}
+
+.type:hover {
+  background-color: gray;
+  color: white;
+}
+
+.download_area {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  width: 1000px;
+}
+
 .download_area a {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
   color: black;
   padding: 10px;
   background-color: lightgray;
 }
 
-.download_area div {
+.link {
   position: relative;
   height: 30px;
+  text-align: left;
 }
 
 .download_area a:hover {
@@ -138,6 +159,7 @@ table {
 
 .journal_toggle, .ledger_toggle {
   width: 1000px;
+  height: 50px;
   background-color: lightgray;
   margin-left: auto;
   margin-right: auto;

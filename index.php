@@ -42,7 +42,7 @@
 
     <!--Heading-->
     <h2><script type="text/javascript">
-        createHeading("General Ledger or Journal");
+        createHeading("template");
       </script></h2>
 
     <!--Transaction list-->
@@ -64,17 +64,16 @@
       );
       </script>
     </p>
-
-    <!--Form giving-->
-    <div class="download_area">
-      <div><a class="link" href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Receipts Journal Template, click here!</a></div>
-      <div><a class="link" href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Payments Journal Template, click here!</a></div>
-      <div><a class="link" href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download the General Ledger Template, click here!</a></div>
-
-
-    </div>
   </div>
 
+  <!--Form giving-->
+    <div class="download_area">
+      <h2>Downloads</h2>
+      <div class="type" id="CRJ">CRJ Template</div><div class="link" id="CRJ_link"><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Receipts Journal Template, click here!</a></div>
+      <div class="type" id="CPJ">CPJ Template</div><div class="link" id="CPJ_link"><a href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>To download the Cash Payments Journal Template, click here!</a></div>
+      <div class="type" id="GL">GL Template</div><div class="link" id="GL_link"><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>To download the General Ledger Template, click here!</a></div>
+      <div class="type" id="AEQ">AEQ Template</div><div class="link" id="AEQ_link"><a href="Documents/ACCOUNTING EQUATION.xlsx" download>To download the Accounting Equation Template, click here!</a></div>
+    </div>
   <!--Answer form area-->
   <div class="format_area">
     <h2>Formats of Accounting activities</h2>
