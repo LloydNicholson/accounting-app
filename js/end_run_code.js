@@ -7,8 +7,8 @@ document.cookie =
 var username = document.cookie;
 
 console.log("username", username);
-console.log("returned_month", returned_month);
-console.log("returned_day", returned_day);
-console.log("returned_details", returned_details);
-console.log("returned_folio", returned_folio);
-console.log("returned_amount", returned_amount);
+console.log("returned_month", returned_month1);
+console.log("returned_day", returned_day1);
+console.log("returned_details", returned_details1);
+console.log("returned_folio", returned_folio1);
+console.log("returned_amount", returned_amount1);

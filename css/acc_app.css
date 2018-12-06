@@ -279,5 +279,9 @@ table {
 }
 
 .test_table input {
+  width: 100px;
+}
+
+.test_table input {
   border: 1px solid black;
 }

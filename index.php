@@ -43,26 +43,12 @@
     <!--Heading-->
     <h2><script type="text/javascript">
         createHeading("template");
-      </script></h2>
+        </script>
+    </h2>
 
     <!--Transaction list-->
     <p>
-      <script type="text/javascript">
-      document.write(
-          createCapital(1, 1, 100000, 150000),
-          createExpense(3, 1, 2000, 4000),
-          createIncome(4, 2, 1000, 3000),
-          createExpense(10, 1, 500, 1000),
-          createDrawings(11, 1, 6000, 10000),
-          createLiability(12, 1, 40000, 50000),
-          createIncome(16, 1, 9000, 14000),
-          createAsset(20, 1, 50000, 100000),
-          createLiability(23, 1, 90000, 110000),
-          createIncome(24, 1, 9000, 14000),
-          createExpense(27, 1, 5000, 10000),
-          createCapital(28, 1, 20000, 40000)
-      );
-      </script>
+      <script type="text/javascript" src="js/transaction_list.js"></script>
     </p>
   </div>
 
@@ -380,31 +366,54 @@
     <table class="test_table">
       <tr>
         <form method="post" enctype="multipart/form-data">
-        <td><input id="month1" type="text" name="month"></td>
-        <td><input id="day1" type="text" name="day"><button type="submit" name="submit">Submit Activity</button></td>
+        <!--Debit column-->
+        <td><input type="text" name="month1"></td>
+        <td><input type="text" name="day1"></td>
+        <td><input type="text" name="details1"></td>
+        <td><input type="text" name="folio1"></td>
+        <td><input type="text" name="amount1"></td>
+
+        <!--Credit column-->
+        <td><input type="text" name="month2"></td>
+        <td><input type="text" name="day2"></td>
+        <td><input type="text" name="details2"></td>
+        <td><input type="text" name="folio2"></td>
+        <td><input type="text" name="amount2"></td>
+        <button type="submit" name="submit">Submit Activity</button>
       </form>
       </tr>
     </table>
 
     <!--Javascript saving PHP variables-->
     <?php
-      if (isset($_POST['submit'])) {
-          $month = $_POST["month"];
-          $day = $_POST["day"];
-
-          if (($month == "February") && ($day == 24)) {
-            echo "correct";
-          }
-      }
+      include 'table_data.php';
     ?>
+
     <br>
-    <script type="text/javascript"> var returned_month = "<?= $month ?>";</script>
-    <script type="text/javascript"> var returned_day = <?= $day ?>;</script>
+    <script type="text/javascript">
+      // Debit column
+      var returned_month1 = "<?= $r_month1 ?>";
+      var returned_day1 = Number(<?= $r_day1 ?>);
+      var returned_details1 = "<?= $r_details1 ?>";
+      var returned_folio1 = "<?= $r_folio1 ?>";
+      var returned_amount1 = Number(<?= $r_amount1 ?>);
+
+      // Credit column
+      var returned_month2 = "<?= $r_month2 ?>";
+      var returned_day2 = Number(<?= $r_day2 ?>);
+      var returned_details2 = "<?= $r_details2 ?>";
+      var returned_folio2 = "<?= $r_folio2 ?>";
+      var returned_amount2 = Number(<?= $r_amount2 ?>);
+
+      if (returned_month1 == returned_month2) {
+        console.log('correct');
+      }
+    </script>
 
   </div>
-</body>
   <!-- jQuery and JS code loading -->
-  <script src="js/php_form_data.js"></script>
+  <script src="js/end_run_code.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery_code.js"></script>
+</body>
 </html>

@@ -20,7 +20,7 @@ const businesses = [
 ];
 
 // Set business name to randomise
-ourBusiness = randomWord(businesses);
+var ourBusiness = randomWord(businesses);
 
 // Different owners names
 const owners = [
@@ -44,7 +44,7 @@ const owners = [
 ];
 
 // Set owner name to randomise everytime
-owner = randomWord(owners);
+var owner = randomWord(owners);
 
 // Month array
 const months = [
@@ -62,7 +62,7 @@ const months = [
   "December"
 ];
 
-month = randomWord(months);
+var month = randomWord(months);
 
 // Initialise year array
 var years = [];
