@@ -1,5 +1,4 @@
 function drawLedger(num_rows, num_cols, information) {
-
   let table_start = "<table class='table'>";
   let table_head = "<th class='table_head'>" + information + "</th>";
   let row_head = "<tr class='table_row'>";

@@ -272,3 +272,12 @@ table {
   transition: 0.2s;
   transform: rotate(90deg);
 }
+
+/* Testing css for table */
+.test_table {
+  border: 2px solid black;
+}
+
+.test_table input {
+  border: 1px solid black;
+}

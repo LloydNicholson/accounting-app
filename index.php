@@ -7,9 +7,9 @@
   <!-- Stylesheet reference-->
   <link rel="stylesheet" href="css/acc_app.css">
 
-  <!--Javascript reference-->
-  <script src="js/site_content.js"></script>
+  <!-- Javascript reference-->
   <script src="js/T_account.js"></script>
+  <script src="js/site_content.js"></script>
 
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -247,7 +247,7 @@
           <th class="credit" id="amount">Amount</th>
         </tr>
         <tr class="row" id="one">
-          <td class="debit" id="month"><!--<form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form>--></td>
+          <td class="debit" id="month"></td>
           <td class="debit" id="day"></td>
           <td class="debit" id="details"></td>
           <td class="debit" id="folio"></td>
@@ -325,7 +325,7 @@
         <td class="debit" id="folio"></td>
         <td class="debit" id="amount"></td>
 
-        <td class="credit" id="month"><!--<form action="fetch_values.php" method="post" enctype="multipart/form-data"><input type="text" name="month" id="month"></form>--></td>
+        <td class="credit" id="month"></td>
         <td class="credit" id="day"></td>
         <td class="credit" id="details"></td>
         <td class="credit" id="folio"></td>
@@ -375,10 +375,36 @@
       </tr>
     </table>
     </div>
-  </div>
 
-  <!-- jQuery code loading -->
+    <!--Test to create table and create a form within-->
+    <table class="test_table">
+      <tr>
+        <form method="post" enctype="multipart/form-data">
+        <td><input id="month1" type="text" name="month"></td>
+        <td><input id="day1" type="text" name="day"><button type="submit" name="submit">Submit Activity</button></td>
+      </form>
+      </tr>
+    </table>
+
+    <!--Javascript saving PHP variables-->
+    <?php
+      if (isset($_POST['submit'])) {
+          $month = $_POST["month"];
+          $day = $_POST["day"];
+
+          if (($month == "February") && ($day == 24)) {
+            echo "correct";
+          }
+      }
+    ?>
+    <br>
+    <script type="text/javascript"> var returned_month = "<?= $month ?>";</script>
+    <script type="text/javascript"> var returned_day = <?= $day ?>;</script>
+
+  </div>
+</body>
+  <!-- jQuery and JS code loading -->
+  <script src="js/php_form_data.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery_code.js"></script>
-</body>
 </html>
