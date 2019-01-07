@@ -367,19 +367,19 @@
       <tr>
         <form method="post" enctype="multipart/form-data">
         <!--Debit column-->
-        <td><input type="text" name="month1"></td>
-        <td><input type="text" name="day1"></td>
-        <td><input type="text" name="details1"></td>
-        <td><input type="text" name="folio1"></td>
-        <td><input type="text" name="amount1"></td>
+        <td><input type="text" name="month1" id="input" value=""></td>
+        <td><input type="text" name="day1" id="input" value=""></td>
+        <td><input type="text" name="details1" id="input" value=""></td>
+        <td><input type="text" name="folio1" id="input" value=""></td>
+        <td><input type="text" name="amount1" id="input" value=""></td>
 
         <!--Credit column-->
-        <td><input type="text" name="month2"></td>
-        <td><input type="text" name="day2"></td>
-        <td><input type="text" name="details2"></td>
-        <td><input type="text" name="folio2"></td>
-        <td><input type="text" name="amount2"></td>
-        <button type="submit" name="submit">Submit Activity</button>
+        <td><input type="text" name="month2" id="input" value=""></td>
+        <td><input type="text" name="day2" id="input" value=""></td>
+        <td><input type="text" name="details2" id="input" value=""></td>
+        <td><input type="text" name="folio2" id="input" value=""></td>
+        <td><input type="text" name="amount2" id="input" value=""></td>
+        <button type="submit" name="submit" id="input_button">Submit Activity</button>
       </form>
       </tr>
     </table>
@@ -388,31 +388,9 @@
     <?php
       include 'table_data.php';
     ?>
-
     <br>
-    <script type="text/javascript">
-      // Debit column
-      var returned_month1 = "<?= $r_month1 ?>";
-      var returned_day1 = Number(<?= $r_day1 ?>);
-      var returned_details1 = "<?= $r_details1 ?>";
-      var returned_folio1 = "<?= $r_folio1 ?>";
-      var returned_amount1 = Number(<?= $r_amount1 ?>);
-
-      // Credit column
-      var returned_month2 = "<?= $r_month2 ?>";
-      var returned_day2 = Number(<?= $r_day2 ?>);
-      var returned_details2 = "<?= $r_details2 ?>";
-      var returned_folio2 = "<?= $r_folio2 ?>";
-      var returned_amount2 = Number(<?= $r_amount2 ?>);
-
-      if (returned_month1 == returned_month2) {
-        console.log('correct');
-      }
-    </script>
-
   </div>
   <!-- jQuery and JS code loading -->
-  <script src="js/end_run_code.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery_code.js"></script>
 </body>

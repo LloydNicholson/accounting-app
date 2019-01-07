@@ -16,7 +16,8 @@ const businesses = [
   "Enlightened Engineers",
   "Trendy Tutors",
   "Fresh Fellers",
-  "Feline Friends"
+  "Feline Friends",
+  "Jim's Attorneys"
 ];
 
 // Set business name to randomise
@@ -225,7 +226,6 @@ function createExpense(day, num, low_val, high_val) {
     transaction +=
       " to the value of R" + randomisedNum(low_val, high_val) + ".";
     var currentDay = transaction.match(dateFound);
-    console.log(currentDay);
 
     return transaction + "<br>";
   }
@@ -301,3 +301,8 @@ function createDrawings(day, num, low_val, high_val) {
     return transaction + "<br>";
   }
 }
+
+const inputField = document.querySelector("#input");
+const inputButton = document.querySelector("#input_button");
+
+console.log(inputField.value);
