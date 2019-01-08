@@ -1,9 +1,9 @@
 document.write(
   createCapital(1, 1, 100000, 150000),
   createExpense(3, 1, 2000, 4000),
-  createIncome(4, 2, 1000, 3000),
+  createIncome(4, 1, 1000, 3000),
   createExpense(10, 1, 500, 1000),
-  createDrawings(11, 1, 6000, 10000),
+  createDrawings(11, 2, 6000, 10000),
   createLiability(12, 1, 40000, 50000),
   createIncome(16, 1, 9000, 14000),
   createAsset(20, 1, 50000, 100000),

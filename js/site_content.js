@@ -213,11 +213,10 @@ const expenseTransaction = new TransactionType('Expense', 800, 15000);
 console.log(assetTransaction.randomisedNum());
 */
 
-const transactionList = [];
+const transactionList = []; // push transactions into this array
 
 // Create an expense transaction
-function createExpense(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createExpense(day, low_val, high_val) {
         const dateFound = /\d+/;
         let transaction = day + ". ";
         transaction += "We ";
@@ -227,13 +226,11 @@ function createExpense(day, num, low_val, high_val) {
             " to the value of R" + randomisedNum(low_val, high_val) + ".";
         const currentDay = transaction.match(dateFound);
 
-        return transaction + "<br>";
-    }
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 }
 
 // Create an income transaction
-function createIncome(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createIncome(day, low_val, high_val) {
         let transaction = day;
         transaction += ". " + ourBusiness;
         transaction += " " + receiveMethod[0];
@@ -242,13 +239,13 @@ function createIncome(day, num, low_val, high_val) {
         transaction += " " + randomWord(option.slice(0, 2));
         transaction += " from " + randomWord(payee) + ".";
 
-        return transaction + "<br>";
-    }
+
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
+
 }
 
 // Create an asset transaction
-function createAsset(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createAsset(day, low_val, high_val) {
         let transaction = day + ". ";
         transaction += "Our business ";
         transaction += " " + paymentMethod[1];
@@ -257,13 +254,12 @@ function createAsset(day, num, low_val, high_val) {
         transaction += " " + randomWord(option.slice(0, 2));
         transaction += " from " + randomWord(payee) + ".";
 
-        return transaction + "<br>";
-    }
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
+
 }
 
 // Create an liability transaction
-function createLiability(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createLiability(day, low_val, high_val) {
         let transaction = day + ". ";
         transaction += "The business ";
         transaction += " " + receiveMethod[1];
@@ -271,26 +267,22 @@ function createLiability(day, num, low_val, high_val) {
         transaction += " to the value of R" + randomisedNum(low_val, high_val);
         transaction += " from " + randomWord(bank) + ".";
 
-        return transaction + "<br>";
-    }
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 }
 
 // Create an capital transaction
-function createCapital(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createCapital(day, low_val, high_val) {
         let transaction = day + ". ";
         transaction += "The owner, " + owner;
         transaction += " " + randomWord(receiveMethod.slice(2, 4));
         transaction += ", a capital contribution";
         transaction += " of R" + randomisedNum(low_val, high_val) + ".";
 
-        return transaction + "<br>";
-    }
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 }
 
 // Create an drawings transaction
-function createDrawings(day, num, low_val, high_val) {
-    for (let i = 0; i < num; i++) {
+function createDrawings(day, low_val, high_val) {
         let transaction = day + ". ";
         transaction += owner;
         transaction += " " + paymentMethod[3];
@@ -298,8 +290,7 @@ function createDrawings(day, num, low_val, high_val) {
         transaction +=
             " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
 
-        return transaction + "<br>";
-    }
+        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 }
 
 
