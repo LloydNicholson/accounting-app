@@ -85,7 +85,7 @@ table {
 }
 
 /* Transaction area css*/
-.transactionList {
+#transactionList {
   position: relative;
   padding: 10px 20px;
   text-align: left;
@@ -97,12 +97,12 @@ table {
   margin-right: auto;
 }
 
-.transactionList h2 {
+#transactionList h2 {
   font-size: 26px;
   color: #4a4f63;
 }
 
-.transactionList p {
+#transactionList p {
   font-size: 20px;
 }
 

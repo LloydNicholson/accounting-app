@@ -7,10 +7,6 @@
     <!-- Stylesheet reference-->
     <link rel="stylesheet" href="css/acc_app.css">
 
-    <!-- Javascript reference-->
-    <script src="js/T_account.js"></script>
-    <script src="js/site_content.js"></script>
-
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet">
@@ -21,7 +17,7 @@
 <!--Page header-->
 <div class="header">
     <h1>KID CONNECT</h1>
-    <img class="header_image" src="/Images/Small_Business_and_Accounting-LG.jpg" alt="Header image">
+    <img class="header_image" src="./Images/Small_Business_and_Accounting-LG.jpg" alt="Header image">
     <h2>Accounting Practice Exercises</h2>
     <h2>Practice your Accounting with various examples that have been randomly generated. This page will give you opportunities to complete Source Documents, Journals, Ledgers and Financial statements</h2>
     <h3>Refresh your page to generate a new set of examples.</h3>
@@ -38,19 +34,7 @@
 </div>
 
 <!--Transaction list creation area-->
-<div class="transactionList">
-
-    <!--Heading-->
-    <h2><script type="text/javascript">
-        createHeading("template");
-    </script>
-    </h2>
-
-    <!--Transaction list-->
-    <p>
-        <script type="text/javascript" src="js/transaction_list.js"></script>
-    </p>
-</div>
+<div id="transactionList"></div> <!--Javascript innerHTML input transaction list-->
 
 <!--Form giving-->
 <div class="download_area">
@@ -391,6 +375,9 @@
     <br>
 </div>
 <!-- jQuery and JS code loading -->
+<!-- Javascript reference-->
+<script type="text/javascript" src="js/site_content.js"></script>
+<script src="js/T_account.js"></script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery_code.js"></script>
 </body>

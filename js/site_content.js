@@ -1,27 +1,31 @@
-// Different business names
-const businesses = [
-    "Rancid Retailers",
-    "Trusted Traders",
-    "Lawdy Lawnmowers",
-    "Garbage Gardening",
-    "Anti Accounting Firm",
-    "B-e-a-utiful Beauty Salon",
-    "Handy Hairstylists",
-    "Ordinary Orthodontists",
-    "Daily Dentists",
-    "Silly Sweets",
-    "XYZ Stationers",
-    "Sporty Sports Gear",
-    "Freedom Flowers",
-    "Enlightened Engineers",
-    "Trendy Tutors",
-    "Fresh Fellers",
-    "Feline Friends",
-    "Jim's Attorneys"
-];
+'use strict';
+console.dir(document);
 
-// Set business name to randomise
-let ourBusiness = randomWord(businesses);
+// Not going to randomise business names - decided against it
+// // Different business names
+// const businesses = [
+//     "Rancid Retailers",
+//     "Trusted Traders",
+//     "Lawdy Lawnmowers",
+//     "Garbage Gardening",
+//     "Anti Accounting Firm",
+//     "B-e-a-utiful Beauty Salon",
+//     "Handy Hairstylists",
+//     "Ordinary Orthodontists",
+//     "Daily Dentists",
+//     "Silly Sweets",
+//     "XYZ Stationers",
+//     "Sporty Sports Gear",
+//     "Freedom Flowers",
+//     "Enlightened Engineers",
+//     "Trendy Tutors",
+//     "Fresh Fellers",
+//     "Feline Friends",
+//     "Jim's Attorneys"
+// ];
+//
+// // Set business name to randomise
+// let ourBusiness = randomWord(businesses);
 
 // Different owners names
 const owners = [
@@ -63,16 +67,14 @@ const months = [
     "December"
 ];
 
-const month = randomWord(months);
-
 // Initialise year array
 const years = [];
 for (let i = 2000; i < 2019; i++) {
     years.push(i);
 }
-year = randomWord(years);
+let year = randomWord(years);
 
-const payee = [
+const payersOfMoney = [
     "Joe's Traders",
     "Mitchell's Manufacturers",
     "Levine's Loggers",
@@ -96,7 +98,7 @@ const bank = [
 ];
 
 // Different account types and sub-accounts
-const accountType = {
+const classifications = {
     // All assets
     assets: [
         "trading stock",
@@ -146,20 +148,8 @@ const receiveMethod = [
 const option = ["cash", "", "on credit"];
 
 // Create heading for entire transaction list
-function createHeading(questionType) {
-    document.write(
-        "Use the following information to complete the " +
-        questionType +
-        " of " +
-        ourBusiness +
-        " for the month of " +
-        month +
-        " " +
-        year +
-        "<br>" +
-        "<br>"
-    );
-    document.write("Transaction list" + "<br>");
+function createHeading() {
+
 }
 
 // Create a random word
@@ -180,117 +170,187 @@ function randomisedNum(low_num, high_num) {
     return Math.floor(Math.random() * high_num) + Math.floor(low_num);
 }
 
-/* Testing account creation with objects
+// transaction list array
+const transactionListArray = [];
+
 class Transaction {
-  constructor(type, low_val, high_val) {
-    this._type = type;
-    this._low_val = low_val;
-    this._high_val = high_val;
-  }
+    constructor(businessName) {
+        this._accountType = "default";
+        this._paymentMethod = "default";
+        this._businessName = businessName;
+    }
 
-  get type() {
-    return this._type;
-  }
+    createTransaction() {
+        transactionListArray.push(``);
+        this._transaction = transactionListArray;
+    }
 
-  get low_val() {
-    return this._low_val;
-  }
+    displayTransaction() {
+        let transactionArea = document.getElementById('transactionList');
+        transactionArea.innerHTML = this._transaction;
+    }
 
-  get high_val() {
-    return this._high_val;
-  }
+    get businessName() {
+        return this._businessName;
+    }
 
-  randomisedNum() {
-    return Math.floor(Math.random() * this._high_val) + this._low_val;
-  }
+    set businessName(value) {
+        this._businessName = value;
+    }
+
+    get paymentMethod() {
+        return this._paymentMethod;
+    }
+
+    set paymentMethod(value) {
+        this._paymentMethod = value;
+    }
+
+    get accountType() {
+        return this._accountType;
+    }
+
+    set accountType(value) {
+        this._accountType = value;
+    }
 }
 
-// Create different transaction types
-const assetTransaction = new TransactionType('Asset', 10000, 500000);
-const incomeTransaction = new TransactionType('Income', 10000, 100000);
-const expenseTransaction = new TransactionType('Expense', 800, 15000);
+class Expenses extends Transaction {
+    constructor() {
+        super();
+        this._date = randomWord(dates);
+        this.accountType = classifications.expenses;
+        this.paymentMethod = paymentMethod[0];
 
-console.log(assetTransaction.randomisedNum());
-*/
+    }
 
-const transactionList = []; // push transactions into this array
+    createTransaction() {
+        // return something completely different
+        // yay!!!
 
-// Create an expense transaction
-function createExpense(day, low_val, high_val) {
-        const dateFound = /\d+/;
-        let transaction = day + ". ";
-        transaction += "We ";
-        transaction += " " + paymentMethod[0];
-        transaction += " " + randomWord(accountType.expenses);
-        transaction +=
-            " to the value of R" + randomisedNum(low_val, high_val) + ".";
-        const currentDay = transaction.match(dateFound);
-
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
+    }
 }
 
-// Create an income transaction
-function createIncome(day, low_val, high_val) {
-        let transaction = day;
-        transaction += ". " + ourBusiness;
-        transaction += " " + receiveMethod[0];
-        transaction += " " + randomWord(accountType.incomes);
-        transaction += " amounting to R" + randomisedNum(low_val, high_val);
-        transaction += " " + randomWord(option.slice(0, 2));
-        transaction += " from " + randomWord(payee) + ".";
+// Base level transaction
+let transaction = new Transaction();
+transaction.createTransaction(paymentMethod[0], classifications.expenses, 1000, 10000);
+transaction.displayTransaction();
+
+// Expenses
+let expenseType = new Expenses();
+expenseType.businessName = "Hello Kitty";
 
 
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 
-}
 
-// Create an asset transaction
-function createAsset(day, low_val, high_val) {
-        let transaction = day + ". ";
-        transaction += "Our business ";
-        transaction += " " + paymentMethod[1];
-        transaction += " " + randomWord(accountType.assets);
-        transaction += " to the value of R" + randomisedNum(low_val, high_val);
-        transaction += " " + randomWord(option.slice(0, 2));
-        transaction += " from " + randomWord(payee) + ".";
 
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
 
-}
 
-// Create an liability transaction
-function createLiability(day, low_val, high_val) {
-        let transaction = day + ". ";
-        transaction += "The business ";
-        transaction += " " + receiveMethod[1];
-        transaction += " " + randomWord(accountType.liabilities);
-        transaction += " to the value of R" + randomisedNum(low_val, high_val);
-        transaction += " from " + randomWord(bank) + ".";
 
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
-}
 
-// Create an capital transaction
-function createCapital(day, low_val, high_val) {
-        let transaction = day + ". ";
-        transaction += "The owner, " + owner;
-        transaction += " " + randomWord(receiveMethod.slice(2, 4));
-        transaction += ", a capital contribution";
-        transaction += " of R" + randomisedNum(low_val, high_val) + ".";
 
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
-}
 
-// Create an drawings transaction
-function createDrawings(day, low_val, high_val) {
-        let transaction = day + ". ";
-        transaction += owner;
-        transaction += " " + paymentMethod[3];
-        transaction += " " + randomWord(accountType.assets);
-        transaction +=
-            " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
 
-        return transaction + "<br>"; // use this next to push into array - transactionList.push(transaction);
-}
+
+
+
+
+
+
+
+
+
+// // Create an income transaction
+// function createIncome(day, low_val, high_val) {
+//         let transaction = day;
+//         transaction += ". " + ourBusiness;
+//         transaction += " " + receiveMethod[0];
+//         transaction += " " + randomWord(accountType.incomes);
+//         transaction += " amounting to R" + randomisedNum(low_val, high_val);
+//         transaction += " " + randomWord(option.slice(0, 2));
+//         transaction += " from " + randomWord(payee) + ".";
+//
+//         transaction.push(transaction);
+//
+// }
+//
+// // Create an asset transaction
+// function createAsset(day, low_val, high_val) {
+//         let transaction = day + ". ";
+//         transaction += "Our business ";
+//         transaction += " " + paymentMethod[1];
+//         transaction += " " + randomWord(accountType.assets);
+//         transaction += " to the value of R" + randomisedNum(low_val, high_val);
+//         transaction += " " + randomWord(option.slice(0, 2));
+//         transaction += " from " + randomWord(payee) + ".";
+//
+//         transaction.push(transaction);
+//
+// }
+//
+// // Create an liability transaction
+// function createLiability(day, low_val, high_val) {
+//         let transaction = day + ". ";
+//         transaction += "The business ";
+//         transaction += " " + receiveMethod[1];
+//         transaction += " " + randomWord(accountType.liabilities);
+//         transaction += " to the value of R" + randomisedNum(low_val, high_val);
+//         transaction += " from " + randomWord(bank) + ".";
+//
+//         transaction.push(transaction);
+// }
+//
+// // Create an capital transaction
+// function createCapital(day, low_val, high_val) {
+//         let transaction = day + ". ";
+//         transaction += "The owner, " + owner;
+//         transaction += " " + randomWord(receiveMethod.slice(2, 4));
+//         transaction += ", a capital contribution";
+//         transaction += " of R" + randomisedNum(low_val, high_val) + ".";
+//
+//         transaction.push(transaction);
+// }
+//
+// // Create an drawings transaction
+// function createDrawings(day, low_val, high_val) {
+//         let transaction = day + ". ";
+//         transaction += owner;
+//         transaction += " " + paymentMethod[3];
+//         transaction += " " + randomWord(accountType.assets);
+//         transaction += " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
+//
+//         transaction.push(transaction);
+// }
+//
+// function createTransactionList() {
+//     createCapital(1, 1, 100000, 150000);
+//     createExpense(3, 1, 2000, 4000);
+//     createIncome(24, 1, 9000, 14000);
+//     createIncome(4, 1, 1000, 3000);
+//     createExpense(10, 1, 500, 1000);
+//     createDrawings(11, 2, 6000, 10000);
+//     createCapital(28, 1, 20000, 40000);
+//     createLiability(12, 1, 40000, 50000);
+//     createIncome(16, 1, 9000, 14000);
+//     createAsset(20, 1, 50000, 100000);
+//     createLiability(23, 1, 90000, 110000);
+//     createExpense(27, 1, 5000, 10000);
+// }
+//
+// function sortTransactions(transactions) {
+//     // Trying to sort array by first letter
+//     let dateInString = /\d+/;
+//     for (let i = 0; i < transactions.length-1; i++) {
+//         let regexNumFirst = transactions[i].match(dateInString);
+//         let regexNumSecond = transactions[i+1].match(dateInString);
+//         let temp = "";
+//         if (regexNumSecond[0] > regexNumFirst[0]) {
+//             temp = transactions[i+1];
+//             transactions[i+1] = temp;
+//         }
+//     }
+// }
+
+
 
 
