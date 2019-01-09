@@ -2,30 +2,30 @@
 console.dir(document);
 
 // Not going to randomise business names - decided against it
-// // Different business names
-// const businesses = [
-//     "Rancid Retailers",
-//     "Trusted Traders",
-//     "Lawdy Lawnmowers",
-//     "Garbage Gardening",
-//     "Anti Accounting Firm",
-//     "B-e-a-utiful Beauty Salon",
-//     "Handy Hairstylists",
-//     "Ordinary Orthodontists",
-//     "Daily Dentists",
-//     "Silly Sweets",
-//     "XYZ Stationers",
-//     "Sporty Sports Gear",
-//     "Freedom Flowers",
-//     "Enlightened Engineers",
-//     "Trendy Tutors",
-//     "Fresh Fellers",
-//     "Feline Friends",
-//     "Jim's Attorneys"
-// ];
-//
-// // Set business name to randomise
-// let ourBusiness = randomWord(businesses);
+// Different business names
+const businesses = [
+    "Rancid Retailers",
+    "Trusted Traders",
+    "Lawdy Lawnmowers",
+    "Garbage Gardening",
+    "Anti Accounting Firm",
+    "B-e-a-utiful Beauty Salon",
+    "Handy Hairstylists",
+    "Ordinary Orthodontists",
+    "Daily Dentists",
+    "Silly Sweets",
+    "XYZ Stationers",
+    "Sporty Sports Gear",
+    "Freedom Flowers",
+    "Enlightened Engineers",
+    "Trendy Tutors",
+    "Fresh Fellers",
+    "Feline Friends",
+    "Jim's Attorneys"
+];
+
+// Set business name to randomise
+let ourBusinessName = randomWord(businesses);
 
 // Different owners names
 const owners = [
@@ -50,7 +50,7 @@ const owners = [
 
 // Set owner name to randomise everytime
 let owner = randomWord(owners);
-
+//
 // Month array
 const months = [
     "January",
@@ -84,7 +84,8 @@ const payersOfMoney = [
     "Carl's Cupboards",
     "Anne's Actuaries",
     "James' Carpenters",
-    "Stacey's Stockers"
+    "Stacey's Stockers",
+    "Bryan's Brewers",
 ];
 
 const bank = [
@@ -126,7 +127,6 @@ const classifications = {
         "fuel",
         "bank charges",
         "consumable goods",
-        "the interest on our overdrawn bank account",
         "interest on loan",
         "postage",
         "donations",
@@ -136,16 +136,16 @@ const classifications = {
     incomes: ["current income", "rent", "donations", "commission", "cash sales"]
 };
 
-const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
+// const paymentMethod = ["paid for", "purchased", "bought", "widthdrew"];
 
-const receiveMethod = [
-    "received",
-    "acquired",
-    "deposited into the businesses bank account",
-    "deposited into the the current account of the business"
-];
+// const receiveMethod = [
+//     "received",
+//     "acquired",
+//     "deposited into the businesses bank account",
+//     "deposited into the the current account of the business"
+// ];
 
-const option = ["cash", "", "on credit"];
+// const option = ["cash", "", "on credit"];
 
 // Create heading for entire transaction list
 function createHeading() {
@@ -172,22 +172,35 @@ function randomisedNum(low_num, high_num) {
 
 // transaction list array
 const transactionListArray = [];
+console.log(transactionListArray);
 
 class Transaction {
-    constructor(businessName) {
+    constructor(accountType, paymentMethod, lowNum, highNum) {
         this._accountType = "default";
         this._paymentMethod = "default";
-        this._businessName = businessName;
+        this._businessName = ourBusinessName;
+        this._ownerName = owner;
+        this._transaction = "this is the default transaction printout";
+        this._date = randomWord(dates);
+        this._otherBusiness = randomWord(payersOfMoney);
+        this.randomisedNum(lowNum, highNum);
+        this._transactionAmount = 0;
     }
 
-    createTransaction() {
-        transactionListArray.push(``);
-        this._transaction = transactionListArray;
+    randomisedNum(lowNum, highNum) {
+        this._transactionAmount = randomisedNum(lowNum, highNum);
     }
 
-    displayTransaction() {
-        let transactionArea = document.getElementById('transactionList');
-        transactionArea.innerHTML = this._transaction;
+    generateTransaction() {
+        return this._transaction;
+    }
+
+    pushTransactionToArray() {
+        if (this.generateTransaction() != null) {
+            transactionListArray.push(this.generateTransaction());
+            let transactionArea = document.getElementById('transactionList');
+            transactionArea.innerHTML = transactionListArray.join("<br>");
+        }
     }
 
     get businessName() {
@@ -196,6 +209,10 @@ class Transaction {
 
     set businessName(value) {
         this._businessName = value;
+    }
+
+    get ownerName() {
+        return this._ownerName;
     }
 
     get paymentMethod() {
@@ -213,34 +230,70 @@ class Transaction {
     set accountType(value) {
         this._accountType = value;
     }
+
+    get otherBusiness() {
+        return this._otherBusiness;
+    }
+
+    set otherBusiness(value) {
+        this._otherBusiness = value;
+    }
 }
 
-class Expenses extends Transaction {
-    constructor() {
+class Expense extends Transaction {
+    constructor(accountType, paymentMethod, lowNum, highNum) {
         super();
-        this._date = randomWord(dates);
-        this.accountType = classifications.expenses;
-        this.paymentMethod = paymentMethod[0];
-
+        this.accountType = randomWord(accountType);
+        this.paymentMethod = paymentMethod;
+        this.randomisedNum(lowNum, highNum);
     }
 
-    createTransaction() {
-        // return something completely different
-        // yay!!!
-
+    generateTransaction() {
+        return `${this._date}. ${this.businessName} ${this.paymentMethod} ${this._otherBusiness} for ${this.accountType} for the sum of R${this._transactionAmount}`;
     }
 }
 
+class Asset extends Transaction {
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super();
+        this.accountType = randomWord(accountType);
+        this.paymentMethod = paymentMethod;
+        this.randomisedNum(lowNum, highNum);
+    }
+
+    generateTransaction() {
+        return `${this._date}. ${this.businessName} ${this.paymentMethod} ${this.accountType} from ${this._otherBusiness} amounting to R${this._transactionAmount}`;
+    }
+}
+
+class Income extends Transaction {
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, paymentMethod, lowNum, highNum);
+        this.accountType = randomWord(classifications.incomes);
+        this.paymentMethod = paymentMethod;
+        super.randomisedNum(lowNum, highNum);
+    }
+
+    generateTransaction() {
+        return `${this._date}. ${this.businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._otherBusiness}`
+    }
+}
+
+// Calling function to write code
 // Base level transaction
-let transaction = new Transaction();
-transaction.createTransaction(paymentMethod[0], classifications.expenses, 1000, 10000);
-transaction.displayTransaction();
+// let transaction = new Transaction();
 
 // Expenses
-let expenseType = new Expenses();
-expenseType.businessName = "Hello Kitty";
+let expense1 = new Expense(classifications.expenses,"paid", 2000, 10000);
+// Incomes
+let income1 = new Income(classifications.incomes, 'received', 5000, 8000);
+// Assets
+let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
 
-
+// Transaction list push area
+expense1.pushTransactionToArray();
+asset1.pushTransactionToArray();
+income1.pushTransactionToArray();
 
 
 
