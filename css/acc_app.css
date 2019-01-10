@@ -1,43 +1,43 @@
 html {
-  background-color: #fff;
-  text-align: center;
-  font-family: 'Lato';
-  padding-bottom: 250px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'Lato';
+    padding-bottom: 250px;
 }
 
 div {
-  padding: 4px;
-  margin: 12px;
+    padding: 4px;
+    margin: 12px;
 }
 
 h1 {
-  font-size: 46px;
+    font-size: 46px;
 }
 
 h2 {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 h3 {
-  font-size: 26px;
+    font-size: 26px;
 }
 
 input {
-  height: 40px;
-  margin: 0px;
+    height: 40px;
+    margin: 0px;
 }
 
 table {
-  border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 /* Header of page */
 .header {
-  font-size: 20px;
-  color: #385555;
-  width: 1000px;
-  margin-right: auto;
-  margin-left: auto;
+    font-size: 20px;
+    color: #385555;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .header_image {
@@ -51,237 +51,242 @@ table {
 
 /* Upload and input area css*/
 .upload_area {
-  width: 1000px;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 24px;
-  color: #385555;
+    width: 1000px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+    color: #385555;
 }
 
 .upload_area input::-webkit-file-upload-button {
-  position: relative;
-  top: -4px;
-  width: 150px;
+    position: relative;
+    top: -4px;
+    width: 150px;
 }
 
 .upload_area input {
-  font-size: 18px;
-  position: relative;
+    font-size: 18px;
+    position: relative;
 }
 
 .upload_area button {
-  font-size: 20px;
-  border: none;
-  width: 200px;
-  text-align: center;
-  background-color: lightgray;
+    font-size: 20px;
+    border: none;
+    width: 200px;
+    text-align: center;
+    background-color: lightgray;
 }
 
 .upload_area button:hover {
-  background-color: gray;
-  color: white;
-  cursor: pointer;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
 }
 
 /* Transaction area css*/
+.transactionDiv {
+    position: relative;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 18px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid gray;
+    border-radius: 10px;
+}
+
 #transactionList {
-  position: relative;
-  padding: 10px 20px;
-  text-align: left;
-  font-size: 18px;
-  border: 4px solid gray;
-  border-radius: 10px;
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: -40px;
+    white-space: nowrap;
 }
 
-#transactionList h2 {
-  font-size: 26px;
-  color: #4a4f63;
+#transactionList ul {
+    list-style: none;
 }
 
-#transactionList p {
-  font-size: 20px;
+#transactionListHeading {
+    font-size: 26px;
+    color: #4a4f63;
 }
 
 /* Download area css*/
 .type {
-  display: block;
-  width: 200px;
-  height: 40px;
-  background-color: lightgray;
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-color: lightgray;
 }
 
 .type:hover {
-  background-color: gray;
-  color: white;
+    background-color: gray;
+    color: white;
 }
 
 .download_area {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 20px;
-  width: 1000px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    width: 1000px;
 }
 
 .download_area a {
-  font-size: 20px;
-  text-align: left;
-  text-decoration: none;
-  color: black;
-  padding: 10px;
-  background-color: lightgray;
+    font-size: 20px;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: lightgray;
 }
 
 .link {
-  position: relative;
-  height: 30px;
-  text-align: left;
+    position: relative;
+    height: 30px;
+    text-align: left;
 }
 
 .download_area a:hover {
-  background-color: gray;
-  color: white;
+    background-color: gray;
+    color: white;
 }
 
 /* Journal area css*/
 .journal {
-  width: 1000px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
-  margin-bottom: 50px;
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    margin-bottom: 50px;
 }
 
 .journal_toggle, .ledger_toggle {
-  width: 1000px;
-  height: 50px;
-  background-color: lightgray;
-  margin-left: auto;
-  margin-right: auto;
+    width: 1000px;
+    height: 50px;
+    background-color: lightgray;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .journal_toggle:hover, .ledger_toggle:hover {
-  cursor: pointer;
-  background-color: gray;
-  color: white;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
 }
 
 .heading2 th {
-  border: 1px solid gray;
+    border: 1px solid gray;
 }
 
 /* Cash receipts and payments journal css*/
 .cash_receipts_journal, .cash_payments_journal {
-  border: 2px solid gray;
-  width: 1000px;
-  padding-bottom: 10px;
+    border: 2px solid gray;
+    width: 1000px;
+    padding-bottom: 10px;
 }
 
 .heading th, .heading2 th {
-  border: 2px solid gray;
-  background-color: lightgray;
+    border: 2px solid gray;
+    background-color: lightgray;
 }
 
 .row td {
-  height: 40px;
-  border: 1px solid gray;
+    height: 40px;
+    border: 1px solid gray;
 }
 
 .analysis, .acc2, .acc1 {
-  width: 100px;
+    width: 100px;
 }
 
 /* General ledger area css*/
 .general_ledger {
-  width: 1000px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px;
-  margin-bottom: 50px;
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    margin-bottom: 50px;
 }
 
 .heading .debit, .heading .credit {
-  width: 120px;
-  height: 40px;
-  border: 1px solid gray;
-  border-top: 10px solid gray;
-  margin: 0px;
+    width: 120px;
+    height: 40px;
+    border: 1px solid gray;
+    border-top: 10px solid gray;
+    margin: 0px;
 }
 
 .row .debit, .row .credit {
-  width: 120px;
-  height: 40px;
-  border: 1px solid gray;
-  margin: 0px;
+    width: 120px;
+    height: 40px;
+    border: 1px solid gray;
+    margin: 0px;
 }
 
 #month.credit {
-  border-left: 10px solid gray;
+    border-left: 10px solid gray;
 }
 
 #month, #day, #folio {
-  width: 80px;
+    width: 80px;
 }
 
 #details{
-  width: 200px;
+    width: 200px;
 }
 
 #amount {
-  width: 160px;
+    width: 160px;
 }
 
 /* Table area css*/
 .table {
-  width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .table_head {
-  text-align: center;
+    text-align: center;
 }
 
 .table_col {
-  border: 1px solid black;
-  width: 50px;
-  height: 20px;
+    border: 1px solid black;
+    width: 50px;
+    height: 20px;
 }
 
 .table_row {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 /* Extra css added through jQuery*/
 .grow {
-  width: 1200px;
+    width: 1200px;
 }
 
 .zoom {
-  width: 110%;
-  max-width: 100%;
+    width: 110%;
+    max-width: 100%;
 }
 
 .rotate {
-  transition: 0.2s;
-  transform: rotate(90deg);
+    transition: 0.2s;
+    transform: rotate(90deg);
 }
 
 /* Testing css for table */
 .test_table {
-  border: 2px solid black;
+    border: 2px solid black;
 }
 
 .test_table input {
-  width: 100px;
+    width: 100px;
 }
 
 .test_table input {
-  border: 1px solid black;
+    border: 1px solid black;
 }

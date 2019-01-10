@@ -23,6 +23,8 @@
     <h3>Refresh your page to generate a new set of examples.</h3>
 </div>
 
+<div class="floatingSideNav" style="position: fixed!important; width: 1000px; background-color: #add9ff; height: 100%;"></div>
+
 <!--Form retrieving-->
 <div class="upload_area">
     <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -34,7 +36,10 @@
 </div>
 
 <!--Transaction list creation area-->
+<div class="transactionDiv">
+<div id="transactionListHeading"></div>
 <div id="transactionList"></div> <!--Javascript innerHTML input transaction list-->
+</div>
 
 <!--Form giving-->
 <div class="download_area">
@@ -47,7 +52,7 @@
 <!--Answer form area-->
 <div class="format_area">
     <h2>Formats of Accounting activities</h2>
-    <div class="journal_toggle"><img src="Images/Arrow.jpg" alt="arrow" class="arrow"> Show/Hide Journal format
+    <div class="journal_toggle"><img src="./Images/Arrow.jpg" alt="arrow" class="arrow"> Show/Hide Journal format
         <img src="Images/Arrow.jpg" alt="arrow" class="arrow"></div>
     <div class="journal">
         <h3>Journal Format</h3>
@@ -198,7 +203,7 @@
     </div>
 
     <div class="ledger_toggle"><img src="Images/Arrow.jpg" alt="arrow" class="arrow"> Show/Hide General Ledger format
-        <img src="Images/Arrow.jpg" alt="arrow" class="arrow"></div>
+        <img src="./Images/Arrow.jpg" alt="arrow" class="arrow"></div>
     <div class="general_ledger">
         <h3>General Ledger Format</h3>
         <h4>Bank</h4>
