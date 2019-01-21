@@ -66,6 +66,8 @@ const months = [
     "December"
 ];
 
+const month = randomWord(months);
+
 // Initialise year array
 const years = [];
 for (let i = 2000; i < 2019; i++) {
@@ -139,11 +141,6 @@ const classifications = {
 
 // const option = ["cash", "", "on credit"];
 
-// Create heading for entire transaction list
-function createHeading() {
-
-}
-
 // Create a random word
 function randomWord(item) {
     return item[Math.floor(Math.random() * item.length)];
@@ -175,7 +172,7 @@ class Transaction {
         this._accountType = "default";
         this._paymentMethod = "default";
         this._businessName = ourBusinessName;
-        this._ownerName = "No one yet";
+        this._ownerName = owner;
         this._transaction = "this is the default transaction printout";
         this._date = randomWord(dates);
         this._otherBusiness = randomWord(payersOfMoney);
@@ -183,6 +180,7 @@ class Transaction {
         this._highNum = highNum;
         this.randomisedNum(this._lowNum, this._highNum);
         this._transactionAmount = 0;
+        this._month = month;
     }
 
     randomisedNum(lowNum, highNum) {
@@ -238,6 +236,10 @@ class Transaction {
     set otherBusiness(value) {
         this._otherBusiness = value;
     }
+
+    get month() {
+        return this._month;
+    }
 }
 
 class Expense extends Transaction {
@@ -249,7 +251,7 @@ class Expense extends Transaction {
     }
 
     generateTransaction() {
-        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this._otherBusiness} for ${this.accountType} for the sum of R${this._transactionAmount}`;
+        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this._otherBusiness} for ${this.accountType} for the sum of R${this._transactionAmount}.`;
     }
 }
 
@@ -262,7 +264,7 @@ class Asset extends Transaction {
     }
 
     generateTransaction() {
-        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this._otherBusiness} amounting to R${this._transactionAmount}`;
+        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this._otherBusiness} amounting to R${this._transactionAmount}.`;
     }
 }
 
@@ -275,14 +277,13 @@ class Income extends Transaction {
     }
 
     generateTransaction() {
-        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._otherBusiness}`
+        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._otherBusiness}.`
     }
 }
 
 class Capital extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
         super();
-        this.ownerName = owner;
         this.setAccountType(accountType);
         this.paymentMethod = paymentMethod;
         this.randomisedNum(lowNum, highNum);
@@ -290,7 +291,7 @@ class Capital extends Transaction {
     }
 
     generateTransaction() {
-        return `${this.date}. The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this._transactionAmount}`;
+        return `${this.date}. The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this._transactionAmount}.`;
     }
 
 }
@@ -305,111 +306,110 @@ class Liability extends Transaction {
     }
 
     generateTransaction() {
-        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._bank}`
+        return `${this.date}. ${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._bank}.`
     }
 }
 
-// Calling function to write code
-// Base level transaction
-// let transaction = new Transaction();
+class Drawings extends Transaction {
+
+    constructor(accountType, paymentMethod, reasonForTransaction, lowNum, highNum) {
+        super();
+        this._reasonForTransaction = reasonForTransaction;
+        this.setAccountType(accountType);
+        this.paymentMethod = paymentMethod;
+        this.randomisedNum(lowNum, highNum);
+    }
+
+    generateTransaction() {
+        return `${this.date}. The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this._transactionAmount} for ${this._reasonForTransaction}`;
+    }
+}
 
 // Expenses
 let expense1 = new Expense(classifications.expenses,"made a payment to", 2000, 10000);
+let expense2 = new Expense(classifications.expenses, "paid to", 8000, 20000);
 // Incomes
 let income1 = new Income(classifications.incomes, 'received', 5000, 8000);
+let income2 = new Income(classifications.incomes, 'received', 10000, 15000);
 // Assets
 let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
+let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000);
 // Capital
 let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000);
 // Liabilities
 let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000);
-
+let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000);
+// Drawings
+// let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment",5000, 10000);
+let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
 capital.pushTransactionToArray();
 expense1.pushTransactionToArray();
+expense2.pushTransactionToArray();
 asset1.pushTransactionToArray();
+asset2.pushTransactionToArray();
 liability1.pushTransactionToArray();
+liability2.pushTransactionToArray();
+// drawings1.pushTransactionToArray();
+drawings2.pushTransactionToArray();
 income1.pushTransactionToArray();
+income2.pushTransactionToArray();
 
 // DOM implementation
 // Where the transaction list is created in the DOM
-console.log("The original array: ");
-console.log(transactionListArray);
+// Sorting the array
 transactionListArray.sort((a, b) => {
    return parseInt(a) - parseInt(b);
 });
 
-console.log("The new array: ");
-console.log(transactionListArray);
 
+const replaceDateWithBlankSpace = array => {
+    const length = array.length - 1;
+
+    for (let i = 0; i < length; i++) {
+        const regex = /^\d+./;
+        const currentString = array[i];
+        const nextString = array[i + 1];
+        const tabCharacter = '&#9;';
+
+        const currentDate = currentString.match(regex);
+        const nextDate = nextString.match(regex);
+
+        // Check if array is at first index
+        if (i >= 0 && i <= length+1) {
+            array[i+1] = array[i+1].replace(/\s/, tabCharacter);
+        }
+
+        // Find if current date equals next date and set a blank area
+        if (currentDate && nextDate && currentDate[0] === nextDate[0]){
+            array[i+1] = array[i+1].replace(regex, "");
+        }
+
+    }
+};
+replaceDateWithBlankSpace(transactionListArray);
+// console.log(transactionListArray);
 
 let ulString = "<ul>";
 transactionListArray.forEach((transaction) => {
     ulString += "<li>" + transaction + "</li>";
 });
 ulString += "</ul>";
-console.log(transactionListArray);
 
-let transactionArea = document.querySelector('#transactionList');
-transactionArea.innerHTML = ulString;
 
-let length = transactionListArray.length;
-for (let i = 0; i < length-1; i++) {
-    let current = transactionListArray[i];
-    // let previous = transactionListArray[(i+length-1)%length];
-    let next = transactionListArray[i+1];
-    let firstNumber = parseInt(current);
-    let secondNumber = parseInt(next);
 
-    if (firstNumber === secondNumber)  {
-        // Map the new array to replace a value
-        transactionListArray.map((transaction) => {
-            return transaction.replace(secondNumber, "   ");
-        });
-    }
+// DOM
+// Create heading for entire transaction list
+function createHeading() {
+    let transactionHeading = document.querySelector('#transactionListHeading');
+    transactionHeading.innerHTML = `Use the following information to complete the template of ${ourBusinessName} for the month of ${month} ${year}`;
 }
 
-console.log(transactionListArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Create an drawings transaction
-// function createDrawings(day, low_val, high_val) {
-//         let transaction = day + ". ";
-//         transaction += owner;
-//         transaction += " " + paymentMethod[3];
-//         transaction += " " + randomWord(accountType.assets);
-//         transaction += " worth R" + randomisedNum(low_val, high_val) + " for personal use.";
-//
-//         transaction.push(transaction);
-// }
-//
-//
-// function sortTransactions(transactions) {
-//     // Trying to sort array by first letter
-//     let dateInString = /\d+/;
-//     for (let i = 0; i < transactions.length-1; i++) {
-//         let regexNumFirst = transactions[i].match(dateInString);
-//         let regexNumSecond = transactions[i+1].match(dateInString);
-//         let temp = "";
-//         if (regexNumSecond[0] > regexNumFirst[0]) {
-//             temp = transactions[i+1];
-//             transactions[i+1] = temp;
-//         }
-//     }
-// }
-
+createHeading();
+// Add transaction to list elements
+let transactionArea = document.querySelector('#transactionList');
+transactionArea.innerHTML = ulString;
 
 
 

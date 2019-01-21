@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/css/acc_app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/acc_app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/site_content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/site_content.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/transaction_list.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,35 +20,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/site_content.js">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1144">
-              <caret line="366" column="35" selection-start-line="366" selection-start-column="35" selection-end-line="366" selection-end-column="35" />
+            <state relative-caret-position="438">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/acc_app.css">
+        <entry file="file://$PROJECT_DIR$/js/site_content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+            <state relative-caret-position="274">
+              <caret line="347" column="28" lean-forward="true" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
+              <folding>
+                <element signature="e#3397#5082#0" />
+                <element signature="e#5084#5540#0" />
+                <element signature="e#5997#6450#0" />
+                <element signature="e#6452#6888#0" />
+                <element signature="e#6890#7364#0" />
+                <element signature="e#7366#7897#0" />
+                <marker date="1548065983909" expanded="true" signature="9543:10347" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+        <entry file="file://$PROJECT_DIR$/css/acc_app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#table#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#table#1;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#3;n#div#5;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#table#0;n#div#5;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="3611">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -64,8 +67,8 @@
         <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/js/transaction_list.js" />
         <option value="$PROJECT_DIR$/css/acc_app.css" />
-        <option value="$PROJECT_DIR$/js/site_content.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/site_content.js" />
       </list>
     </option>
   </component>
@@ -78,9 +81,10 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -123,7 +127,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="liveEdit" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -178,25 +182,48 @@
       <workItem from="1547118975442" duration="169000" />
       <workItem from="1547119235389" duration="6615000" />
       <workItem from="1547134469938" duration="231000" />
-      <workItem from="1547134741095" duration="35000" />
+      <workItem from="1547134741095" duration="977000" />
+      <workItem from="1547140606919" duration="550000" />
+      <workItem from="1547150361186" duration="1201000" />
+      <workItem from="1547151781090" duration="96000" />
+      <workItem from="1547151901771" duration="394000" />
+      <workItem from="1547152393519" duration="172000" />
+      <workItem from="1547152606289" duration="91000" />
+      <workItem from="1547152754054" duration="700000" />
+      <workItem from="1547153517824" duration="160000" />
+      <workItem from="1547153700461" duration="217000" />
+      <workItem from="1547153954035" duration="102000" />
+      <workItem from="1547154081640" duration="24917000" />
+      <workItem from="1547287408533" duration="23000" />
+      <workItem from="1547287463206" duration="25000" />
+      <workItem from="1547288113388" duration="2667000" />
+      <workItem from="1547291099139" duration="4503000" />
+      <workItem from="1547460796200" duration="15000" />
+      <workItem from="1547460838011" duration="219000" />
+      <workItem from="1547463553106" duration="154000" />
+      <workItem from="1547466369608" duration="207000" />
+      <workItem from="1547466684345" duration="303000" />
+      <workItem from="1547989005493" duration="798000" />
+      <workItem from="1547996824312" duration="3321000" />
+      <workItem from="1548064188748" duration="944000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62560000" />
+    <option name="totallyTimeSpent" value="105281000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16138126" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16738197" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32769832" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.30958232" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3159948" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30949286" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21867321" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -204,9 +231,11 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899868" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32899868" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32639793" />
+      <window_info anchor="bottom" id="Quokka" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Json Parser" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,28 +244,31 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>qsas</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/T_account.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery_code.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-338" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/table_data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php" />
     <entry file="file://$PROJECT_DIR$/fetch_values.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/table_data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1068">
+          <caret line="59" column="19" lean-forward="true" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/upload.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -245,45 +277,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/transaction_list.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="224">
+          <caret line="7835" column="4" selection-start-line="7835" selection-start-column="4" selection-end-line="7835" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="1302" column="8" lean-forward="true" selection-start-line="1302" selection-start-column="8" selection-end-line="1302" selection-end-column="8" />
+        <state relative-caret-position="175">
+          <caret line="919" column="4" selection-start-line="919" selection-start-column="4" selection-end-line="919" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/T_account.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/transaction_list.js" />
+    <entry file="file://$PROJECT_DIR$/css/acc_app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3611">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#table#0;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#table#1;n#div#1;n#div#5;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#5;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#table#0;n#div#5;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="438">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/site_content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="366" column="35" selection-start-line="366" selection-start-column="35" selection-end-line="366" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/acc_app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+        <state relative-caret-position="274">
+          <caret line="347" column="28" lean-forward="true" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
+          <folding>
+            <element signature="e#3397#5082#0" />
+            <element signature="e#5084#5540#0" />
+            <element signature="e#5997#6450#0" />
+            <element signature="e#6452#6888#0" />
+            <element signature="e#6890#7364#0" />
+            <element signature="e#7366#7897#0" />
+            <marker date="1548065983909" expanded="true" signature="9543:10347" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

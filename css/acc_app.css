@@ -1,30 +1,16 @@
-html {
-    background-color: #fff;
-    text-align: center;
-    font-family: 'Lato';
-    padding-bottom: 250px;
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: "Lato";
 }
 
 div {
-    padding: 4px;
-    margin: 12px;
-}
-
-h1 {
-    font-size: 46px;
-}
-
-h2 {
-    font-size: 30px;
-}
-
-h3 {
-    font-size: 26px;
-}
-
-input {
-    height: 40px;
-    margin: 0px;
+    display: block;
 }
 
 table {
@@ -32,29 +18,106 @@ table {
 }
 
 /* Header of page */
-.header {
-    font-size: 20px;
-    color: #385555;
-    width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
+.header h1 {
+    position: relative;
+    display: block;
+    background-color: #4a4f63;
+    line-height: 72px;
+    padding-left: 20px;
+    font-size: 30px;
+    color: darkgray;
+    margin: 0;
+    z-index: 10;
+}
+
+/*Top Nav*/
+.topNavBar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: darkgray;
+    margin: 0;
+    padding: 0;
+    height: 70px;
+    box-shadow: 0 2px 5px 0 #4a4f65;
+    z-index: 10;
+}
+
+/*Side Nav*/
+.leftSideNav {
+    position: fixed!important;
+    display: block!important;
+    width: 200px;
+    top: 142px;
+    height: 100%;
+    background-color: transparent;
+}
+
+#leftSideNavInfo {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    width: inherit;
+    padding-top: 142px;
+    padding-bottom: 0;
+    background-color: silver;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.rightSideNav {
+    position: fixed!important;
+    display: block!important;
+    width: 200px;
+    top: 142px;
+    height: 100%;
+    right: 0;
+    background-color: transparent;
+}
+
+#rightSideNavInfo {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    height: 100%;
+    width: inherit;
+    padding-top: 142px;
+    padding-bottom: 0;
+    background-color: silver;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.divMain {
+    margin-left: 200px;
+    margin-top: 0;
+    background-color: ghostwhite;
 }
 
 .header_image {
     display: block;
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
+    width: 80%;
+    margin-left: 18px;
     margin-right: auto;
-    background-position: center;
+    height: 85%;
+}
+
+/*Opening information*/
+.openingInfo h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.textArea {
+    width: 78%;
+    padding: 30px;
 }
 
 /* Upload and input area css*/
 .upload_area {
-    width: 1000px;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 140px;
     font-size: 24px;
     color: #385555;
 }
@@ -87,28 +150,24 @@ table {
 /* Transaction area css*/
 .transactionDiv {
     position: relative;
-    padding: 10px 20px;
     text-align: left;
     font-size: 18px;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
     border: 4px solid gray;
     border-radius: 10px;
 }
 
-#transactionList {
-    margin-left: -40px;
-    white-space: nowrap;
-}
-
 #transactionList ul {
     list-style: none;
+    font-size: 18px;
+    white-space: pre;
 }
 
 #transactionListHeading {
     font-size: 26px;
     color: #4a4f63;
+    margin: 0;
+    padding: 20px;
+
 }
 
 /* Download area css*/
@@ -126,10 +185,8 @@ table {
 
 .download_area {
     display: block;
-    margin-right: auto;
-    margin-left: auto;
     margin-bottom: 20px;
-    width: 1000px;
+    width: 100%;
 }
 
 .download_area a {
@@ -154,20 +211,16 @@ table {
 
 /* Journal area css*/
 .journal {
-    width: 1000px;
+    width: 100%;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
     padding: 10px 20px;
     margin-bottom: 50px;
 }
 
 .journal_toggle, .ledger_toggle {
-    width: 1000px;
+    width: 100%;
     height: 50px;
     background-color: lightgray;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .journal_toggle:hover, .ledger_toggle:hover {
@@ -183,7 +236,7 @@ table {
 /* Cash receipts and payments journal css*/
 .cash_receipts_journal, .cash_payments_journal {
     border: 2px solid gray;
-    width: 1000px;
+    width: 100%;
     padding-bottom: 10px;
 }
 
@@ -203,10 +256,8 @@ table {
 
 /* General ledger area css*/
 .general_ledger {
-    width: 1000px;
+    width: 100%;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
     padding: 10px 20px;
     margin-bottom: 50px;
 }
@@ -216,14 +267,14 @@ table {
     height: 40px;
     border: 1px solid gray;
     border-top: 10px solid gray;
-    margin: 0px;
+    margin: 0;
 }
 
 .row .debit, .row .credit {
     width: 120px;
     height: 40px;
     border: 1px solid gray;
-    margin: 0px;
+    margin: 0;
 }
 
 #month.credit {
@@ -244,9 +295,7 @@ table {
 
 /* Table area css*/
 .table {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
 .table_head {
@@ -265,7 +314,7 @@ table {
 
 /* Extra css added through jQuery*/
 .grow {
-    width: 1200px;
+    width: 120%;
 }
 
 .zoom {
@@ -284,9 +333,10 @@ table {
 }
 
 .test_table input {
-    width: 100px;
+    width: 80px;
 }
 
 .test_table input {
     border: 1px solid black;
 }
+
