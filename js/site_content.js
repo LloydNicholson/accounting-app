@@ -112,7 +112,7 @@ const classifications = {
         "land and buildings"
     ],
     // All liabilities
-    liabilities: ["a loan", "a mortgage bond", "a bank overdraft"],
+    liabilities: ["a loan", "a mortgage bond"],
     drawings: ["drawings"],
     capital: ["capital"],
     // All expenses
@@ -131,6 +131,7 @@ const classifications = {
         "bank charges",
         "consumable goods",
         "interest on loan",
+        "interest expense",
         "postage",
         "donations",
         "rent"
@@ -139,7 +140,7 @@ const classifications = {
     incomes: ["current income", "rent", "donations", "commission", "cash sales"]
 };
 
-// const option = ["cash", "", "on credit"];
+const option = ["cash", "", "on credit"];
 
 // Create a random word
 function randomWord(item) {

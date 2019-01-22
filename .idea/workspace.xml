@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d50b8abf-5d4c-4378-8c2d-4330c9fa5901" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/acc_app.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/acc_app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/site_content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/site_content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/transaction_list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,28 +19,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="308">
+              <caret line="224" column="22" lean-forward="true" selection-start-line="224" selection-start-column="22" selection-end-line="224" selection-end-column="22" />
+              <folding>
+                <element signature="n#div#0;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#1;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#table#0;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/site_content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="347" column="28" lean-forward="true" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
+            <state relative-caret-position="508">
+              <caret line="360" column="41" selection-start-line="360" selection-start-column="41" selection-end-line="360" selection-end-column="41" />
               <folding>
-                <element signature="e#3397#5082#0" />
-                <element signature="e#5084#5540#0" />
-                <element signature="e#5997#6450#0" />
-                <element signature="e#6452#6888#0" />
-                <element signature="e#6890#7364#0" />
-                <element signature="e#7366#7897#0" />
-                <marker date="1548065983909" expanded="true" signature="9543:10347" ph="..." />
+                <marker date="1548082201507" expanded="true" signature="9548:10352" ph="..." />
               </folding>
             </state>
           </provider>
@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/css/acc_app.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3611">
-              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+              <caret line="157" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -67,8 +67,8 @@
         <option value="$PROJECT_DIR$/upload.php" />
         <option value="$PROJECT_DIR$/js/transaction_list.js" />
         <option value="$PROJECT_DIR$/css/acc_app.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/site_content.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -94,6 +94,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,21 +102,10 @@
               <item name="accounting-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="accounting-app" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="accounting-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="accounting-app" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="accounting-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="accounting-app" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -205,32 +195,35 @@
       <workItem from="1547466684345" duration="303000" />
       <workItem from="1547989005493" duration="798000" />
       <workItem from="1547996824312" duration="3321000" />
-      <workItem from="1548064188748" duration="944000" />
+      <workItem from="1548064188748" duration="1175000" />
+      <workItem from="1548072680743" duration="7000" />
+      <workItem from="1548082122409" duration="161000" />
+      <workItem from="1548157685172" duration="623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105281000" />
+    <option name="totallyTimeSpent" value="106303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16738197" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17381974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32769832" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.30949286" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.21867321" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.21867321" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899868" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32899868" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32639793" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32555282" />
       <window_info anchor="bottom" id="Quokka" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -301,29 +294,29 @@
     <entry file="file://$PROJECT_DIR$/css/acc_app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3611">
-          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/site_content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="347" column="28" lean-forward="true" selection-start-line="347" selection-start-column="28" selection-end-line="347" selection-end-column="28" />
+        <state relative-caret-position="508">
+          <caret line="360" column="41" selection-start-line="360" selection-start-column="41" selection-end-line="360" selection-end-column="41" />
           <folding>
-            <element signature="e#3397#5082#0" />
-            <element signature="e#5084#5540#0" />
-            <element signature="e#5997#6450#0" />
-            <element signature="e#6452#6888#0" />
-            <element signature="e#6890#7364#0" />
-            <element signature="e#7366#7897#0" />
-            <marker date="1548065983909" expanded="true" signature="9543:10347" ph="..." />
+            <marker date="1548082201507" expanded="true" signature="9548:10352" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="224" column="22" lean-forward="true" selection-start-line="224" selection-start-column="22" selection-end-line="224" selection-end-column="22" />
+          <folding>
+            <element signature="n#div#0;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#table#0;n#div#4;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
