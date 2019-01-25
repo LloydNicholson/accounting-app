@@ -166,6 +166,7 @@ function hasNumber(currentString, testString) {
 }
 
 // transaction list array
+// const transactionListArray = [];
 const transactionListArray = [];
 
 class Transaction {
@@ -240,6 +241,10 @@ class Transaction {
 
     get month() {
         return this._month;
+    }
+
+    get transactionListArray() {
+        return this._transactionListArray;
     }
 }
 
@@ -326,6 +331,9 @@ class Drawings extends Transaction {
     }
 }
 
+// Base Transaction
+let transaction = new Transaction("default", "default", 0, 0);
+
 // Expenses
 let expense1 = new Expense(classifications.expenses,"made a payment to", 2000, 10000);
 let expense2 = new Expense(classifications.expenses, "paid to", 8000, 20000);
@@ -378,8 +386,11 @@ const replaceDateWithBlankSpace = array => {
         const nextDate = nextString.match(regex);
 
         // Check if array is at first index
-        if (i >= 0 && i <= length+1) {
-            array[i+1] = array[i+1].replace(/\s/, tabCharacter);
+        if (i >= 0 && i <= length) {
+            array[i] = array[i].replace(/\s/, tabCharacter);
+            if (i === length-1) {
+                array[i+1] = array[i+1].replace(/\s/, tabCharacter);
+            }
         }
 
         // Find if current date equals next date and set a blank area
@@ -392,13 +403,11 @@ const replaceDateWithBlankSpace = array => {
 replaceDateWithBlankSpace(transactionListArray);
 // console.log(transactionListArray);
 
-let ulString = "<ul>";
+let ulString = '<ul class="list-group">';
 transactionListArray.forEach((transaction) => {
-    ulString += "<li>" + transaction + "</li>";
+    ulString += '<li class="list-group-item" style="white-space: pre-wrap">' + transaction + '</li>';
 });
-ulString += "</ul>";
-
-
+ulString += '</ul>';
 
 // DOM
 // Create heading for entire transaction list
@@ -408,9 +417,28 @@ function createHeading() {
 }
 
 createHeading();
+
 // Add transaction to list elements
 let transactionArea = document.querySelector('#transactionList');
 transactionArea.innerHTML = ulString;
 
+const createTransactionSolution = () => {
+    let tableArea = document.querySelector('#tableSolutionArea');
+    let tableString = "</div><table class='table-responsive table-bordered'> <tbody>";
 
+    transactionListArray.forEach((transaction) => {
+        tableString += "<tr>";
+
+        tableString += "<td>" + transaction.date + "</td>";
+        tableString += "<td>" + transaction.month + "</td>";
+
+        tableString += "</tr>";
+    });
+
+    tableString += "</tbody> </table>";
+
+    tableArea.innerHTML = tableString;
+};
+
+createTransactionSolution();
 
