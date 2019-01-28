@@ -160,7 +160,7 @@ function randomisedNum(low_num, high_num) {
     return Math.floor(Math.random() * high_num) + Math.floor(low_num);
 }
 
-function hasNumber(currentString, testString) {
+function matchedNumber(currentString, testString) {
     return currentString.match(testString);
 }
 
@@ -421,7 +421,7 @@ transactionListArray.sort((a, b) => {
 
 // Solution creation
 const createGeneralLedgerSolution = () => {
-    let tableArea = document.querySelector('#tableSolutionArea');
+    let ledgerArea = document.querySelector('#ledgerSolutionArea');
     let tableString = "</div><table class='table-striped table-bordered'> <tbody>";
 
     transactionListArray.forEach((transaction) => {
@@ -438,12 +438,26 @@ const createGeneralLedgerSolution = () => {
 
     tableString += "</tbody> </table>";
 
-    tableArea.innerHTML = tableString;
+    ledgerArea.innerHTML = tableString;
 };
 
 // createGeneralLedgerSolution();
 
 const createJournalSolution = () => {
+    let journalArea = document.querySelector('#journalSolutionArea');
+    let tableString = "</div><table class='table-striped table-bordered'><tbody>";
+
+    tableString += "<thead><tr>";
+
+    tableString += "<td> Doc </td>";
+    tableString += "<td> Date </td>";
+    tableString += "<td> Details </td>";
+    tableString += "<td> Fol </td>";
+    tableString += "<td> Bank </td>";
+
+    tableString += "</tr></thead></tbody></table>";
+
+    journalArea.innerHTML = tableString;
 
 };
 
