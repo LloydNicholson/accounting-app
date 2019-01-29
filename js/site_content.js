@@ -23,9 +23,6 @@ const businesses = [
     "Jim's Attorneys"
 ];
 
-// Set business name to randomise
-let ourBusinessName = randomWord(businesses);
-
 // Different owners names
 const owners = [
     "Douglas",
@@ -47,9 +44,6 @@ const owners = [
     "Chris"
 ];
 
-// Set owner name to randomise every time
-let owner = randomWord(owners);
-//
 // Month array
 const months = [
     "January",
@@ -66,14 +60,11 @@ const months = [
     "December"
 ];
 
-const month = randomWord(months);
-
 // Initialise year array
 const years = [];
-for (let i = 2010; i < 2020; i++) {
+for (let i = 2005; i < 2020; i++) {
     years.push(i);
 }
-let year = randomWord(years);
 
 const payersOfMoney = [
     "Joe's Traders",
@@ -99,6 +90,12 @@ const banks = [
     "Bidvest bank"
 ];
 
+// Set business name to randomise
+let ourBusinessName = randomWord(businesses);
+// Set owner name to randomise every time
+let owner = randomWord(owners);
+let month = randomWord(months);
+let year = randomWord(years);
 let bank = randomWord(banks);
 
 // Different account types and sub-accounts
@@ -142,17 +139,13 @@ const classifications = {
 
 const option = ["cash", "", "on credit"];
 
+// const randomise = () => { trying to randomise on click
+//
+// };
+
 // Create a random word
 function randomWord(item) {
     return item[Math.floor(Math.random() * item.length)];
-}
-
-// Randomised date
-const dates = [];
-const firstDay = 1;
-const lastDay = 28;
-for (let i = firstDay; i < lastDay; i++) {
-    dates.push(i);
 }
 
 // Create random values between two points
@@ -160,13 +153,29 @@ function randomisedNum(low_num, high_num) {
     return Math.floor(Math.random() * high_num) + Math.floor(low_num);
 }
 
+// Randomised date
+const dates = [];
+let firstDay = 1;
+let lastDay = 28;
+switch (month) {
+    case 'January': case 'March': case 'May': case 'July': case 'August': case 'October': case 'December': lastDay = 31;
+    break;
+    case 'April': case 'June': case 'September': case 'November': lastDay = 30;
+    break;
+    case 'February': lastDay = 28;
+}
+for (let i = firstDay; i <= lastDay; i++) {
+    dates.push(i);
+}
+
+
+
 function matchedNumber(currentString, testString) {
     return currentString.match(testString);
 }
 
 // transaction list array
 // const transactionListArray = [];
-const transactionListArray = [];
 
 class Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
@@ -400,17 +409,26 @@ let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 1
 let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
-transactionListArray.push(capital);
-transactionListArray.push(expense1);
-transactionListArray.push(expense2);
-transactionListArray.push(asset1);
-transactionListArray.push(asset2);
-transactionListArray.push(asset3);
-transactionListArray.push(liability1);
-transactionListArray.push(liability2);
-transactionListArray.push(drawings2);
-transactionListArray.push(income1);
-transactionListArray.push(income2);
+const transactionListArray = [];
+const pushToTransactionList = () => {
+    transactionListArray.push(capital);
+    transactionListArray.push(expense1);
+    transactionListArray.push(expense2);
+    transactionListArray.push(asset1);
+    transactionListArray.push(asset2);
+    transactionListArray.push(asset3);
+    transactionListArray.push(liability1);
+    transactionListArray.push(liability2);
+    transactionListArray.push(drawings2);
+    transactionListArray.push(income1);
+    transactionListArray.push(income2);
+};
+pushToTransactionList();
+
+// let row = journalTable.getRow(1); //return row component with index of 1
+// let rowData = row.getData();
+// let rows = journalTable.getRows();
+// let rows = journalTable.getRowFromPosition(0, true);
 
 // DOM implementation
 // Where the transaction list is created in the DOM
@@ -419,50 +437,46 @@ transactionListArray.sort((a, b) => {
    return a.date - b.date;
 });
 
-// Solution creation
-const createGeneralLedgerSolution = () => {
-    let ledgerArea = document.querySelector('#ledgerSolutionArea');
-    let tableString = "</div><table class='table-striped table-bordered'> <tbody>";
+// // For debugging purposes
+// setTimeout(() => {
+//     for (let i = 0; i < transactionListArray.length; i++) {
+//         let currentInputDate = cashReceiptsJournalTable.getData()[i].date;
+//         let currentDate = transactionListArray[i].date;
+//
+//         if (currentInputDate !== 'undefined') {
+//             if (parseInt(currentInputDate) === currentDate) {
+//                 console.log("The date " + currentInputDate + " is correct");
+//             }
+//         }
+//     }
+//
+//     setTimeout(() => {
+//         console.clear();
+//     }, 2000);
+// }, 8000);
 
-    transactionListArray.forEach((transaction) => {
-        tableString += "<tr>";
 
-        tableString += "<td>" + transaction.month + "</td>";
-        tableString += "<td>" + transaction.date + "</td>";
-        tableString += "<td>" + transaction.accountType + "</td>";
-        tableString += "<td>" + transaction.folio + "</td>";
-        tableString += "<td>" + transaction.transactionAmount + "</td>";
+// console.log(journalTable.columnManager.columns[1].contentElement.style.backgroundColor);
 
-        tableString += "</tr>";
-    });
+// const createJournalSolution = () => {
+//     let journalArea = document.querySelector('#journalSolutionArea');
+//     let tableString = "</div><table class='table-striped table-bordered'><tbody>";
+//
+//     tableString += "<thead><tr>";
+//
+//     tableString += "<td> Doc </td>";
+//     tableString += "<td> Date </td>";
+//     tableString += "<td> Details </td>";
+//     tableString += "<td> Fol </td>";
+//     tableString += "<td> Bank </td>";
+//
+//     tableString += "</tr></thead></tbody></table>";
+//
+//     journalArea.innerHTML = tableString;
+//
+// };
 
-    tableString += "</tbody> </table>";
-
-    ledgerArea.innerHTML = tableString;
-};
-
-// createGeneralLedgerSolution();
-
-const createJournalSolution = () => {
-    let journalArea = document.querySelector('#journalSolutionArea');
-    let tableString = "</div><table class='table-striped table-bordered'><tbody>";
-
-    tableString += "<thead><tr>";
-
-    tableString += "<td> Doc </td>";
-    tableString += "<td> Date </td>";
-    tableString += "<td> Details </td>";
-    tableString += "<td> Fol </td>";
-    tableString += "<td> Bank </td>";
-
-    tableString += "</tr></thead></tbody></table>";
-
-    journalArea.innerHTML = tableString;
-
-};
-
-createJournalSolution();
-
+// createJournalSolution();
 
 const replaceDateWithBlankSpace = array => {
     for (let i = 0; i < array.length-1; i++) {
