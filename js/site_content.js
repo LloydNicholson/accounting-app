@@ -87,71 +87,86 @@ const payersOfMoney = [
 
 const banks = [
     "Nedbank",
-    "ABSA bank",
+    "ABSA",
     "FNB",
     "Standard Bank",
     "Discovery Bank",
-    "Capitec bank",
-    "Bidvest bank"
+    "Capitec Bank",
+    "Bidvest Bank"
 ];
 
 // Set business name to randomise
-let ourBusinessName = randomWord(businesses);
-// Set owner name to randomise every time
-let owner = randomWord(owners);
-let month = randomWord(months);
-let year = randomWord(years);
-let bank = randomWord(banks);
+let ourBusinessName = randomItem(businesses);
+// Set ourOwner name to randomise every time
+let ourOwner = randomItem(owners);
+let month = randomItem(months);
+let year = randomItem(years);
+let randomBank = randomItem(banks);
 
 // Different account types and sub-accounts
 const classifications = {
     // All assets
     assets: [
-        "trading stock",
-        "vehicles",
-        "equipment",
-        "machinery",
-        "land and buildings"
+        {name: "Trading Stock", alts: ['stock', 'goods', 'products', 'trading stock']},
+        {name: "Vehicles", alts: ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']},
+        {name: "Equipment", alts: ['computers', 'computer', 'printers', 'fax machines']},
+        {name: "Machinery", alts: ['mechanical drill', 'large jackhammer']},
+        {name: "Land and buildings", alts: ['property', 'new property', 'storage facility']}
     ],
     // All liabilities
-    liabilities: ["a loan", "a mortgage bond"],
-    drawings: ["drawings"],
-    capital: ["capital"],
+    liabilities: [
+        {name: 'Loan', alts: ['a loan', 'a substantial loan']},
+        {name: "Mortgage bond", alts: ['property loan', 'bognd', 'mortgage bond']}
+        ],
+    drawings: [{name: 'Drawings', alts: ['drawings', 'money']}],
+    capital: [{name :'Capital', alts: ['contribution', 'capital']}],
     // All expenses
     expenses: [
-        "salaries",
-        "wages",
-        "repairs to the motor vehicle",
-        "advertising",
-        "the telephone account",
-        "telephone",
-        "stationery",
-        "water and electricity",
-        "insurance",
-        "packing material",
-        "fuel",
-        "bank charges",
-        "consumable goods",
-        "interest on loan",
-        "interest expense",
-        "postage",
-        "donations",
-        "rent"
+        {name: "Salaries", alts: []},
+        {name: "Wages", alts: []},
+        {name: "Repairs", alts: ['repairs to the motor vehicle']},
+        {name: 'Advertising', alts: []},
+        {name: 'Telephone', alts: ['the telephone account']},
+        {name: 'Stationery', alts: []},
+        {name: 'Water and electricity', alts: []},
+        {name: 'Insurance', alts: []},
+        {name: 'Packing material', alts: []},
+        {name: 'Fuel', alts: []},
+        {name: 'Bank charges', alts: []},
+        {name: "Consumable goods", alts: []},
+        {name: 'Interest on loan', alts: ['interest on long term liability']},
+        {name: 'Interest expense', alts: ['interest on bank account']},
+        {name: 'postage', alts: []},
+        {name: 'Donations', alts: []},
+        {name: "Rent Expense", alts: ["rent", "rental"]}
     ],
     // All incomes
-    incomes: ["current income", "rent", "donations", "commission", "cash sales"]
+    incomes: [
+        {name: "Current income", alts: ['money from services rendered', 'money for a service']},
+        {name: 'Rent', alts: ['rent']},
+        {name: 'Donations', alts: ['donations']},
+        {name: 'Commission', alts: ['commission', 'a part of sale']},
+        {name: 'Cash sales', alts: []}
+    ]
 };
 
-const option = ["cash", "", "on credit"];
+const options = ["cash", "", "on credit"];
 
+// TODO - Create a list of different account alternatives e.g. services rendered -> current income
+// const fakeExpenses = [{name: "rent expense", alts: ['rent', 'rental']}];
+
+function randomItem(item) {
+    return item[Math.floor(Math.random() * item.length)];
+}
+
+function randomAccount(item) {
+    return randomItem(item.alts);
+}
+
+// TODO - Randomise on click
 // const randomise = () => { trying to randomise on click
 //
 // };
-
-// Create a random word
-function randomWord(item) {
-    return item[Math.floor(Math.random() * item.length)];
-}
 
 // Create random values between two points
 function randomisedNum(low_num, high_num) {
@@ -173,7 +188,6 @@ for (let i = firstDay; i <= lastDay; i++) {
     dates.push(i);
 }
 
-
 function matchedNumber(currentString, testString) {
     return currentString.match(testString);
 }
@@ -184,16 +198,16 @@ class Transaction {
         this._paymentMethod = "default";
         this._businessName = ourBusinessName;
         this._folio = "default";
-        this._option = "default";
-        this._ownerName = owner;
+        this._option = randomItem(options);
+        this._ownerName = ourOwner;
         this._transactionString = "this is the default transaction printout";
-        this._date = randomWord(dates);
-        this._otherBusiness = randomWord(payersOfMoney);
+        this._date = randomItem(dates);
+        this._otherBusiness = randomItem(payersOfMoney);
         this._lowNum = lowNum;
         this._highNum = highNum;
-        this.randomisedNum(this._lowNum, this._highNum);
         this._transactionAmount = 0;
         this._month = month;
+        this._bank = randomBank;
     }
 
     randomisedNum(lowNum, highNum) {
@@ -209,7 +223,7 @@ class Transaction {
     }
 
     setAccountType(accountType) {
-        this._accountType = randomWord(accountType);
+        this._accountType = randomAccount(accountType[0]);
     }
 
     get date() {
@@ -264,97 +278,96 @@ class Transaction {
         this._transactionAmount = value;
     }
 
+    get bank() {
+        return this._bank;
+    }
+
+    set bank(value) {
+        this._bank = value;
+    }
 }
 
 class Expense extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super();
-        this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, lowNum, highNum);
         this.randomisedNum(lowNum, highNum);
-        if (option === 'cash') {
+        this.paymentMethod = paymentMethod;
+        this.setAccountType(accountType);
+        if (this.option === 'cash' || '') {
             this.folio = 'CPJ';
         } else {
             this.folio = 'CJ';
         }
-        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountType} for the sum of R${this.transactionAmount}, ${this.option}.`;
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountType} for the sum of R${this.transactionAmount} ${this.option}.`;
     }
-
-    // set transactionString(value) { // try this later
-    //     super.transactionString = value;
-    // }
 }
 
 class Asset extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super();
-        this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, lowNum, highNum);
         this.randomisedNum(lowNum, highNum);
-        this.option = option;
-        if ((paymentMethod === "bought" || paymentMethod === "purchased") && (option === "cash")) {
+        this.paymentMethod = paymentMethod;
+        this.setAccountType(accountType);
+        if ((this.paymentMethod === 'bought' || this.paymentMethod === 'purchased') && (this.option === 'cash' || '')) {
             this.folio = 'CPJ';
         } else {
-            this.folio = 'CRJ';
+            this.folio = 'CJ';
         }
 
-        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this.otherBusiness} amounting to R${this.transactionAmount}, ${this.option}.`;
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this.otherBusiness} amounting to R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Income extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super();
-        this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, lowNum, highNum);
         this.randomisedNum(lowNum, highNum);
-        this.option = option;
-        if (option === 'cash') {
+        this.paymentMethod = paymentMethod;
+        this.setAccountType(accountType);
+        if (this.option === 'cash' || '') {
             this.folio = 'CRJ';
         } else {
             this.folio = 'DJ';
         }
-        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount}, ${this.option} from ${this.otherBusiness}.`;
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} ${this.option} from ${this.otherBusiness}.`;
     }
 }
 
 class Capital extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super();
-        this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
+        super(accountType, lowNum, highNum);
         this.randomisedNum(lowNum, highNum);
-        this.option = option;
+        this.paymentMethod = paymentMethod;
+        this.setAccountType(accountType);
         this.date = 1;
         this.folio = "CRJ";
-        this.transactionString = `${this.date}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this.transactionAmount}, ${this.option}.`;
+        this.option = option;
+        this.transactionString = `${this.date}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Liability extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super();
-        this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, lowNum, highNum);
         this.randomisedNum(lowNum, highNum);
-        this.option = option;
-        this._bank = bank;
-        if ((paymentMethod === "acquired" || paymentMethod === "received") && (option === "cash")) {
-            this.folio = "CRJ";
+        this.paymentMethod = paymentMethod;
+        this.setAccountType(accountType);
+        if ((this.paymentMethod === 'acquired' || this.paymentMethod === 'received') && (this.option ==='cash' || '')) {
+            this.folio = 'CRJ';
         } else {
-            this.folio = "CPJ";
+            this.folio = 'CPJ';
         }
-        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} from ${this._bank}.`;
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} from ${this.bank}.`;
     }
 }
 
 class Drawings extends Transaction {
 
     constructor(accountType, paymentMethod, reasonForTransaction, lowNum, highNum) {
-        super();
+        super(paymentMethod, lowNum, highNum);
+        this.paymentMethod = paymentMethod;
         this._reasonForTransaction = reasonForTransaction;
         this.setAccountType(accountType);
-        this.paymentMethod = paymentMethod;
         this.randomisedNum(lowNum, highNum);
         this.folio = "CPJ";
         this.transactionString = `${this.date}${'&#09;'}The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this.transactionAmount} for ${this._reasonForTransaction}`;
@@ -365,15 +378,15 @@ class Drawings extends Transaction {
 // let transaction = new Transaction("default", "default", 0, 0);
 
 // Expenses
-let expense1 = new Expense(classifications.expenses,"made payment to", 2000, 10000, "cash");
-let expense2 = new Expense(classifications.expenses, "paid", 8000, 20000, "on credit");
+let expense1 = new Expense(classifications.expenses,"made payment to", 2000, 10000);
+let expense2 = new Expense(classifications.expenses, "paid", 8000, 20000);
 // Incomes
-let income1 = new Income(classifications.incomes, 'received', 5000, 8000, "cash");
-let income2 = new Income(classifications.incomes, 'received', 10000, 15000, "on credit");
+let income1 = new Income(classifications.incomes, 'received', 5000, 8000);
+let income2 = new Income(classifications.incomes, 'received', 10000, 15000);
 // Assets
-let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000, "cash");
-let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000, "on credit");
-let asset3 = new Asset(classifications.assets, 'received', 50000, 200000, "cash");
+let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
+let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000);
+let asset3 = new Asset(classifications.assets, 'received', 10000, 200000);
 // Capital
 let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000, "cash");
 // Liabilities
