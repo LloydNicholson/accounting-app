@@ -1,6 +1,5 @@
 'use strict';
 
-// Not going to randomise business names - decided against it
 // Different business names
 const businesses = [
     "Rancid Retailers",
@@ -20,7 +19,8 @@ const businesses = [
     "Trendy Tutors",
     "Fresh Fellers",
     "Feline Friends",
-    "Jim's Attorneys"
+    "Jim's Attorneys",
+    "Advocates for Animals",
 ];
 
 // Different owners names
@@ -41,7 +41,11 @@ const owners = [
     "Jessie",
     "Kerry",
     "Martin",
-    "Chris"
+    "Chris",
+    "Rachel",
+    "Patrick",
+    "Colin",
+    "Herbie"
 ];
 
 // Month array
@@ -62,9 +66,7 @@ const months = [
 
 // Initialise year array
 const years = [];
-for (let i = 2005; i < 2020; i++) {
-    years.push(i);
-}
+for (let i = 2005; i < 2020; i++) {years.push(i);}
 
 const payersOfMoney = [
     "Joe's Traders",
@@ -78,6 +80,9 @@ const payersOfMoney = [
     "James' Carpenters",
     "Stacey's Stockers",
     "Bryan's Brewers",
+    "Fun Flops",
+    "Made in China Manufacturers",
+    "Protecting People"
 ];
 
 const banks = [
@@ -169,13 +174,9 @@ for (let i = firstDay; i <= lastDay; i++) {
 }
 
 
-
 function matchedNumber(currentString, testString) {
     return currentString.match(testString);
 }
-
-// transaction list array
-// const transactionListArray = [];
 
 class Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
@@ -185,7 +186,7 @@ class Transaction {
         this._folio = "default";
         this._option = "default";
         this._ownerName = owner;
-        this._transaction = "this is the default transaction printout";
+        this._transactionString = "this is the default transaction printout";
         this._date = randomWord(dates);
         this._otherBusiness = randomWord(payersOfMoney);
         this._lowNum = lowNum;
@@ -199,8 +200,12 @@ class Transaction {
         this._transactionAmount = randomisedNum(lowNum, highNum);
     }
 
-    getTransaction() {
-        return this._transaction;
+    get transactionString() {
+        return this._transactionString;
+    }
+
+    set transactionString(value) {
+        this._transactionString = value;
     }
 
     setAccountType(accountType) {
@@ -217,10 +222,6 @@ class Transaction {
 
     get ownerName() {
         return this._ownerName;
-    }
-
-    set ownerName(value) {
-        this._ownerName = value;
     }
 
     get folio() {
@@ -255,18 +256,6 @@ class Transaction {
         return this._otherBusiness;
     }
 
-    set otherBusiness(value) {
-        this._otherBusiness = value;
-    }
-
-    get month() {
-        return this._month;
-    }
-
-    set month(value) {
-        this._month = value;
-    }
-
     get transactionAmount() {
         return this._transactionAmount;
     }
@@ -274,6 +263,7 @@ class Transaction {
     set transactionAmount(value) {
         this._transactionAmount = value;
     }
+
 }
 
 class Expense extends Transaction {
@@ -282,17 +272,17 @@ class Expense extends Transaction {
         this.setAccountType(accountType);
         this.paymentMethod = paymentMethod;
         this.randomisedNum(lowNum, highNum);
-        this.option = option;
-        if (option === "cash") {
+        if (option === 'cash') {
             this.folio = 'CPJ';
         } else {
             this.folio = 'CJ';
         }
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountType} for the sum of R${this.transactionAmount}, ${this.option}.`;
     }
 
-    getTransaction() {
-        return `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this._otherBusiness} for ${this.accountType} for the sum of R${this._transactionAmount}, ${this.option}.`;
-    }
+    // set transactionString(value) { // try this later
+    //     super.transactionString = value;
+    // }
 }
 
 class Asset extends Transaction {
@@ -307,10 +297,8 @@ class Asset extends Transaction {
         } else {
             this.folio = 'CRJ';
         }
-    }
 
-    getTransaction() {
-        return `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this._otherBusiness} amounting to R${this._transactionAmount}, ${this.option}.`;
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this.otherBusiness} amounting to R${this.transactionAmount}, ${this.option}.`;
     }
 }
 
@@ -321,15 +309,12 @@ class Income extends Transaction {
         this.paymentMethod = paymentMethod;
         this.randomisedNum(lowNum, highNum);
         this.option = option;
-        if (option === "cash") {
+        if (option === 'cash') {
             this.folio = 'CRJ';
         } else {
-            this.folio = "DJ";
+            this.folio = 'DJ';
         }
-    }
-
-    getTransaction() {
-        return `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount}, ${this.option} from ${this._otherBusiness}.`
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount}, ${this.option} from ${this.otherBusiness}.`;
     }
 }
 
@@ -342,12 +327,8 @@ class Capital extends Transaction {
         this.option = option;
         this.date = 1;
         this.folio = "CRJ";
+        this.transactionString = `${this.date}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this.transactionAmount}, ${this.option}.`;
     }
-
-    getTransaction() {
-        return `${this.date}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this._transactionAmount}, ${this.option}.`;
-    }
-
 }
 
 class Liability extends Transaction {
@@ -363,10 +344,7 @@ class Liability extends Transaction {
         } else {
             this.folio = "CPJ";
         }
-    }
-
-    getTransaction() {
-        return `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this._transactionAmount} from ${this._bank}.`
+        this.transactionString = `${this.date}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} from ${this._bank}.`;
     }
 }
 
@@ -379,10 +357,7 @@ class Drawings extends Transaction {
         this.paymentMethod = paymentMethod;
         this.randomisedNum(lowNum, highNum);
         this.folio = "CPJ";
-    }
-
-    getTransaction() {
-        return `${this.date}${'&#09;'}The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this._transactionAmount} for ${this._reasonForTransaction}`;
+        this.transactionString = `${this.date}${'&#09;'}The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this.transactionAmount} for ${this._reasonForTransaction}`;
     }
 }
 
@@ -405,7 +380,7 @@ let capital = new Capital(classifications.capital, 'deposited into the businesse
 let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000, "cash");
 let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000, "cash");
 // Drawings
-// let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment",5000, 10000);
+let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment",5000, 10000);
 let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
@@ -419,64 +394,17 @@ const pushToTransactionList = () => {
     transactionListArray.push(asset3);
     transactionListArray.push(liability1);
     transactionListArray.push(liability2);
+    transactionListArray.push(drawings1);
     transactionListArray.push(drawings2);
     transactionListArray.push(income1);
     transactionListArray.push(income2);
 };
 pushToTransactionList();
 
-// let row = journalTable.getRow(1); //return row component with index of 1
-// let rowData = row.getData();
-// let rows = journalTable.getRows();
-// let rows = journalTable.getRowFromPosition(0, true);
-
-// DOM implementation
-// Where the transaction list is created in the DOM
 // Sorting the array
 transactionListArray.sort((a, b) => {
    return a.date - b.date;
 });
-
-// // For debugging purposes
-// setTimeout(() => {
-//     for (let i = 0; i < transactionListArray.length; i++) {
-//         let currentInputDate = cashReceiptsJournalTable.getData()[i].date;
-//         let currentDate = transactionListArray[i].date;
-//
-//         if (currentInputDate !== 'undefined') {
-//             if (parseInt(currentInputDate) === currentDate) {
-//                 console.log("The date " + currentInputDate + " is correct");
-//             }
-//         }
-//     }
-//
-//     setTimeout(() => {
-//         console.clear();
-//     }, 2000);
-// }, 8000);
-
-
-// console.log(journalTable.columnManager.columns[1].contentElement.style.backgroundColor);
-
-// const createJournalSolution = () => {
-//     let journalArea = document.querySelector('#journalSolutionArea');
-//     let tableString = "</div><table class='table-striped table-bordered'><tbody>";
-//
-//     tableString += "<thead><tr>";
-//
-//     tableString += "<td> Doc </td>";
-//     tableString += "<td> Date </td>";
-//     tableString += "<td> Details </td>";
-//     tableString += "<td> Fol </td>";
-//     tableString += "<td> Bank </td>";
-//
-//     tableString += "</tr></thead></tbody></table>";
-//
-//     journalArea.innerHTML = tableString;
-//
-// };
-
-// createJournalSolution();
 
 const replaceDateWithBlankSpace = array => {
     for (let i = 0; i < array.length-1; i++) {
@@ -494,9 +422,15 @@ const replaceDateWithBlankSpace = array => {
 
 replaceDateWithBlankSpace(transactionListArray);
 
+
+
+
+
+// DOM implementation
+// Where the transaction list is created in the DOM
 let ulString = '<ul class="list-group">';
-transactionListArray.forEach((transaction) => {
-    ulString += '<li class="list-group-item" style="white-space: pre-wrap">' + transaction.getTransaction() + '</li>';
+transactionListArray.forEach((index) => {
+    ulString += '<li class="list-group-item" style="white-space: pre-wrap">' + index.transactionString + '</li>';
 });
 ulString += '</ul>';
 

@@ -90,33 +90,37 @@
 
     <hr>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-3">
-                <button data-toggle="collapse" data-target="#ledgerSolutionArea">Show Ledger Solution</button>
-                <div id="ledgerSolutionArea" class="collapse"></div>
-            </div>
+    <!--<div class="container-fluid">-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-3">-->
+                <!--<button data-toggle="collapse" data-target="#ledgerSolutionArea">Show Ledger Solution</button>-->
+                <!--<div id="ledgerSolutionArea" class="collapse"></div>-->
+            <!--</div>-->
 
-            <div class="col-xs-3">
-                <button data-toggle="collapse" data-target="#journalSolutionArea">Show Journal Solution</button>
-                <div id="journalSolutionArea" class="collapse"></div>
-            </div>
+            <!--<div class="col-xs-3">-->
+                <!--<button data-toggle="collapse" data-target="#journalSolutionArea">Show Journal Solution</button>-->
+                <!--<div id="journalSolutionArea" class="collapse"></div>-->
+            <!--</div>-->
 
-        </div>
-    </div>
+        <!--</div>-->
+    <!--</div>-->
 
     <hr>
 
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row">
             <div class="col-xs-12">
-                <div class="h3">CRJ answer area</div>
+                <div class="h3">Answer area</div>
+                <div class="h4">CRJ</div>
                 <div id="CashReceiptsJournalAnswerArea"></div>
-                <div class="h3">CPJ answer area</div>
+                <div class="btn btn-primary" onclick="checkCorrect(filteredCRJ)">Check CRJ</div>
+                <div class="h4">CPJ</div>
                 <div id="CashPaymentsJournalAnswerArea"></div>
+                <div class="btn btn-primary" onclick="checkCorrect(filteredCPJ)">Check CPJ</div>
             </div>
         </div>
     </div>
+
 
     <hr>
 
@@ -176,7 +180,9 @@
 
 <script src="js/jquery_code.js"></script>
 <script type="text/javascript" src="js/site_content.js"></script>
-<script type="text/javascript" src="js/CRJTable.js"></script>
+<script type="text/javascript" src="js/journals.js"></script>
+
+
 
 </body>
 </html>
