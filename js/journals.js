@@ -1,48 +1,142 @@
 'use strict';
 
-// Imports
-
 // Functions
 const filterJournal = (folio) => {
-    return transactionListArray.filter((transaction => transaction.folio === folio));
+    return journalTransactionList.filter((transaction => transaction.folio === folio));
 };
 
 const createInputJournal = (array, folio) => {
-    for (let i = 0; i < transactionListArray.length; i++) { // make sure there is space for final total of column
-        if (transactionListArray[i].folio === folio) {
+    for (let i = 0; i < journalTransactionList.length; i++) { // make sure there is space for final total of column
+        if (journalTransactionList[i].folio === folio) {
             array.push({});
         }
     }
+
+    // Set id for the array
+    for (let i = 0; i < array.length; i++) {
+        array[i].id = i;
+    }
 };
 
-// let property = transactionListArray[0];
-// for (let key in property) {
-//     if (property.hasOwnProperty(key)) {
-//         console.log(key + " -> " + property[key]);
-//     }
-// }
-
-const checkCorrect = (initialArray) => {
-    // for (let key in initialArray) {
-    //     if (initialArray.hasOwnProperty(key)) {
-    //         console.log(checkedArray[key] + " is correct");
-    //     }
-    // }
-
-    Object.entries(initialArray).forEach(
-        ([key, value]) => console.log(key, value)
-    );
-
-    setTimeout(() => {
-        console.clear();
-    }, 10000);
-
+// CRJ checks
+const checkCRJRowDocument = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (cellValue === filteredCRJ[cellIndex].documentType) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    }
+    return cellValue;
 };
+const checkCRJRowDate = (cell) => {
+    let cellValue = parseInt(cell.getValue());
+    let cellIndex = cell.getData().id;
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue === filteredCRJ[cellIndex].currentDate) {
+        cell.getElement().style.backgroundColor = "#caffaa";
+    } else {
+        cell.getElement().style.backgroundColor = "#ffb6b1";
+    }
+    return cellValue;
+};
+const checkCRJRowDetails = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (cellValue === filteredCRJ[cellIndex].otherBusiness) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else if (cellValue === filteredCRJ[cellIndex].ownerName && filteredCRJ[cellIndex].accountName === 'Capital') {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    }
+    return cellValue;
+};
+const checkCRJBank = (cell) => {
+    let cellValue = parseInt(cell.getValue());
+    let cellIndex = cell.getData().id;
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue === filteredCRJ[cellIndex].transactionAmount) {
+        cell.getElement().style.backgroundColor = "#caffaa";
+    } else {
+        cell.getElement().style.backgroundColor = "#ffb6b1";
+    }
+    return cellValue;
+};
+const checkCRJCI = (cell) => {
+    let cellValue = parseInt(cell.getValue());
+    let cellIndex = cell.getData().id;
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue === filteredCRJ[cellIndex].transactionAmount && filteredCRJ[cellIndex].accountName === 'Current income') {
+        cell.getElement().style.backgroundColor = "#caffaa";
+    } else {
+        cell.getElement().style.backgroundColor = "#ffb6b1";
+    }
+    return cellValue;
+};
+const checkCRJSundryAmount = (cell) => {
+    let cellValue = parseInt(cell.getValue());
+    let cellIndex = cell.getData().id;
+    console.log(cell.getData());
+    if (cellValue === filteredCRJ[cellIndex].transactionAmount) {
+        cell.getElement().style.backgroundColor = "#caffaa";
+    } else {
+        cell.getElement().style.backgroundColor = "#ffb6b1";
+    }
+};
+const checkCRJSundryAccount = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (cellValue === filteredCRJ[cellIndex].accountName) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    }
+    return cellValue;
+};
+
+// CPJ checks
+
+
+// answerData
+const crjAnswerData = [{}];
+const cpjAnswerData = [{}];
+const cjAnswerData = [{}];
+const djAnswerData = [{}];
+
+// Create journals
+createInputJournal(crjAnswerData,"CRJ");
+createInputJournal(cpjAnswerData,"CPJ");
+createInputJournal(cjAnswerData,"CJ");
+createInputJournal(djAnswerData,"DJ");
+
+// Filter journals
+const filteredCRJ = filterJournal("CRJ");
+const filteredCPJ = filterJournal("CPJ");
+const filteredCJ = filterJournal("CJ");
+const filteredDJ = filterJournal("DJ");
 
 
 // CASH RECEIPTS JOURNAL
-const crjAnswerData = [{}];
-createInputJournal(crjAnswerData,"CRJ");
+//TODO Checks on CRJ
+// Analysis
+// Other accounts
+// Sundry
+
 let cashReceiptsJournalTable = new Tabulator("#CashReceiptsJournalAnswerArea", {
     data: crjAnswerData,
     layout:"fitColumns",      //fit columns to width of table
@@ -51,29 +145,27 @@ let cashReceiptsJournalTable = new Tabulator("#CashReceiptsJournalAnswerArea", {
     history:true,             //allow undo and redo actions on the table
     columnVertAlign:"bottom",
     columns:[                 //define the table columns
-        {title:"Doc", field:"document", width:65, editor:"input", validator: ["string"]},
-        {title:"Date", field:"date", width:75, editor: "input", validator: ["integer", "min:1", "max:31"]},
-        {title:"Details", field:"details", width:150, editor:"input", validator: ["string"]},
+        {title: "Doc", field: "document", cellEdited: checkCRJRowDocument, width:65, editor:"input", validator: ["string"]},
+        {title:"Date", field:"date", cellEdited: checkCRJRowDate, width:75, editor: "input", validator: ["integer", "min:1", "max:31"]},
+        {title:"Details", field:"details", cellEdited: checkCRJRowDetails, width:150, editor:"input", validator: ["string"]},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"]},
         {title:"Analysis of <br>Receipts", field:"analysisOfReceipts", width:120, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Bank", field:"randomBank", width:80, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Current income", field:"currentIncome", width:140, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Bank", field:"bankValue", cellEdited: checkCRJBank, width:80, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Current income", field:"currentIncome", cellEdited: checkCRJCI, width:140, editor:"input", validator: ["integer", "min:1"]},
         {title:"Sundry", field:"sundry",columns: [
-                {title:"Account", field:"account", align: "left", editor:"input", validator: ["string"]},
-                {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
+                {title:"Account", field:"account", cellEdited: checkCRJSundryAccount, align: "left", editor:"input", validator: ["string"]},
+                {title:"Amount", cellEdited: checkCRJSundryAmount, field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
             ],
         },
     ],
 });
 
-// Create the filtered CRJ
-const filteredCRJ = filterJournal("CRJ");
-// Checks
-
-
 // CASH PAYMENTS JOURNAL
-const cpjAnswerData = [{}];
-createInputJournal(cpjAnswerData,"CPJ");
+//TODO Checks on CPJ
+// Document
+// Date
+// Payee
+//
 let cashPaymentsJournalTable = new Tabulator("#CashPaymentsJournalAnswerArea", {
     data: cpjAnswerData,
     layout:"fitColumns",      //fit columns to width of table
@@ -82,13 +174,13 @@ let cashPaymentsJournalTable = new Tabulator("#CashPaymentsJournalAnswerArea", {
     history:true,             //allow undo and redo actions on the table
     columnVertAlign:"bottom",
     columns:[                 //define the table columns
-        {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"]},
+        {title:"Doc",field:"document", width:65, editor:"input", validator: ["integer", "min:0"]},
         {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"]},
         {title:"Payee", field:"details", width:150, editor:"input", validator: ["string"]},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"]},
-        {title:"Bank", field:"randomBank", width:100, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Trading Stock", field:"tradingStock", width:140, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Equipment", field:"additional", width:120, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Bank", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Trading Stock", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Equipment", field:"amount", width:120, editor:"input", validator: ["integer", "min:1"]},
         {title:"Sundry", field:"sundry", columns: [
                     {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"]},
                     {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
@@ -99,17 +191,8 @@ let cashPaymentsJournalTable = new Tabulator("#CashPaymentsJournalAnswerArea", {
     ],
 });
 
-// Create the filtered CPJ
-const filteredCPJ = filterJournal("CPJ");
-
-// Checks
-
-
-
 
 // CREDITORS JOURNAL
-const cjAnswerData = [{}];
-createInputJournal(cjAnswerData,"CJ");
 let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     data: cjAnswerData,
     layout:"fitColumns",      //fit columns to width of table
@@ -120,11 +203,11 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"]},
         {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"]},
-        {title:"Creditor", field:"creditor", width:150, editor:"input", validator: ["string"]},
+        {title:"Creditor", field:"details", width:150, editor:"input", validator: ["string"]},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"]},
-        {title:"Creditors Control", field:"creditorsControl", width:100, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Trading Stock", field:"tradingStock", width:140, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Equipment", field:"additional", width:120, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Creditors Control", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Trading Stock", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Equipment", field:"amount", width:120, editor:"input", validator: ["integer", "min:1"]},
         {title:"Sundry", field:"sundry", columns: [
                 {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"]},
                 {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
@@ -135,13 +218,8 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     ],
 });
 
-// Create the filtered CJ
-const filteredCJ = filterJournal("CJ");
-
 
 // DEBTORS JOURNAL
-const djAnswerData = [{}];
-createInputJournal(djAnswerData,"DJ");
 let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     data: djAnswerData,
     layout:"fitColumns",      //fit columns to width of table
@@ -152,11 +230,11 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"]},
         {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"]},
-        {title:"Debtor", field:"debtor", width:150, editor:"input", validator: ["string"]},
+        {title:"Debtor", field:"details", width:150, editor:"input", validator: ["string"]},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"]},
-        {title:"Debtors Control", field:"debtorsControl", width:100, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Trading Stock", field:"tradingStock", width:140, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Equipment", field:"additional", width:120, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Debtors Control", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Sales", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"]},
+        {title:"Current Income", field:"amount", width:120, editor:"input", validator: ["integer", "min:1"]},
         {title:"Sundry", field:"sundry", columns: [
                 {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"]},
                 {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
@@ -167,12 +245,13 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     ],
 });
 
-
-// Create the filtered DJ
-const filteredDJ = filterJournal("DJ");
-
-
 console.log('Creditors Journal', filteredCJ);
 console.log('Debtors Journal', filteredDJ);
 console.log('Cash Receipts Journal', filteredCRJ);
 console.log('Cash Payments Journal', filteredCPJ);
+
+
+// Clear console every 60 seconds
+setInterval(() => {
+    console.clear();
+}, 60000);

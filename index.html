@@ -9,15 +9,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     <!--Tabulator tables-->
     <link href="https://unpkg.com/tabulator-tables@4.1.4/dist/css/tabulator.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.1.4/dist/js/tabulator.min.js"></script>
 
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -45,10 +38,11 @@
 
     <hr>
 
+    <h3 class="text-center">Download Templates</h3>
     <div class="row">
         <div class="col-xs-6">
             <div class="dropdown">
-                <button type="button" class="dropdown-toggle" data-toggle="dropdown">Grade 8 & 9 Templates <span class="caret"></span></button>
+                <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Grade 8 & 9 Templates <span class="caret"></span></div>
                 <ul class="dropdown-menu">
                     <li><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>Cash Receipts Journal</a></li>
                     <li><a href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>Cash Payments Journal</a></li>
@@ -62,8 +56,8 @@
 
         <div class="col-xs-6">
             <div class="dropdown">
-                <button type="button" class="dropdown-toggle" data-toggle="dropdown">Grade 10 - 12 Templates <span class="caret"></span></button>
-                <ul class="dropdown-menu">
+                <div class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown">Grade 10 - 12 Templates <span class="caret"></span></div>
+                <ul class="dropdown-menu pull-right" style="top: 35px; right: -1px;">
                     <li><a href="#">Budget</a></li>
                     <li><a href="#">Income statement</a></li>
                     <li><a href="#">Balance Sheet statement</a></li>
@@ -83,25 +77,10 @@
             <div class="col-xs-12">
                 <!--Transaction list creation area-->
                 <h3 id="transactionListHeading"></h3>
-                <div id="transactionList"></div> <!--Javascript innerHTML input transaction list-->
+                <div id="transactionList" style="font-size: 16px;"></div> <!--Javascript innerHTML input transaction list-->
             </div>
         </div>
     </div>
-
-    <!--<div class="container-fluid">-->
-        <!--<div class="row">-->
-            <!--<div class="col-xs-3">-->
-                <!--<button data-toggle="collapse" data-target="#ledgerSolutionArea">Show Ledger Solution</button>-->
-                <!--<div id="ledgerSolutionArea" class="collapse"></div>-->
-            <!--</div>-->
-
-            <!--<div class="col-xs-3">-->
-                <!--<button data-toggle="collapse" data-target="#journalSolutionArea">Show Journal Solution</button>-->
-                <!--<div id="journalSolutionArea" class="collapse"></div>-->
-            <!--</div>-->
-
-        <!--</div>-->
-    <!--</div>-->
 
     <hr>
 
@@ -111,84 +90,66 @@
                 <div class="h3">Answer area</div>
                 <div class="h4">CRJ</div>
                 <div id="CashReceiptsJournalAnswerArea"></div>
-                <div class="btn btn-primary pull-right" onclick="checkCorrect(filteredCRJ)">Check CRJ</div>
 
                 <div class="h4">CPJ</div>
                 <div id="CashPaymentsJournalAnswerArea"></div>
-                <div class="btn btn-primary pull-right" onclick="checkCorrect(filteredCPJ)">Check CPJ</div>
 
                 <div class="h4">CJ</div>
                 <div id="CreditorsJournalAnswerArea"></div>
-                <div class="btn btn-primary pull-right" onclick="checkCorrect(filteredCJ)">Check CJ</div>
 
                 <div class="h4">DJ</div>
                 <div id="DebtorsJournalAnswerArea"></div>
-                <div class="btn btn-primary pull-right" onclick="checkCorrect(filteredDJ)">Check DJ</div>
             </div>
         </div>
     </div>
-
-    <hr>
-
-    <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4">
-        <div class="container-fluid text-xs-left">
-            <div class="row">
-                <div class="col-xs-4">
-                    <!-- Contact details -->
-                    <h5 class="text-uppercase">Contact details</h5>
-                    <ul class="list-group" style="list-style: none">
-                        <li class="list-group-item-header">Lloyd</li>
-                        <li><a href="mailto:nichlloyd@gmail.com">nichlloyd@gmail.com</a></li>
-                        <li><a href="mailto:lloydnicholson@kidcon.co.za">lloydnicholson@kidcon.co.za</a></li>
-                        <li><a href="mailto:lloyd@lloydindevelopment.com">lloyd@lloydindevelopment.com</a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-4">
-                    <!-- Content -->
-                    <h5 class="text-uppercase">Other accounting practice sites</h5>
-                    <ul class="list-group" style="list-style: none">
-                        <li><a href="https://www.accountingcoach.com" target="_blank">Accounting Coach</a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                    </ul>
-                </div>
-                <div class="col-xs-4">
-                    <!-- Content -->
-                    <h5 class="text-uppercase">Credits</h5>
-                    <ul class="list-group" style="list-style: none">
-                        <li>Website created by <a href="https://www.lloydindevelopment.com" target="_blank">Lloyd Nicholson</a> using Bootstrap</li>
-                    </ul>
-                </div>
-                <!-- Grid column -->
-                <hr class="clearfix w-100 d-md-none pb-3">
-            </div>
-        </div>
-    </footer>
 </div>
-
-                    <!--<div class="container">-->
-
-                        <!--<div class="upload_area">-->
-                            <!--<form action="upload.php" method="post" enctype="multipart/form-data">-->
-                                <!--<p>Download and fill in the sheet by hand or on your computer and send it back when completed. Remember to add your name inside the excel spreadsheet.</p>-->
-                                <!--<label>Choose a file to upload: </label>-->
-                                <!--<input type="file" name="file">-->
-                                <!--<button type="submit" name="submit">Upload</button>-->
-                            <!--</form>-->
-                        <!--</div>-->
-
-                        <!--&lt;!&ndash;Form giving&ndash;&gt;-->
 
 
 <!-- jQuery and JS code loading -->
-<!-- Javascript reference-->
-
-<script src="js/jquery_code.js"></script>
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.1.4/dist/js/tabulator.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery_code.js"></script>
 <script type="text/javascript" src="js/site_content.js"></script>
 <script type="text/javascript" src="js/journals.js"></script>
 
-
-
 </body>
+<hr>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-xs-left">
+        <div class="row">
+            <div class="col-xs-4">
+                <!-- Contact details -->
+                <h5 class="text-uppercase">Contact details</h5>
+                <ul class="list-group" style="list-style: none">
+                    <li class="list-group-item-header">Lloyd</li>
+                    <li><a href="mailto:nichlloyd@gmail.com">nichlloyd@gmail.com</a></li>
+                    <li><a href="mailto:lloydnicholson@kidcon.co.za">lloydnicholson@kidcon.co.za</a></li>
+                    <li><a href="mailto:lloyd@lloydindevelopment.com">lloyd@lloydindevelopment.com</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4">
+                <!-- Content -->
+                <h5 class="text-uppercase">Other accounting practice sites</h5>
+                <ul class="list-group" style="list-style: none">
+                    <li><a href="https://www.accountingcoach.com" target="_blank">Accounting Coach</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4">
+                <!-- Content -->
+                <h5 class="text-uppercase">Credits</h5>
+                <ul class="list-group" style="list-style: none">
+                    <li>Website created by <a href="https://www.lloydindevelopment.com" target="_blank">Lloyd Nicholson</a> using Bootstrap</li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none pb-3">
+        </div>
+    </div>
+</footer>
 </html>
