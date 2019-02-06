@@ -210,6 +210,7 @@ class Transaction {
         this._bank = randomBank;
         this._documentType = '';
         this._analyse = true;
+        this._side = 'debit';
     }
 
     randomisedNum(lowNum, highNum) {
@@ -230,6 +231,14 @@ class Transaction {
 
     set analyse(value) {
         this._analyse = value;
+    }
+
+    get side() {
+        return this._side;
+    }
+
+    set side(value) {
+        this._side = value;
     }
 
     get documentType() {
@@ -376,7 +385,6 @@ class Capital extends Transaction {
         this.randomisedNum(lowNum, highNum);
         this.paymentMethod = paymentMethod;
         this.accountType = accountType;
-        this.currentDate = 1;
         this.folio = "CRJ";
         this.documentType = 'B/S';
         this.analyse = false;
@@ -438,7 +446,8 @@ let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal deb
 let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
-const journalTransactionList = [];
+const transactionList = [];
+
 const pushToArray = (array) => {
     array.push(capital);
     array.push(expense1);
@@ -453,7 +462,9 @@ const pushToArray = (array) => {
     array.push(income1);
     array.push(income2);
 };
-pushToArray(journalTransactionList);
+
+// Push area
+pushToArray(transactionList);
 
 // Sorting the array
 const sortArray = (array) => {
@@ -461,7 +472,9 @@ const sortArray = (array) => {
         return a.currentDate - b.currentDate;
     });
 };
-sortArray(journalTransactionList);
+
+// Sort area
+sortArray(transactionList);
 
 // const replaceDateWithBlankSpace = array => {
 //     for (let i = 0; i < array.length-1; i++) {
@@ -477,12 +490,12 @@ sortArray(journalTransactionList);
 //     }
 // };
 //
-// replaceDateWithBlankSpace(journalTransactionList);
+// replaceDateWithBlankSpace(transactionList);
 
 // DOM implementation
 // Where the transaction list is created in the DOM
 let ulString = '<ul class="list-group">';
-journalTransactionList.forEach((index) => {
+transactionList.forEach((index) => {
     ulString += '<li class="list-group-item" style="white-space: pre-wrap">' + index.transactionString + '</li>';
 });
 ulString += '</ul>';

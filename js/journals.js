@@ -2,12 +2,12 @@
 
 // Functions
 const filterJournal = (folio) => {
-    return journalTransactionList.filter((transaction => transaction.folio === folio));
+    return transactionList.filter((transaction => transaction.folio === folio));
 };
 
 const createInputJournal = (array, folio) => {
-    for (let i = 0; i < journalTransactionList.length; i++) { // make sure there is space for final total of column
-        if (journalTransactionList[i].folio === folio) {
+    for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column
+        if (transactionList[i].folio === folio) {
             array.push({});
         }
     }
@@ -166,6 +166,7 @@ let cashReceiptsJournalTable = new Tabulator("#CashReceiptsJournalAnswerArea", {
 // Date
 // Payee
 //
+
 let cashPaymentsJournalTable = new Tabulator("#CashPaymentsJournalAnswerArea", {
     data: cpjAnswerData,
     layout:"fitColumns",      //fit columns to width of table
@@ -218,7 +219,6 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     ],
 });
 
-
 // DEBTORS JOURNAL
 let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     data: djAnswerData,
@@ -230,25 +230,19 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"]},
         {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"]},
-        {title:"Debtor", field:"details", width:150, editor:"input", validator: ["string"]},
+        {title:"Debtor", field:"details", width:250, editor:"input", validator: ["string"]},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"]},
-        {title:"Debtors Control", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Sales", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Current Income", field:"amount", width:120, editor:"input", validator: ["integer", "min:1"]},
-        {title:"Sundry", field:"sundry", columns: [
-                {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"]},
-                {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"]}
-            ],
-        },
+        {title:"Sales", field:"amount", editor:"input", validator: ["integer", "min:1"]},
+        {title:"Cost of Sales", field:"amount", editor:"input", validator: ["integer", "min:1"]},
         // {title:"Date Of Birth", field:"dob", width:130, sorter:"date", align:"center"},
         // {title:"Driver", field:"car", width:90,  align:"center", formatter:"tickCross", sorter:"boolean", editor:true},
     ],
 });
 
-console.log('Creditors Journal', filteredCJ);
-console.log('Debtors Journal', filteredDJ);
 console.log('Cash Receipts Journal', filteredCRJ);
 console.log('Cash Payments Journal', filteredCPJ);
+console.log('Creditors Journal', filteredCJ);
+console.log('Debtors Journal', filteredDJ);
 
 
 // Clear console every 60 seconds

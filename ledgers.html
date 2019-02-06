@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Accounting Practice App</title>
+
     <!-- Stylesheet reference-->
     <!--<link rel="stylesheet" href="css/acc_app.css">&lt;!&ndash;Commenting out my original css&ndash;&gt;-->
     <!-- Latest compiled and minified CSS -->
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 </head>
-<body>
+<body id="ledgers">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -39,46 +39,32 @@
 
     <div class="container-fluid">
         <div class="jumbotron">
-            <h3>Accounting Practice Exercises</h3>
-            <h3>Practice your Accounting with various examples that have been randomly generated.
-                This page will give you opportunities to complete Accounting Equations, Journals, Ledgers and Financial statements</h3>
-            <h4 style="font-style: italic">Refresh your page to generate a new set of transactions.</h4>
+            <h3>Ledger Exercises</h3>
+            <h3>Coming soon...</h3>
+            <!--<h4 style="font-style: italic">Refresh your page to generate a new set of transactions.</h4>-->
         </div>
     </div>
 
     <hr>
 
-    <h3 class="text-center">Download Templates</h3>
-    <div class="row">
-        <div class="col-xs-6">
-            <div class="dropdown">
-                <div class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Grade 8 & 9 Templates <span class="caret"></span></div>
-                <ul class="dropdown-menu">
-                    <li><a href="Documents/CASH RECEIPTS JOURNAL TEMPLATE.xlsx" download>Cash Receipts Journal</a></li>
-                    <li><a href="Documents/CASH PAYMENTS JOURNAL TEMPLATE.xlsx" download>Cash Payments Journal</a></li>
-                    <li><a href="Documents/CREDITORS JOURNAL TEMPLATE.xlsx" download>Creditors Journal</a></li>
-                    <li><a href="Documents/DEBTORS JOURNAL TEMPLATE.xlsx" download>Debtors Journal</a></li>
-                    <li><a href="Documents/GENERAL LEDGER TEMPLATE.xlsx" download>General Ledger</a></li>
-                    <li><a href="Documents/ACCOUNTING EQUATION TEMPLATE.xlsx" download>Accounting Equation</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="col-xs-6">
-            <div class="dropdown">
-                <div class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown">Grade 10 - 12 Templates <span class="caret"></span></div>
-                <ul class="dropdown-menu pull-right" style="top: 35px; right: -1px;">
-                    <li><a href="#">Budget</a></li>
-                    <li><a href="#">Income statement</a></li>
-                    <li><a href="#">Balance Sheet statement</a></li>
-                    <li><a href="#">Bank Recon</a></li>
-                    <li><a href="#">Trial Balance</a></li>
-                </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <!--Transaction list creation area-->
+                <h3 id="ledgerTransactionListHeading"></h3>
+                <div id="ledgerTransactionList" style="font-size: 16px;"></div> <!--Javascript innerHTML input transaction list-->
             </div>
         </div>
     </div>
 
-    <hr>
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-xs-12">
+                <!--<div class="h3">Answer area</div>-->
+
+            </div>
+        </div>
+    </div>
 </div>
 
 
