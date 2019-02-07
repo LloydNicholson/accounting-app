@@ -14,7 +14,6 @@ const createInputArray = (array) => {
 const accountingEquationAnswerData = [{}];
 
 createInputArray(accountingEquationAnswerData);
-console.log(accountingEquationAnswerData);
 
 //TODO - checks for table
 // Debit
@@ -35,12 +34,12 @@ let accountingEquationTable = new Tabulator("#accountingEquationAnswerArea", {
                 let cellValue = cell.getValue();
                 let cellIndex = cell.getData().id;
                 if (cellValue === transactionList[cellIndex].accountName) {
-                    
+
                 }
-            }, editor:"input", validator: ["string"]},
-        {title:"Account credited", field:"credit", editor: "input", validator: ["string"]},
-        {title:"Assets", field:"assets", editor:"input", validator: ["string"]},
-        {title:"Owners Equity", field:"ownersEquity", editor:"input", validator: ["string"]},
-        {title:"Liabilities", field:"liabilities", editor:"input", validator: ["string"]},
+            }, width: 200, editor:"input", validator: ["string"]},
+        {title:"Account credited", field:"credit", width: 200, editor: "input", validator: ["string"]},
+        {title:"Assets", field:"assets", editor:"input", validator: ["integer"]},
+        {title:"Owners Equity", field:"ownersEquity", editor:"input", validator: ["integer"]},
+        {title:"Liabilities", field:"liabilities", editor:"input", validator: ["integer"]},
     ],
 });

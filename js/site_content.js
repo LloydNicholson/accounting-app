@@ -95,14 +95,6 @@ const banks = [
     "Bidvest Bank"
 ];
 
-// Set business name to randomise
-let ourBusinessName = randomItem(businesses);
-// Set ourOwner name to randomise every time
-let ourOwner = randomItem(owners);
-let month = randomItem(months);
-let year = randomItem(years);
-let randomBank = randomItem(banks);
-
 // Different account types and sub-accounts
 const classifications = {
     // All assets
@@ -116,7 +108,7 @@ const classifications = {
     // All liabilities
     liabilities: [
         {name: 'Loan', alts: ['a loan', 'a substantial loan']},
-        {name: "Mortgage bond", alts: ['property loan', 'bond', 'mortgage bond']}
+        {name: "Mortgage bond", alts: ['a property loan', 'a bond', 'a mortgage bond']}
         ],
     drawings: [{name: 'Drawings', alts: ['drawings', 'money']}],
     capital: [{name :'Capital', alts: ['contribution', 'capital']}],
@@ -152,15 +144,36 @@ const classifications = {
 
 const options = ['cash', '', 'on credit'];
 
-// const fakeExpenses = [{name: "rent expense", alts: ['rent', 'rental']}];
-
-function randomItem(item) {
+const randomItem = (item) => {
     return item[Math.floor(Math.random() * item.length)];
-}
+};
 
-function randomAccount(item) {
-    return randomItem(item.alts);
-}
+const randomAccountName = (item) => {
+    return item.name;
+};
+
+const randomAccountAlt = (item) => {
+    return item.alts[Math.floor(Math.random() * item.alts.length)];
+};
+
+// const incomeAccountType = randomItem(classifications.incomes);
+// const incomeAccountName = randomAccountName(incomeAccountType);
+// const incomeAccountAlt = randomAccountAlt(incomeAccountType);
+// console.log('account type: ', incomeAccountType);
+// console.log('account name', incomeAccountName);
+// console.log('account alt: ', incomeAccountAlt);
+
+
+// Set business name to randomise
+let ourBusinessName = randomItem(businesses);
+// Set ourOwner name to randomise every time
+let ourOwner = randomItem(owners);
+let month = randomItem(months);
+let year = randomItem(years);
+let randomBank = randomItem(banks);
+
+// const randomItem1 = randomItem(classifications.incomes);
+// const randomAlt = randomItem1.alts[Math.floor(Math.random() * randomItem1.alts.length)];
 
 // TODO - Randomise on click
 // const randomise = () => { trying to randomise on click
@@ -193,9 +206,8 @@ function matchedNumber(currentString, testString) {
 
 class Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
-        this._accountType = 'default';
-        this._accountName = accountType[0].name;
-        this._paymentMethod = "default";
+        this._accountType = accountType;
+        this._paymentMethod = paymentMethod;
         this._businessName = ourBusinessName;
         this._folio = "default";
         this._option = randomItem(options);
@@ -203,18 +215,13 @@ class Transaction {
         this._transactionString = 'this is the default transaction printout';
         this._currentDate = randomItem(dates);
         this._otherBusiness = randomItem(payersOfMoney);
-        this._lowNum = lowNum;
-        this._highNum = highNum;
-        this._transactionAmount = 0;
+        this._transactionAmount = randomisedNum(lowNum, highNum);
         this._month = month;
         this._bank = randomBank;
         this._documentType = '';
         this._analyse = true;
-        this._side = 'debit';
-    }
-
-    randomisedNum(lowNum, highNum) {
-        this._transactionAmount = randomisedNum(lowNum, highNum);
+        this._debit = 'Debit account';
+        this._credit = 'Credit account';
     }
 
     get transactionString() {
@@ -233,12 +240,20 @@ class Transaction {
         this._analyse = value;
     }
 
-    get side() {
-        return this._side;
+    get debit() {
+        return this._debit;
     }
 
-    set side(value) {
-        this._side = value;
+    set debit(value) {
+        this._debit = value;
+    }
+
+    get credit() {
+        return this._credit;
+    }
+
+    set credit(value) {
+        this._credit = value;
     }
 
     get documentType() {
@@ -249,20 +264,16 @@ class Transaction {
         this._documentType = value;
     }
 
-    get accountName() {
-        return this._accountName;
-    }
-
-    set accountName(value) {
-        this._accountName = value.toLowerCase();
-    }
-
     get accountType() {
-        return this._accountType;
+        return randomItem(this._accountType);
     }
 
-    set accountType(value) {
-        this._accountType = randomAccount(value[0]);
+    get accountName() {
+        return randomAccountName(this.accountType);
+    }
+
+    get accountAlts() {
+        return randomAccountAlt(this.accountType);
     }
 
     get currentDate() {
@@ -297,10 +308,6 @@ class Transaction {
         return this._paymentMethod;
     }
 
-    set paymentMethod(value) {
-        this._paymentMethod = value;
-    }
-
     get otherBusiness() {
         return this._otherBusiness;
     }
@@ -316,75 +323,70 @@ class Transaction {
     get bank() {
         return this._bank;
     }
-
-    set bank(value) {
-        this._bank = value;
-    }
 }
 
 class Expense extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, lowNum, highNum);
-        this.randomisedNum(lowNum, highNum);
-        this.paymentMethod = paymentMethod;
-        this.accountType = accountType;
-
+        super(accountType, paymentMethod, lowNum, highNum);
         // Check for option and set the folio
         if (this.option === 'cash' || '') {
             this.folio = 'CPJ';
+            this.debit = this.accountName;
+            this.credit = 'Bank';
         } else {
             this.folio = 'CJ';
+            this.debit = this.accountName;
+            this.credit = 'Creditors Control'
         }
 
-        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountType} for the sum of R${this.transactionAmount} ${this.option}.`;
+        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountAlts} for the sum of R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Asset extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, lowNum, highNum);
-        this.randomisedNum(lowNum, highNum);
-        this.paymentMethod = paymentMethod;
-        this.accountType = accountType;
+        super(accountType, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
         if ((this.paymentMethod === 'bought' || this.paymentMethod === 'purchased') && (this.option === 'cash' || '')) {
             this.folio = 'CPJ';
+            this.debit = this.accountName;
+            this.credit = 'Bank'
         } else {
             this.folio = 'CJ';
+            this.debit = this.accountName;
+            this.credit = 'Creditors Control';
         }
 
-        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} from ${this.otherBusiness} amounting to R${this.transactionAmount} ${this.option}.`;
+        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} from ${this.otherBusiness} amounting to R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Income extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, lowNum, highNum);
-        this.randomisedNum(lowNum, highNum);
-        this.paymentMethod = paymentMethod;
-        this.accountType = accountType;
+        super(accountType, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
         if (this.option === 'cash' || '') {
             this.folio = 'CRJ';
+            this.debit = 'Bank';
+            this.credit = this.accountName;
         } else {
             this.folio = 'DJ';
+            this.debit = 'Debtors Control';
+            this.credit = this.accountName;
         }
 
         // Set document based on payment method
         if ((this.folio === 'CRJ') && this.accountName === 'Current income') { this.documentType = 'CRR'} else { this.documentType = 'Rec'}
 
-        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} ${this.option} from ${this.otherBusiness}.`;
+        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} amounting to R${this.transactionAmount} ${this.option} from ${this.otherBusiness}.`;
     }
 }
 
 class Capital extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super(accountType, lowNum, highNum);
-        this.randomisedNum(lowNum, highNum);
-        this.paymentMethod = paymentMethod;
-        this.accountType = accountType;
+        super(accountType, paymentMethod, lowNum, highNum);
         this.folio = "CRJ";
         this.documentType = 'B/S';
         this.analyse = false;
@@ -395,36 +397,34 @@ class Capital extends Transaction {
 
 class Liability extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, lowNum, highNum);
-        this.randomisedNum(lowNum, highNum);
-        this.paymentMethod = paymentMethod;
-        this.accountType = accountType;
+        super(accountType, paymentMethod, lowNum, highNum);
         if ((this.paymentMethod === 'acquired' || this.paymentMethod === 'received') && (this.option ==='cash' || '')) {
             this.folio = 'CRJ';
+            this.debit = 'Bank';
+            this.credit = this.accountName;
         } else {
             this.folio = 'CPJ';
+            this.debit = this.accountName;
+            this.credit = 'Bank';
         }
 
         if (this.folio === 'CRJ') { this.documentType = 'Rec' }
-        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountType} amounting to R${this.transactionAmount} from ${this.bank}.`;
+        this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} amounting to R${this.transactionAmount} from ${this.bank}.`;
     }
 }
 
 class Drawings extends Transaction {
 
     constructor(accountType, paymentMethod, reasonForTransaction, lowNum, highNum) {
-        super(paymentMethod, lowNum, highNum);
-        this.paymentMethod = paymentMethod;
+        super(accountType, paymentMethod, lowNum, highNum);
         this._reasonForTransaction = reasonForTransaction;
-        this.accountType = accountType;
-        this.randomisedNum(lowNum, highNum);
         this.folio = "CPJ";
         this.transactionString = `${this.currentDate}${'&#09;'}The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this.transactionAmount} for ${this._reasonForTransaction}`;
     }
 }
 
 // Base Transaction
-// let transaction = new Transaction("default", "default", 0, 0);
+// let transaction = new Transaction(classifications.expenses, "default", 0, 0);
 
 // Expenses
 let expense1 = new Expense(classifications.expenses,"made payment to", 2000, 10000);

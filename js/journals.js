@@ -243,9 +243,3 @@ console.log('Cash Receipts Journal', filteredCRJ);
 console.log('Cash Payments Journal', filteredCPJ);
 console.log('Creditors Journal', filteredCJ);
 console.log('Debtors Journal', filteredDJ);
-
-
-// Clear console every 60 seconds
-setInterval(() => {
-    console.clear();
-}, 60000);

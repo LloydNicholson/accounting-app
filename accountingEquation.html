@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Accounting Practice App</title>
+    <style>
+        /* Style the active class, and buttons on mouse-over */
+        li:hover {
+            background-color: #bcd3d6;
+            color: white;
+        }
+
+    </style>
 
     <!-- Stylesheet reference-->
     <!--<link rel="stylesheet" href="css/acc_app.css">&lt;!&ndash;Commenting out my original css&ndash;&gt;-->
@@ -22,25 +30,35 @@
 </head>
 
 <body id="accountingEquation">
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top" id="mainNavbar">
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="./index.html">Kid Connect</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./accountingEquation.html">Accounting Equation</a></li>
-            <li><a href="./journals.html">Journals</a></li>
-            <li><a href="./ledgers.html">Ledgers</a></li>
-        </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./accountingEquation.html">Accounting Equation</a></li>
+                <li><a href="./journals.html">Journals</a></li>
+                <li><a href="./ledgers.html">Ledgers</a></li>
+            </ul>
+        </div>
+
     </div>
 </nav>
+
 <div class="container">
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-top: 80px;">
         <div class="jumbotron">
             <h3>Accounting Equation Exercises</h3>
-            <h3>Coming soon...</h3>
-            <!--<h4 style="font-style: italic">Refresh your page to generate a new set of transactions.</h4>-->
+            <h3>Practice your Accounting with accounting equations that are randomly generated below.</h3>
+            <h4 style="font-style: italic">Refresh your page to generate a new set of transactions.</h4>
         </div>
     </div>
 
@@ -51,7 +69,7 @@
             <div class="col-xs-12">
                 <!--Transaction list creation area-->
                 <h3 id="transactionListHeading"></h3>
-                <div id="transactionList"></div> <!--Javascript innerHTML input transaction list-->
+                <div id="transactionList" style="font-size: 16px;"></div> <!--Javascript innerHTML input transaction list-->
             </div>
         </div>
     </div>
@@ -65,7 +83,12 @@
             </div>
         </div>
     </div>
+    <hr>
+
 </div>
+
+
+
 
 
 <!-- jQuery and JS code loading -->
@@ -78,10 +101,9 @@
 <script type="text/javascript" src="js/site_content.js"></script>
 <script type="text/javascript" src="js/journals.js"></script>
 <script type="text/javascript" src="js/accountingEquation.js"></script>
+<script type="text/javascript" src="js/site_aesthetics.js"></script>
 
 </body>
-<hr>
-<!-- Footer -->
 <footer class="page-footer font-small blue pt-4">
     <div class="container-fluid text-xs-left">
         <div class="row">
@@ -89,19 +111,20 @@
                 <!-- Contact details -->
                 <h5 class="text-uppercase">Contact details</h5>
                 <ul class="list-group" style="list-style: none">
-                    <li class="list-group-item-header">Lloyd</li>
+                    <li>Lloyd</li>
                     <li><a href="mailto:nichlloyd@gmail.com">nichlloyd@gmail.com</a></li>
                     <li><a href="mailto:lloydnicholson@kidcon.co.za">lloydnicholson@kidcon.co.za</a></li>
                     <li><a href="mailto:lloyd@lloydindevelopment.com">lloyd@lloydindevelopment.com</a></li>
                 </ul>
             </div>
+
             <div class="col-xs-4">
                 <!-- Content -->
                 <h5 class="text-uppercase">Other accounting practice sites</h5>
-                <ul class="list-group" style="list-style: none">
-                    <li><a href="https://www.accountingcoach.com" target="_blank">Accounting Coach</a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                <ul class="list-inline" style="list-style: none">
+                    <li class="list-inline-item"><a href="https://www.accountingcoach.com" target="_blank">Accounting Coach</a></li>
+                    <li class="list-inline-item"><a href=""></a></li>
+                    <li class="list-inline-item"><a href=""></a></li>
                 </ul>
             </div>
             <div class="col-xs-4">
