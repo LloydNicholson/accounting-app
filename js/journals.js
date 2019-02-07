@@ -20,12 +20,13 @@ const createInputJournal = (array, folio) => {
 
 // CRJ checks
 const checkCRJRowDocument = (cell) => {
-    let cellValue = cell.getValue();
+    let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
-        if (cellValue === filteredCRJ[cellIndex].documentType) {
+        if (cellValue === crjItem.documentType.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
         } else {
             cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -36,9 +37,10 @@ const checkCRJRowDocument = (cell) => {
 const checkCRJRowDate = (cell) => {
     let cellValue = parseInt(cell.getValue());
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
-    if (cellValue === filteredCRJ[cellIndex].currentDate) {
+    if (cellValue === crjItem.currentDate) {
         cell.getElement().style.backgroundColor = "#caffaa";
     } else {
         cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -46,14 +48,15 @@ const checkCRJRowDate = (cell) => {
     return cellValue;
 };
 const checkCRJRowDetails = (cell) => {
-    let cellValue = cell.getValue();
+    let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
-        if (cellValue === filteredCRJ[cellIndex].otherBusiness) {
+        if (cellValue === crjItem.otherBusiness.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
-        } else if (cellValue === filteredCRJ[cellIndex].ownerName && filteredCRJ[cellIndex].accountName === 'Capital') {
+        } else if (cellValue === crjItem.ownerName.toLowerCase() && crjItem.accountName.toLowerCase() === 'Capital'.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
         } else {
             cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -64,9 +67,10 @@ const checkCRJRowDetails = (cell) => {
 const checkCRJBank = (cell) => {
     let cellValue = parseInt(cell.getValue());
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
-    if (cellValue === filteredCRJ[cellIndex].transactionAmount) {
+    if (cellValue === crjItem.transactionAmount) {
         cell.getElement().style.backgroundColor = "#caffaa";
     } else {
         cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -76,9 +80,10 @@ const checkCRJBank = (cell) => {
 const checkCRJCI = (cell) => {
     let cellValue = parseInt(cell.getValue());
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
-    if (cellValue === filteredCRJ[cellIndex].transactionAmount && filteredCRJ[cellIndex].accountName === 'Current income') {
+    if (cellValue === crjItem.transactionAmount && crjItem.accountName.toLowerCase() === 'Current income'.toLowerCase()) {
         cell.getElement().style.backgroundColor = "#caffaa";
     } else {
         cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -88,8 +93,9 @@ const checkCRJCI = (cell) => {
 const checkCRJSundryAmount = (cell) => {
     let cellValue = parseInt(cell.getValue());
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     console.log(cell.getData());
-    if (cellValue === filteredCRJ[cellIndex].transactionAmount) {
+    if (cellValue === crjItem.transactionAmount) {
         cell.getElement().style.backgroundColor = "#caffaa";
     } else {
         cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -98,9 +104,10 @@ const checkCRJSundryAmount = (cell) => {
 const checkCRJSundryAccount = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
+    let crjItem = filteredCRJ[cellIndex];
     console.log(cell.getData());
     if (cellValue !== '') {
-        if (cellValue === filteredCRJ[cellIndex].accountName) {
+        if (cellValue === crjItem.accountName.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
         } else {
             cell.getElement().style.backgroundColor = "#ffb6b1";
