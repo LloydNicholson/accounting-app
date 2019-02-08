@@ -144,7 +144,7 @@ const checkCRJSundryAccount = (cell) => {
 };
 
 // CPJ checks
-const checkCPJRowDocument = (cell) => {
+const checkCPJDocument = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let previousCellIndex = cell.getData().id-1;
@@ -290,7 +290,23 @@ const checkCPJSundryAccount = (cell) => {
 };
 
 // CJ checks
-
+const checkCJDocument = (cell) => {
+    let cellValue = cell.getValue().toLowerCase();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (cellValue === cjItem.documentType.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
 
 
 
@@ -379,9 +395,9 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
         {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
         {title:"Creditor", field:"details", width:150, editor:"input", validator: ["string"], headerSort:false},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"], headerSort:false},
-        {title:"Creditors Control", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"], headerSort:false},
-        {title:"Trading Stock", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"], headerSort:false},
-        {title:"Equipment", field:"amount", width:120, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Creditors Control", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Trading Stock", field:"amount", width:130, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Equipment", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"], headerSort:false},
         {title:"Sundry", field:"sundry", columns: [
                 {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"], headerSort:false},
                 {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"], headerSort:false}

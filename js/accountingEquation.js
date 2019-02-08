@@ -51,6 +51,7 @@ const checkAssets = (cell) => {
     } else {
         cell.getElement().style.backgroundColor = "transparent";
     }
+    return cellValue;
 
 };
 const checkOwnerEquity = (cell) => {
@@ -66,12 +67,9 @@ const accountingEquationAnswerData = [{}];
 createInputArray(accountingEquationAnswerData);
 
 //TODO - checks for table
-// Debit
-// Credit
 // Assets
 // Owners Equity
 // Liabilities
-
 
 let accountingEquationTable = new Tabulator("#accountingEquationAnswerArea", {
     data: accountingEquationAnswerData,
