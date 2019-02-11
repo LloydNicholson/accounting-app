@@ -130,7 +130,8 @@ const classifications = {
         {name: 'Interest expense', alts: ['interest on bank account', 'interest']},
         {name: 'Postage', alts: ['postage', 'envelopes']},
         {name: 'Donations', alts: ['donations', 'goods for the underprivileged']},
-        {name: "Rent expense", alts: ["rent", "rental"]}
+        {name: "Rent expense", alts: ["rent", "rental"]},
+        {name: 'Repayment of loan', alts: ['an amount owed to the bank']}
     ],
     // All incomes
     incomes: [
@@ -395,17 +396,11 @@ class Capital extends Transaction {
 class Liability extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
         super(accountType, paymentMethod, lowNum, highNum);
-        if ((paymentMethod === 'acquired' || paymentMethod === 'received')) {
-            this.folio = 'CRJ';
-            this.debit = 'Bank';
-            this.credit = this.accountName;
-        } else {
-            this.folio = 'CPJ';
-            this.debit = this.accountName;
-            this.credit = 'Bank';
-        }
+        this.folio = 'CRJ';
+        this.debit = 'Bank';
+        this.credit = this.accountName;
+        this.documentType = 'Rec';
 
-        if (this.folio === 'CRJ') { this.documentType = 'Rec' }
         this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} amounting to R${this.transactionAmount} from ${this.bank}.`;
     }
 }
@@ -433,6 +428,7 @@ let expense2 = new Expense(classifications.expenses, "paid", 8000, 20000);
 // Incomes
 let income1 = new Income(classifications.incomes, 'received', 5000, 8000);
 let income2 = new Income(classifications.incomes, 'received', 10000, 15000);
+let income3 = new Income(classifications.incomes, 'received', 10000, 15000);
 // Assets
 let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
 let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000);
@@ -440,8 +436,8 @@ let asset3 = new Asset(classifications.assets, 'bought', 10000, 200000);
 // Capital
 let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000);
 // Liabilities
-let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000, "cash");
-let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000, "cash");
+let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000);
+let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000);
 // Drawings
 let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment",5000, 10000);
 let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
@@ -462,6 +458,7 @@ const pushToArray = (array) => {
     array.push(drawings2);
     array.push(income1);
     array.push(income2);
+    array.push(income3);
 };
 
 // Push area

@@ -2,137 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d50b8abf-5d4c-4378-8c2d-4330c9fa5901" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/accounting-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/accounting-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accountingEquation.html" beforeDir="false" afterPath="$PROJECT_DIR$/accountingEquation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/journals.html" beforeDir="false" afterPath="$PROJECT_DIR$/journals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/journals.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/journals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ledgers.html" beforeDir="false" afterPath="$PROJECT_DIR$/ledgers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/bower.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/bootstrap/tabulator_bootstrap4.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/semantic-ui/tabulator_semantic-ui.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_midnight.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_modern.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_simple.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/css/tabulator_site.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/jquery_wrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/jquery_wrapper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/jquery_wrapper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/jquery_wrapper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/accessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/accessor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/accessor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/accessor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/ajax.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/ajax.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/calculation_colums.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/calculation_colums.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/calculation_colums.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/calculation_colums.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/clipboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/clipboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/clipboard.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/data_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/data_tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/data_tree.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/data_tree.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/download.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/download.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/download.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/download.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/edit.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/edit.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/filter.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/filter.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/format.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/format.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/format.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/format.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_columns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_columns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_rows.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/frozen_rows.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/group_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/group_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/group_rows.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/group_rows.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/history.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/history.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/html_table_import.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/html_table_import.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/html_table_import.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/html_table_import.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/keybindings.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/keybindings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/keybindings.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/keybindings.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_columns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_columns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_rows.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/moveable_rows.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/mutator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/mutator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/mutator.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/mutator.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/page.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/page.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/persistence.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/persistence.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/persistence.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/persistence.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_columns.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_columns.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_rows.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_rows.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_table.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_table.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/resize_table.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/responsive_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/responsive_layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/responsive_layout.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/responsive_layout.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/select_row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/select_row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/select_row.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/select_row.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/sort.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/sort.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/modules/validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator_core.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator_core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator_core.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/dist/js/tabulator_core.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/cell.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/cell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/column.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/column.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/column_manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/column_manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/calculation_colums.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/calculation_colums.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/clipboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/clipboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/data_tree.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/data_tree.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/download.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/download.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/filter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/format.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/format.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/frozen_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/frozen_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/group_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/group_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/html_table_import.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/html_table_import.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/localize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/localize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/moveable_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/moveable_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/moveable_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/moveable_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/resize_columns.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/resize_columns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/resize_rows.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/resize_rows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules/sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules_enabled.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/modules_enabled.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/row.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/row_manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/js/row_manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/bootstrap/tabulator_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/bootstrap/tabulator_bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/bootstrap/tabulator_bootstrap4.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/bootstrap/tabulator_bootstrap4.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/semantic-ui/tabulator_semantic-ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/semantic-ui/tabulator_semantic-ui.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_midnight.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_midnight.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_modern.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_modern.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_simple.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_simple.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_site.scss" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tabulator-tables/src/scss/tabulator_site.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/site_content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/site_content.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -151,12 +24,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/site_content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="429" column="11" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
+            <state relative-caret-position="336">
+              <caret line="402" column="8" selection-start-line="402" selection-start-column="8" selection-end-line="402" selection-end-column="8" />
               <folding>
+                <element signature="e#5892#8442#0" />
                 <element signature="e#8444#9187#0" />
                 <element signature="e#9189#9996#0" />
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
@@ -168,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/journals.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="134">
+              <caret line="138" column="35" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -182,10 +56,129 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/journals.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
+              <folding>
+                <element signature="e#61#145#0" />
+                <element signature="e#193#504#0" />
+                <element signature="e#248#397#0" />
+                <element signature="e#352#391#0" />
+                <element signature="e#470#502#0" />
+                <element signature="e#556#1107#0" />
+                <element signature="e#777#1005#0" />
+                <element signature="e#841#917#0" />
+                <element signature="e#923#999#0" />
+                <element signature="e#1011#1083#0" />
+                <element signature="e#1140#1717#0" />
+                <element signature="e#1347#1615#0" />
+                <element signature="e#1406#1527#0" />
+                <element signature="e#1533#1609#0" />
+                <element signature="e#1621#1693#0" />
+                <element signature="e#1753#2503#0" />
+                <element signature="e#1974#2401#0" />
+                <element signature="e#2039#2115#0" />
+                <element signature="e#2237#2313#0" />
+                <element signature="e#2319#2395#0" />
+                <element signature="e#2407#2479#0" />
+                <element signature="e#2536#3119#0" />
+                <element signature="e#2743#3017#0" />
+                <element signature="e#2808#2929#0" />
+                <element signature="e#2935#3011#0" />
+                <element signature="e#3023#3095#0" />
+                <element signature="e#3150#3805#0" />
+                <element signature="e#3357#3703#0" />
+                <element signature="e#3494#3615#0" />
+                <element signature="e#3621#3697#0" />
+                <element signature="e#3709#3781#0" />
+                <element signature="e#3846#4401#0" />
+                <element signature="e#4025#4299#0" />
+                <element signature="e#4090#4211#0" />
+                <element signature="e#4217#4293#0" />
+                <element signature="e#4305#4377#0" />
+                <element signature="e#4443#4965#0" />
+                <element signature="e#4636#4863#0" />
+                <element signature="e#4699#4775#0" />
+                <element signature="e#4781#4857#0" />
+                <element signature="e#4869#4941#0" />
+                <element signature="e#5017#5649#0" />
+                <element signature="e#5231#5547#0" />
+                <element signature="e#5260#5541#0" />
+                <element signature="e#5357#5441#0" />
+                <element signature="e#5447#5531#0" />
+                <element signature="e#5553#5625#0" />
+                <element signature="e#5682#6259#0" />
+                <element signature="e#5889#6157#0" />
+                <element signature="e#5948#6069#0" />
+                <element signature="e#6075#6151#0" />
+                <element signature="e#6163#6235#0" />
+                <element signature="e#6293#6978#0" />
+                <element signature="e#6514#6876#0" />
+                <element signature="e#6579#6655#0" />
+                <element signature="e#6712#6788#0" />
+                <element signature="e#6794#6870#0" />
+                <element signature="e#6882#6954#0" />
+                <element signature="e#7011#7595#0" />
+                <element signature="e#7218#7492#0" />
+                <element signature="e#7283#7404#0" />
+                <element signature="e#7410#7486#0" />
+                <element signature="e#7498#7570#0" />
+                <element signature="e#7636#8290#0" />
+                <element signature="e#7843#8188#0" />
+                <element signature="e#7979#8100#0" />
+                <element signature="e#8106#8182#0" />
+                <element signature="e#8194#8266#0" />
+                <element signature="e#8328#8978#0" />
+                <element signature="e#8535#8876#0" />
+                <element signature="e#8667#8788#0" />
+                <element signature="e#8794#8870#0" />
+                <element signature="e#8882#8954#0" />
+                <element signature="e#9019#9574#0" />
+                <element signature="e#9198#9472#0" />
+                <element signature="e#9263#9384#0" />
+                <element signature="e#9390#9466#0" />
+                <element signature="e#9478#9550#0" />
+                <element signature="e#9616#10138#0" />
+                <element signature="e#9809#10036#0" />
+                <element signature="e#9872#9948#0" />
+                <element signature="e#9954#10030#0" />
+                <element signature="e#10042#10114#0" />
+                <element signature="e#10188#10736#0" />
+                <element signature="e#10407#10634#0" />
+                <element signature="e#10470#10546#0" />
+                <element signature="e#10552#10628#0" />
+                <element signature="e#10640#10712#0" />
+                <element signature="e#10768#11342#0" />
+                <element signature="e#10973#11240#0" />
+                <element signature="e#11031#11152#0" />
+                <element signature="e#11158#11234#0" />
+                <element signature="e#11246#11318#0" />
+                <element signature="e#11954#13769#0" />
+                <element signature="e#12322#13766#0" />
+                <element signature="e#13368#13759#0" />
+                <element signature="e#13409#13748#0" />
+                <element signature="e#15267#15682#0" />
+                <element signature="e#15309#15667#0" />
+                <element signature="e#15692#15774#0" />
+                <element signature="e#16004#17819#0" />
+                <element signature="e#16349#17816#0" />
+                <element signature="e#17269#17595#0" />
+                <element signature="e#17311#17584#0" />
+                <element signature="e#17605#17687#0" />
+                <element signature="e#17911#19228#0" />
+                <element signature="e#18278#19225#0" />
+                <element signature="e#19014#19096#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+            <state relative-caret-position="328">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
@@ -196,11 +189,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ledgers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+            <state relative-caret-position="345">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
@@ -245,12 +238,12 @@
         <option value="$PROJECT_DIR$/js/accountingEquation.js" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/site_content.js" />
-        <option value="$PROJECT_DIR$/js/journals.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/journals.html" />
         <option value="$PROJECT_DIR$/accountingEquation.html" />
         <option value="$PROJECT_DIR$/ledgers.html" />
+        <option value="$PROJECT_DIR$/js/journals.js" />
+        <option value="$PROJECT_DIR$/journals.html" />
+        <option value="$PROJECT_DIR$/js/site_content.js" />
       </list>
     </option>
   </component>
@@ -260,10 +253,10 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="40" />
+    <option name="width" value="1280" />
+    <option name="height" value="984" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -444,7 +437,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299910000" />
+    <option name="totallyTimeSpent" value="301042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,10 +449,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17381974" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17381974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -477,7 +470,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Json Parser" order="3" />
-      <window_info anchor="right" id="Debug" order="4" sideWeight="0.49928468" weight="0.2353362" />
+      <window_info active="true" anchor="right" id="Debug" order="4" sideWeight="0.49928468" visible="true" weight="0.2353362" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.3297568" />
       <window_info anchor="right" id="Terminal" order="6" weight="0.2539342" />
     </layout>
@@ -643,10 +636,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ledgers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/journals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="454" column="2" selection-start-line="454" selection-start-column="2" selection-end-line="454" selection-end-column="2" />
+        <state relative-caret-position="420">
+          <caret line="455" lean-forward="true" selection-start-line="455" selection-end-line="455" />
           <folding>
             <element signature="e#61#145#0" />
             <element signature="e#193#504#0" />
@@ -760,29 +773,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/site_content.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="429" column="11" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
+        <state relative-caret-position="328">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding>
-            <element signature="e#8444#9187#0" />
-            <element signature="e#9189#9996#0" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/journals.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="134">
+          <caret line="138" column="35" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -793,28 +800,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/site_content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        <state relative-caret-position="336">
+          <caret line="402" column="8" selection-start-line="402" selection-start-column="8" selection-end-line="402" selection-end-column="8" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ledgers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#footer#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5892#8442#0" />
+            <element signature="e#8444#9187#0" />
+            <element signature="e#9189#9996#0" />
+            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

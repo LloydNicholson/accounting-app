@@ -448,7 +448,7 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
 });
 
 const sheets = {
-    'Cash Receipts Journal': '#CashReceiptsJournalAnswerArea',
+    'Cash Receipts Journal': true,
     'Cash Payments Journal': '#CashPaymentsJournalAnswerArea',
     'Creditors Journal': '#CreditorsJournalAnswerArea',
     'Debtors Journal': '#DebtorsJournalAnswerArea'
