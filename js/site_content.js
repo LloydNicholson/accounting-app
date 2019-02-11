@@ -340,11 +340,11 @@ class Expense extends Transaction {
 }
 
 class Asset extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super(accountType, paymentMethod, lowNum, highNum, option);
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (option === 'cash' || option === '')) {
+        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (this.option === 'cash' || this.option === '')) {
             this.folio = 'CPJ';
             this.debit = this.accountName;
             this.credit = 'Bank'
@@ -418,6 +418,7 @@ class Drawings extends Transaction {
         this.folio = "CPJ";
         this.debit = this.accountName;
         this.credit = 'Bank';
+        this.option = '';
 
         this.transactionString = `${this.currentDate}${'&#09;'}The business owner, ${this.ownerName} ${this.paymentMethod} cash worth R${this.transactionAmount} for ${this._reasonForTransaction}`;
     }
