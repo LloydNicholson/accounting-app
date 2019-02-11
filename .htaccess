@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 RewriteCond %{HTTP_HOST} ^(www\.)?kidcon\.co.za
-RewriteRule ^(.*)$ http://www.kidcon.co.za/$1 [R,L] #redirected to http not https
+RewriteRule ^(.*)$ https://www.kidcon.co.za/$1 [R,L] #redirected to https

@@ -202,7 +202,6 @@ class Transaction {
         this._paymentMethod = paymentMethod;
         this._businessName = ourBusinessName;
         this._folio = "default";
-        this._option = randomItem(options);
         this._ownerName = ourOwner;
         this._transactionString = 'this is the default transaction printout';
         this._currentDate = randomItem(dates);
@@ -293,11 +292,10 @@ class Transaction {
     }
 
     get option() {
-        return this._option;
-    }
-
-    set option(value) {
-        this._option = value;
+        if (this.className === 'Liability') {
+            return options.splice(0, 0, 2);
+        }
+        return randomItem(options);
     }
 
     get paymentMethod() {
@@ -344,7 +342,7 @@ class Asset extends Transaction {
         super(accountType, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if ((this.paymentMethod === 'bought' || this.paymentMethod === 'purchased') && (this.option === 'cash' || '')) {
+        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (this.option === 'cash' || '')) {
             this.folio = 'CPJ';
             this.debit = this.accountName;
             this.credit = 'Bank'
@@ -394,9 +392,9 @@ class Capital extends Transaction {
 }
 
 class Liability extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
-        if ((this.paymentMethod === 'acquired' || 'received') && (this.option ==='cash' || '')) {
+    constructor(accountType, paymentMethod, lowNum, highNum, option) {
+        super(accountType, paymentMethod, lowNum, highNum, option);
+        if ((paymentMethod === 'acquired' || paymentMethod === 'received')) {
             this.folio = 'CRJ';
             this.debit = 'Bank';
             this.credit = this.accountName;

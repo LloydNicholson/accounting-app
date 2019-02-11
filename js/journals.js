@@ -307,6 +307,24 @@ const checkCJDocument = (cell) => {
     }
     return cellValue;
 };
+const checkCJDate = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.currentDate) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
 
 
 
@@ -392,7 +410,7 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     columnVertAlign:"bottom",
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"], headerSort:false},
-        {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
+        {title:"Date", field:"date", cellEdited: checkCJDate, width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
         {title:"Creditor", field:"details", width:150, editor:"input", validator: ["string"], headerSort:false},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"], headerSort:false},
         {title:"Creditors Control", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"], headerSort:false},

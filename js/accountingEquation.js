@@ -40,13 +40,15 @@ const checkCredit = (cell) => {
     }
     return cellValue;
 };
-const checkAssets = (cell) => {
+const checkPlus = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
-    let assetItem = 0;
+    let cjItem = filteredCJ[cellIndex];
     if (cellValue !== '') {
-        if (parseInt(cellValue) === assetItem) {
-
+        if (cjItem.debit === cjItem.accountName && cellValue === cjItem.transactionAmount) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
         }
     } else {
         cell.getElement().style.backgroundColor = "transparent";
@@ -65,7 +67,7 @@ const checkLiability = (cell) => {
 const accountingEquationAnswerData = [{}];
 
 createInputArray(accountingEquationAnswerData);
-
+console.log(transactionList);
 //TODO - checks for table
 // Assets
 // Owners Equity
@@ -81,7 +83,7 @@ let accountingEquationTable = new Tabulator("#accountingEquationAnswerArea", {
         {title: "Account debited", field: "debit", cellEdited: checkDebit, width: 200, editor:"input", validator: ["string"], headerSort:false},
         {title:"Account credited", field:"credit", cellEdited: checkCredit, width: 200, editor: "input", validator: ["string"], headerSort:false},
         {title:"Assets", field:"assets", columns: [
-                {title: "+", field: "plusAssets", editor: "input", validator: ['integer'], headerSort:false},
+                {title: "+", field: "plusAssets", cellEdited: checkPlus, editor: "input", validator: ['integer'], headerSort:false},
                 {title: "-", field: "minusAssets", editor: "input", validator: ['integer'], headerSort:false}
                 ],
         },
