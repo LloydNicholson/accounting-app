@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d50b8abf-5d4c-4378-8c2d-4330c9fa5901" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/site_content.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/site_content.js" afterDir="false" />
-    </list>
+    <list default="true" id="d50b8abf-5d4c-4378-8c2d-4330c9fa5901" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -25,13 +22,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/site_content.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="424" column="1" lean-forward="true" selection-start-line="424" selection-start-column="1" selection-end-line="424" selection-end-column="1" />
+            <state relative-caret-position="419">
+              <caret line="420" column="25" lean-forward="true" selection-start-line="420" selection-start-column="25" selection-end-line="420" selection-end-column="25" />
               <folding>
                 <element signature="e#8444#9187#0" />
-                <element signature="e#9189#10002#0" />
-                <element signature="e#10935#11459#0" />
-                <element signature="e#11461#12205#0" />
+                <element signature="e#9189#9996#0" />
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -271,7 +266,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299251000" />
+    <option name="totallyTimeSpent" value="299252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,13 +631,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/site_content.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="424" column="1" lean-forward="true" selection-start-line="424" selection-start-column="1" selection-end-line="424" selection-end-column="1" />
+        <state relative-caret-position="419">
+          <caret line="420" column="25" lean-forward="true" selection-start-line="420" selection-start-column="25" selection-end-line="420" selection-end-column="25" />
           <folding>
             <element signature="e#8444#9187#0" />
-            <element signature="e#9189#10002#0" />
-            <element signature="e#10935#11459#0" />
-            <element signature="e#11461#12205#0" />
+            <element signature="e#9189#9996#0" />
             <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
           </folding>
         </state>
