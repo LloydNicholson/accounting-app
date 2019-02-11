@@ -448,13 +448,18 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
 });
 
 const sheets = {
-    'Cash Receipts Journal': true,
+    'Cash Receipts Journal': '#CashReceiptsJournalAnswerArea',
     'Cash Payments Journal': '#CashPaymentsJournalAnswerArea',
     'Creditors Journal': '#CreditorsJournalAnswerArea',
     'Debtors Journal': '#DebtorsJournalAnswerArea'
 };
 
+const downloadJournals = () => {
+    cashReceiptsJournalTable.download("xlsx", "AllJournals.xlsx", {sheets:sheets});
+};
+
 const downloadJournalsButton = document.querySelector('#journalDownloadButton');
+downloadJournalsButton.addEventListener('click', downloadJournals);
 
 console.log('Cash Receipts Journal', filteredCRJ);
 console.log('Cash Payments Journal', filteredCPJ);
