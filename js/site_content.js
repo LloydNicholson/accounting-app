@@ -202,6 +202,7 @@ class Transaction {
         this._paymentMethod = paymentMethod;
         this._businessName = ourBusinessName;
         this._folio = "default";
+        this._option = randomItem(options);
         this._ownerName = ourOwner;
         this._transactionString = 'this is the default transaction printout';
         this._currentDate = randomItem(dates);
@@ -292,10 +293,11 @@ class Transaction {
     }
 
     get option() {
-        if (this.className === 'Liability') {
-            return options.splice(0, 0, 2);
-        }
-        return randomItem(options);
+        return this._option;
+    }
+
+    set option(value) {
+        this._option = value;
     }
 
     get paymentMethod() {
@@ -323,7 +325,7 @@ class Expense extends Transaction {
     constructor(accountType, paymentMethod, lowNum, highNum) {
         super(accountType, paymentMethod, lowNum, highNum);
         // Check for option and set the folio
-        if (this.option === 'cash' || '') {
+        if (this.option === 'cash' || this.option === '') {
             this.folio = 'CPJ';
             this.debit = this.accountName;
             this.credit = 'Bank';
@@ -338,11 +340,11 @@ class Expense extends Transaction {
 }
 
 class Asset extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(accountType, paymentMethod, lowNum, highNum, option) {
+        super(accountType, paymentMethod, lowNum, highNum, option);
 
         // Check for option and set the folio
-        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (this.option === 'cash' || '')) {
+        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (option === 'cash' || option === '')) {
             this.folio = 'CPJ';
             this.debit = this.accountName;
             this.credit = 'Bank'
@@ -361,7 +363,7 @@ class Income extends Transaction {
         super(accountType, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if (this.option === 'cash' || '') {
+        if (this.option === 'cash' || this.option === '') {
             this.folio = 'CRJ';
             this.debit = 'Bank';
             this.credit = this.accountName;
@@ -379,21 +381,20 @@ class Income extends Transaction {
 }
 
 class Capital extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, paymentMethod, lowNum, highNum, randomItem(['cash', '']));
         this.folio = "CRJ";
         this.debit = 'Bank';
         this.credit = this.accountName;
         this.documentType = 'B/S';
         this.analyse = false;
-        this.option = option;
         this.transactionString = `${this.currentDate}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Liability extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum, option) {
-        super(accountType, paymentMethod, lowNum, highNum, option);
+    constructor(accountType, paymentMethod, lowNum, highNum) {
+        super(accountType, paymentMethod, lowNum, highNum);
         if ((paymentMethod === 'acquired' || paymentMethod === 'received')) {
             this.folio = 'CRJ';
             this.debit = 'Bank';
@@ -436,7 +437,7 @@ let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
 let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000);
 let asset3 = new Asset(classifications.assets, 'bought', 10000, 200000);
 // Capital
-let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000, "cash");
+let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000);
 // Liabilities
 let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000, "cash");
 let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000, "cash");

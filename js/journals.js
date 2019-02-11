@@ -447,6 +447,15 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     ],
 });
 
+const sheets = {
+    'Cash Receipts Journal': true,
+    'Cash Payments Journal': '#CashPaymentsJournalAnswerArea',
+    'Creditors Journal': '#CreditorsJournalAnswerArea',
+    'Debtors Journal': '#DebtorsJournalAnswerArea'
+};
+
+const downloadJournalsButton = document.querySelector('#journalDownloadButton');
+
 console.log('Cash Receipts Journal', filteredCRJ);
 console.log('Cash Payments Journal', filteredCPJ);
 console.log('Creditors Journal', filteredCJ);
