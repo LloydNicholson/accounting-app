@@ -45,7 +45,8 @@ const owners = [
     "Rachel",
     "Patrick",
     "Colin",
-    "Herbie"
+    "Herbie",
+    'Georgia'
 ];
 
 // Month array
@@ -86,37 +87,38 @@ const payersOfMoney = [
 ];
 
 const banks = [
-    "Nedbank",
-    "ABSA",
-    "FNB",
-    "Standard Bank",
-    "Discovery Bank",
-    "Capitec Bank",
-    "Bidvest Bank"
+    'Nedbank',
+    'ABSA',
+    'FNB',
+    'Standard Bank',
+    'Discovery Bank',
+    'Capitec Bank',
+    'Bidvest Bank',
+    'African Bank'
 ];
 
 // Different account types and sub-accounts
 const classifications = {
     // All assets
     assets: [
-        {name: "Trading stock", alts: ['stock', 'goods', 'products', 'trading stock']},
-        {name: "Vehicles", alts: ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']},
-        {name: "Equipment", alts: ['computers', 'computer', 'printers', 'fax machines']},
-        {name: "Machinery", alts: ['mechanical drill', 'large jackhammer']},
-        {name: "Land and buildings", alts: ['property', 'new property', 'storage facility']}
+        {name: 'Trading stock', alts: ['trading inventory', 'stock', 'goods', 'products', 'trading stock', 'inventory']},
+        {name: 'Vehicles', alts: ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']},
+        {name: 'Equipment', alts: ['computers', 'a computer', 'printers', 'fax machines']},
+        {name: 'Machinery', alts: ['a mechanical drill', 'a large jackhammer']},
+        {name: 'Land and buildings', alts: ['a property', 'a new property', 'a storage facility']}
     ],
     // All liabilities
     liabilities: [
         {name: 'Loan', alts: ['a loan', 'a substantial loan']},
-        {name: "Mortgage bond", alts: ['a property loan', 'a bond', 'a mortgage bond']}
+        {name: 'Mortgage bond', alts: ['a property loan', 'a bond', 'a mortgage bond']}
         ],
     drawings: [{name: 'Drawings', alts: ['drawings', 'money']}],
     capital: [{name :'Capital', alts: ['contribution', 'capital']}],
     // All expenses
     expenses: [
-        {name: "Salaries", alts: ['salaries', 'monthly payments to employees']},
-        {name: "Wages", alts: ['wages', 'employee weekly wages']},
-        {name: "Repairs", alts: ['repairs to the motor vehicle']},
+        {name: 'Salaries', alts: ['salaries', 'monthly payments to employees']},
+        {name: 'Wages', alts: ['wages', 'employee weekly wages']},
+        {name: 'Repairs', alts: ['repairs to the motor vehicle', 'fixing vehicles']},
         {name: 'Advertising', alts: ['advertising', 'advertisement']},
         {name: 'Telephone', alts: ['telephone account', 'cellphone bill']},
         {name: 'Stationery', alts: ['stationery', 'pencils and pens', 'paper']},
@@ -136,10 +138,10 @@ const classifications = {
     // All incomes
     incomes: [
         {name: 'Current income', alts: ['money for services rendered', 'money for a service']},
-        {name: 'Rent', alts: ['rent', 'rental']},
+        {name: 'Rent income', alts: ['rent', 'rental', 'money from a tenant']},
         {name: 'Donations', alts: ['donations']},
-        {name: 'Commission', alts: ['commission', 'a percentage of sale']},
-        {name: 'Cash sales', alts: ['sales']}
+        {name: 'Commission income', alts: ['commission', 'a percentage of sale']},
+        {name: 'Sales', alts: ['sales', 'money from goods sold']}
     ]
 };
 
@@ -148,14 +150,6 @@ const options = ['cash', '', 'on credit'];
 const randomItem = (item) => {
     return item[Math.floor(Math.random() * item.length)];
 };
-
-// const incomeAccountType = randomItem(classifications.incomes);
-// const incomeAccountName = randomAccountName(incomeAccountType);
-// const incomeAccountAlt = randomAccountAlt(incomeAccountType);
-// console.log('account type: ', incomeAccountType);
-// console.log('account name', incomeAccountName);
-// console.log('account alt: ', incomeAccountAlt);
-
 
 // Set business name to randomise
 let ourBusinessName = randomItem(businesses);
@@ -189,12 +183,9 @@ switch (month) {
     break;
     case 'February': lastDay = 28;
 }
+
 for (let i = firstDay; i <= lastDay; i++) {
     dates.push(i);
-}
-
-function matchedNumber(currentString, testString) {
-    return currentString.match(testString);
 }
 
 class Transaction {
@@ -265,6 +256,10 @@ class Transaction {
         return this._accountType;
     }
 
+    set accountType(value) {
+        this._accountType = value;
+    }
+
     get accountName() {
         return this.accountType.name;
     }
@@ -323,8 +318,8 @@ class Transaction {
 }
 
 class Expense extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(paymentMethod, lowNum, highNum) {
+        super(classifications.expenses, paymentMethod, lowNum, highNum);
         // Check for option and set the folio
         if (this.option === 'cash' || this.option === '') {
             this.folio = 'CPJ';
@@ -341,11 +336,11 @@ class Expense extends Transaction {
 }
 
 class Asset extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(paymentMethod, lowNum, highNum) {
+        super(classifications.assets, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if ((paymentMethod === 'bought' || paymentMethod === 'purchased') && (this.option === 'cash' || this.option === '')) {
+        if (this.option === 'cash' || this.option === '') {
             this.folio = 'CPJ';
             this.debit = this.accountName;
             this.credit = 'Bank'
@@ -360,8 +355,8 @@ class Asset extends Transaction {
 }
 
 class Income extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(paymentMethod, lowNum, highNum) {
+        super(classifications.incomes, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
         if (this.option === 'cash' || this.option === '') {
@@ -371,31 +366,36 @@ class Income extends Transaction {
         } else {
             this.folio = 'DJ';
             this.debit = 'Debtors control';
-            this.credit = this.accountName;
+            this.accountType = classifications.incomes[4];
         }
 
         // Set document based on payment method
-        if ((this.folio === 'CRJ') && this.accountName === 'Current income') { this.documentType = 'CRR'} else { this.documentType = 'Rec'}
+        if ((this.folio === 'CRJ') && this.accountName === 'Current income') {
+            this.documentType = 'CRR'
+        } else {
+            this.documentType = 'Rec'
+        }
 
         this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} amounting to R${this.transactionAmount} ${this.option} from ${this.otherBusiness}.`;
     }
 }
 
 class Capital extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum, randomItem(['cash', '']));
+    constructor(paymentMethod, lowNum, highNum) {
+        super(classifications.capital, paymentMethod, lowNum, highNum);
         this.folio = "CRJ";
         this.debit = 'Bank';
         this.credit = this.accountName;
         this.documentType = 'B/S';
         this.analyse = false;
+        this.option = randomItem(['cash', '']);
         this.transactionString = `${this.currentDate}${'&#09;'}The owner, ${this.ownerName} ${this.paymentMethod} a total of R${this.transactionAmount} ${this.option}.`;
     }
 }
 
 class Liability extends Transaction {
-    constructor(accountType, paymentMethod, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(paymentMethod, lowNum, highNum) {
+        super(classifications.liabilities, paymentMethod, lowNum, highNum);
         this.folio = 'CRJ';
         this.debit = 'Bank';
         this.credit = this.accountName;
@@ -407,8 +407,8 @@ class Liability extends Transaction {
 
 class Drawings extends Transaction {
 
-    constructor(accountType, paymentMethod, reasonForTransaction, lowNum, highNum) {
-        super(accountType, paymentMethod, lowNum, highNum);
+    constructor(paymentMethod, reasonForTransaction, lowNum, highNum) {
+        super(classifications.drawings, paymentMethod, lowNum, highNum);
         this._reasonForTransaction = reasonForTransaction;
         this.folio = "CPJ";
         this.debit = this.accountName;
@@ -423,24 +423,28 @@ class Drawings extends Transaction {
 // let transaction = new Transaction(classifications.expenses, "default", 0, 0);
 
 // Expenses
-let expense1 = new Expense(classifications.expenses,"made payment to", 2000, 10000);
-let expense2 = new Expense(classifications.expenses, "paid", 8000, 20000);
+let expense1 = new Expense("made payment to", 2000, 10000);
+let expense2 = new Expense("paid", 8000, 20000);
 // Incomes
-let income1 = new Income(classifications.incomes, 'received', 5000, 8000);
-let income2 = new Income(classifications.incomes, 'received', 10000, 15000);
-let income3 = new Income(classifications.incomes, 'received', 10000, 15000);
+let income1 = new Income('received', 5000, 8000);
+let income2 = new Income('received', 10000, 15000);
+let income3 = new Income('received', 10000, 15000);
+let income4 = new Income('got', 8000, 10000);
+
 // Assets
-let asset1 = new Asset(classifications.assets,'purchased', 10000, 100000);
-let asset2 = new Asset(classifications.assets, 'bought', 50000, 200000);
-let asset3 = new Asset(classifications.assets, 'bought', 10000, 200000);
+let asset1 = new Asset('purchased', 10000, 100000);
+let asset2 = new Asset('bought', 50000, 200000);
+let asset3 = new Asset('bought', 10000, 200000);
+let asset4 = new Asset('made payment for', 9000, 20000);
+
 // Capital
-let capital = new Capital(classifications.capital, 'deposited into the businesses bank account', 10000, 1000000);
+let capital = new Capital('deposited into the businesses bank account', 10000, 1000000);
 // Liabilities
-let liability1 = new Liability(classifications.liabilities, "received", 4000, 140000);
-let liability2 = new Liability(classifications.liabilities, "acquired", 50000, 100000);
+let liability1 = new Liability("received", 4000, 140000);
+let liability2 = new Liability("acquired", 50000, 100000);
 // Drawings
-let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment",5000, 10000);
-let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
+let drawings1 = new Drawings("withdrew", "personal debt payment",5000, 10000);
+let drawings2 = new Drawings("took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
 const transactionList = [];
@@ -452,6 +456,7 @@ const pushToArray = (array) => {
     array.push(asset1);
     array.push(asset2);
     array.push(asset3);
+    array.push(asset4);
     array.push(liability1);
     array.push(liability2);
     array.push(drawings1);
@@ -459,6 +464,7 @@ const pushToArray = (array) => {
     array.push(income1);
     array.push(income2);
     array.push(income3);
+    array.push(income4);
 };
 
 // Push area

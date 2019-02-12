@@ -23,8 +23,6 @@ const checkCRJDocument = (cell) => {
     let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === crjItem.documentType.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
@@ -40,8 +38,6 @@ const checkCRJDate = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === crjItem.currentDate) {
             cellValue = parseInt(cellValue);
@@ -58,12 +54,12 @@ const checkCRJDetails = (cell) => {
     let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === crjItem.otherBusiness.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
-        } else if (cellValue === crjItem.ownerName.toLowerCase() && crjItem.accountName.toLowerCase() === 'Capital'.toLowerCase()) {
+        } else if (cellValue === crjItem.ownerName.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else if (cellValue === crjItem.bank.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
         } else {
             cell.getElement().style.backgroundColor = "#ffb6b1";
@@ -77,8 +73,6 @@ const checkCRJBank = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === crjItem.transactionAmount) {
             cellValue = parseInt(cellValue);
@@ -95,8 +89,6 @@ const checkCRJCI = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === crjItem.transactionAmount && crjItem.accountName.toLowerCase() === 'Current income'.toLowerCase()) {
             cellValue = parseInt(cellValue);
@@ -113,7 +105,6 @@ const checkCRJSundryAmount = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === crjItem.transactionAmount) {
             cellValue = parseInt(cellValue);
@@ -130,7 +121,6 @@ const checkCRJSundryAccount = (cell) => {
     let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
     let crjItem = filteredCRJ[cellIndex];
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === crjItem.accountName.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
@@ -148,8 +138,6 @@ const checkCPJDocument = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let previousCellIndex = cell.getData().id-1;
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellIndex > 0) {
             if (parseInt(cellValue[cellIndex]) === parseInt(cellValue[previousCellIndex] + 1)) {
@@ -167,8 +155,6 @@ const checkCPJDate = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.currentDate) {
             cellValue = parseInt(cellValue);
@@ -185,8 +171,6 @@ const checkCPJPayee = (cell) => {
     let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === cpjItem.otherBusiness.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
@@ -204,8 +188,6 @@ const checkCPJBank = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.transactionAmount) {
             cellValue = parseInt(cellValue);
@@ -223,8 +205,6 @@ const checkCPJTradingStock = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.transactionAmount && cpjItem.accountName.toLowerCase() === 'Trading stock'.toLowerCase()) {
             cellValue = parseInt(cellValue);
@@ -241,8 +221,6 @@ const checkCPJEquipment = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.transactionAmount && cpjItem.accountName.toLowerCase() === 'Equipment'.toLowerCase()) {
             cellValue = parseInt(cellValue);
@@ -259,7 +237,6 @@ const checkCPJSundryAmount = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.transactionAmount) {
             cellValue = parseInt(cellValue);
@@ -276,7 +253,6 @@ const checkCPJSundryAccount = (cell) => {
     let cellValue = cell.getValue().toLowerCase();
     let cellIndex = cell.getData().id;
     let cpjItem = filteredCPJ[cellIndex];
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === cpjItem.accountName.toLowerCase()) {
             cell.getElement().style.backgroundColor = "#caffaa";
@@ -311,8 +287,6 @@ const checkCJDate = (cell) => {
     let cellValue = cell.getValue();
     let cellIndex = cell.getData().id;
     let cjItem = filteredCJ[cellIndex];
-    //cell - cell component
-    console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cjItem.currentDate) {
             cellValue = parseInt(cellValue);
@@ -325,10 +299,183 @@ const checkCJDate = (cell) => {
     }
     return cellValue;
 };
+const checkCJCreditor = (cell) => {
+    let cellValue = cell.getValue().toLowerCase();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (cellValue === cjItem.otherBusiness.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkCJCreditorsControl = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
 
-
+    return cellValue;
+};
+const checkCJTradingStock = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount && cjItem.accountName.toLowerCase() === 'Trading stock'.toLowerCase()) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkCJEquipment = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount && cjItem.accountName.toLowerCase() === 'Equipment'.toLowerCase()) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkCJSundryAmount = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkCJSundryAccount = (cell) => {
+    let cellValue = cell.getValue().toLowerCase();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (cellValue === cjItem.accountName.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
 
 // DJ checks
+const checkDJDocument = (cell) => {
+    let cellValue = cell.getValue().toLowerCase();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    //cell - cell component
+    console.log(cell.getData());
+    if (cellValue !== '') {
+        if (cellValue === cjItem.documentType.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkDJDate = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let djItem = filteredDJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === djItem.currentDate) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkDJDebtor = (cell) => {
+    let cellValue = cell.getValue().toLowerCase();
+    let cellIndex = cell.getData().id;
+    let djItem = filteredDJ[cellIndex];
+    if (cellValue !== '') {
+        if (cellValue === djItem.otherBusiness.toLowerCase()) {
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+};
+const checkDJSales = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount && cjItem.accountName.toLowerCase() === 'Sales'.toLowerCase()) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+}; // look at these two - only sales are recorded in the DJ
+const checkDJCostOfSales = (cell) => {
+    let cellValue = cell.getValue();
+    let cellIndex = cell.getData().id;
+    let cjItem = filteredCJ[cellIndex];
+    if (cellValue !== '') {
+        if (parseInt(cellValue) === cjItem.transactionAmount && cjItem.accountName.toLowerCase() === 'Equipment'.toLowerCase()) {
+            cellValue = parseInt(cellValue);
+            cell.getElement().style.backgroundColor = "#caffaa";
+        } else {
+            cell.getElement().style.backgroundColor = "#ffb6b1";
+        }
+    } else {
+        cell.getElement().style.backgroundColor = "transparent";
+    }
+    return cellValue;
+}; // look at these two - only cost of sales are recorded in the DJ
 
 // answerData
 const crjAnswerData = [{}];
@@ -395,8 +542,6 @@ let cashPaymentsJournalTable = new Tabulator("#CashPaymentsJournalAnswerArea", {
                     {title:"Amount", field:"amount", cellEdited: checkCPJSundryAmount, align:"right", editor:"input", validator: ["integer", "min:1"], headerSort:false}
                     ],
             },
-        // {title:"Date Of Birth", field:"dob", width:130, sorter:"date", align:"center"},
-        // {title:"Driver", field:"car", width:90,  align:"center", formatter:"tickCross", sorter:"boolean", editor:true},
     ],
 });
 
@@ -411,18 +556,16 @@ let creditorsJournalTable = new Tabulator("#CreditorsJournalAnswerArea", {
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"], headerSort:false},
         {title:"Date", field:"date", cellEdited: checkCJDate, width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
-        {title:"Creditor", field:"details", width:150, editor:"input", validator: ["string"], headerSort:false},
+        {title:"Creditor", field:"details", cellEdited: checkCJCreditor, width:150, editor:"input", validator: ["string"], headerSort:false},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"], headerSort:false},
-        {title:"Creditors Control", field:"amount", width:140, editor:"input", validator: ["integer", "min:1"], headerSort:false},
-        {title:"Trading Stock", field:"amount", width:130, editor:"input", validator: ["integer", "min:1"], headerSort:false},
-        {title:"Equipment", field:"amount", width:100, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Creditors Control", field:"amount", cellEdited: checkCJCreditorsControl, width:140, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Trading Stock", field:"amount", cellEdited: checkCJTradingStock, width:130, editor:"input", validator: ["integer", "min:1"], headerSort:false},
+        {title:"Equipment", field:"amount", cellEdited: checkCJEquipment, width:100, editor:"input", validator: ["integer", "min:1"], headerSort:false},
         {title:"Sundry", field:"sundry", columns: [
-                {title:"Account", field:"sundryName", align: "left", editor:"input", validator: ["string"], headerSort:false},
-                {title:"Amount", field:"amount", align:"right", editor:"input", validator: ["integer", "min:1"], headerSort:false}
+                {title:"Account", field:"sundryName", cellEdited: checkCJSundryAccount, align: "left", editor:"input", validator: ["string"], headerSort:false},
+                {title:"Amount", field:"amount", cellEdited: checkCJSundryAmount, align:"right", editor:"input", validator: ["integer", "min:1"], headerSort:false}
             ],
         },
-        // {title:"Date Of Birth", field:"dob", width:130, sorter:"date", align:"center"},
-        // {title:"Driver", field:"car", width:90,  align:"center", formatter:"tickCross", sorter:"boolean", editor:true},
     ],
 });
 
@@ -437,13 +580,11 @@ let debtorsJournalTable = new Tabulator("#DebtorsJournalAnswerArea", {
     headerSort:false,
     columns:[                 //define the table columns
         {title:"Doc", field:"document", width:65, editor:"input", validator: ["integer", "min:0"], headerSort:false},
-        {title:"Date", field:"date", width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
-        {title:"Debtor", field:"details", width:250, editor:"input", validator: ["string"], headerSort:false},
+        {title:"Date", field:"date", cellEdited: checkDJDate, width:75, editor:"input", validator: ["integer", "min:1", "max:31"], headerSort:false},
+        {title:"Debtor", field:"details", cellEdited: checkDJDebtor, width:250, editor:"input", validator: ["string"], headerSort:false},
         {title:"Fol", field:"folio", width:60, editor:"input", validator: ["string"], headerSort:false},
         {title:"Sales", field:"amount", editor:"input", validator: ["integer", "min:1"], headerSort:false},
         {title:"Cost of Sales", field:"amount", editor:"input", validator: ["integer", "min:1"], headerSort:false},
-        // {title:"Date Of Birth", field:"dob", width:130, sorter:"date", align:"center"},
-        // {title:"Driver", field:"car", width:90,  align:"center", formatter:"tickCross", sorter:"boolean", editor:true},
     ],
 });
 
