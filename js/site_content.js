@@ -21,6 +21,7 @@ const businesses = [
     "Feline Friends",
     "Jim's Attorneys",
     "Advocates for Animals",
+    "Piping Plumbers"
 ];
 
 // Different owners names
@@ -46,7 +47,9 @@ const owners = [
     "Patrick",
     "Colin",
     "Herbie",
-    'Georgia'
+    'Georgia',
+    'Killian',
+    'Franco'
 ];
 
 // Month array
@@ -83,7 +86,8 @@ const payersOfMoney = [
     "Bryan's Brewers",
     "Fun Flops",
     "Made in China Manufacturers",
-    "Protecting People"
+    "Protecting People",
+    'Loopy Launderers'
 ];
 
 const banks = [
@@ -104,7 +108,7 @@ const classifications = {
         {name: 'Trading stock', alts: ['trading inventory', 'stock', 'goods', 'products', 'trading stock', 'inventory']},
         {name: 'Vehicles', alts: ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']},
         {name: 'Equipment', alts: ['computers', 'a computer', 'printers', 'fax machines']},
-        {name: 'Machinery', alts: ['a mechanical drill', 'a large jackhammer']},
+        {name: 'Machinery', alts: ['a mechanical drill', 'a large jackhammer', 'a electric chainsaw']},
         {name: 'Land and buildings', alts: ['a property', 'a new property', 'a storage facility']}
     ],
     // All liabilities
