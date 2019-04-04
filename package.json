@@ -27,6 +27,9 @@
     "moment": "^2.24.0",
     "popper.js": "^1.14.7",
     "tabulator-tables": "^4.2.0",
-    "typescript": "^3.4.1"
+    "typescript": "^3.4.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-support": "^0.5.11",
+    "source-map-loader": "^0.2.4"
   }
 }
