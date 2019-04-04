@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+<<<<<<< HEAD
+    "outDir": "./dist",
+=======
+    "outDir": "./js",
+>>>>>>> d1261630fd98db070822f1bf1a6eaefe863cb6db
+    "allowJs": true,
+    "target": "es6"
+  },
+  "include": [
+<<<<<<< HEAD
+    "./js"
+=======
+    "./src/**/*"
+>>>>>>> d1261630fd98db070822f1bf1a6eaefe863cb6db
+  ]
+}

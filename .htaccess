@@ -1,4 +1,20 @@
 RewriteEngine On
-RewriteCond %{SERVER_PORT} 80
-RewriteCond %{HTTP_HOST} ^(www\.)?kidcon\.co.za
-RewriteRule ^(.*)$ https://www.kidcon.co.za/$1 [R,L] #redirected to https
+RewriteCond %{HTTPS} off
+RewriteRule ^(cart/|checkout/) https://%{HTTP_HOST}%{REQUEST_URI}
+
+##Setting pages to have certain slugs
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-1
+#RewriteRule ^(.*)$ index.html$1 [QSA,L]
+
+#RewriteCond %{HTTP_HOST} ^(www\.)?kidcon\.co.za
+#RewriteRule ^index.html/? /home [R=301,L]
+#RewriteRule ^index.html/? https://kidcon.co.za/home [R=301,L]
+
+#Test
+RewriteRule    ^home/?$    index.html    [NC,L]    # Handle requests for "home"
+RewriteRule    ^accounting-equation/?$    accountingEquation.html    [NC,L]    # Handle requests for "accounting-equation"
+RewriteRule    ^journals/?$    journals.html    [NC,L]    # Handle requests for "journals"
+RewriteRule    ^ledgers/?$    ledgers.html    [NC,L]    # Handle requests for "ledgers"
+
