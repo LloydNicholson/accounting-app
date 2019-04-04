@@ -7,9 +7,16 @@
     <title>Kid Connect Accounting</title>
     <style>
         /* Style the active class, and buttons on mouse-over */
+        #navbar li {
+            font-size: 22px;
+        }
         #navbar li:hover {
             background-color: #bcd3d6;
             color: white;
+            font-size: 22px;
+        }
+        #transactionList ul {
+            font-size: 20px;
         }
     </style>
 
@@ -44,10 +51,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/accounting-equation">Accounting Equation</a></li>
-                <li><a href="/journals">Journals</a></li>
-                <li><a href="/ledgers">Ledgers</a></li>
+                <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/accounting-equation">Accounting Equation</a></li>
+                <li class="nav-item"><a class="nav-link" href="/journals">Journals</a></li>
+                <li class="nav-item"><a class="nav-link" href="/ledgers">Ledgers</a></li>
             </ul>
         </div>
     </div>
@@ -69,7 +76,7 @@
 
     <h3 class="text-center">Download Templates</h3>
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-12">
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Grade 8 & 9 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
@@ -82,9 +89,6 @@
                     <li class="dropdown-item"><a href="Documents/ACCOUNTING EQUATION TEMPLATE.xlsx" download>Accounting Equation</a></li>
                 </ul>
             </div>
-        </div>
-
-        <div class="col-xs-6">
             <div class="dropdown">
                 <button type="button" class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown">Grade 10 - 12 <span class="caret"></span></button>
                 <ul class="dropdown-menu pull-right" style="top: 35px; right: -1px;">

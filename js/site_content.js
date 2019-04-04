@@ -70,7 +70,9 @@ const months = [
 
 // Initialise year array
 const years = [];
-for (let i = 2005; i < 2020; i++) {years.push(i);}
+for (let i = 2005; i < 2020; i++) {
+    years.push(i);
+}
 
 const payersOfMoney = [
     "Joe's Traders",
@@ -105,7 +107,10 @@ const banks = [
 const classifications = {
     // All assets
     assets: [
-        {name: 'Trading stock', alts: ['trading inventory', 'stock', 'goods', 'products', 'trading stock', 'inventory']},
+        {
+            name: 'Trading stock',
+            alts: ['trading inventory', 'stock', 'goods', 'products', 'trading stock', 'inventory']
+        },
         {name: 'Vehicles', alts: ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']},
         {name: 'Equipment', alts: ['computers', 'a computer', 'printers', 'fax machines']},
         {name: 'Machinery', alts: ['a mechanical drill', 'a large jackhammer', 'a electric chainsaw']},
@@ -115,9 +120,9 @@ const classifications = {
     liabilities: [
         {name: 'Loan', alts: ['a loan', 'a substantial loan']},
         {name: 'Mortgage bond', alts: ['a property loan', 'a bond', 'a mortgage bond']}
-        ],
+    ],
     drawings: [{name: 'Drawings', alts: ['drawings', 'money']}],
-    capital: [{name :'Capital', alts: ['contribution', 'capital']}],
+    capital: [{name: 'Capital', alts: ['contribution', 'capital']}],
     // All expenses
     expenses: [
         {name: 'Salaries', alts: ['salaries', 'monthly payments to employees']},
@@ -125,9 +130,9 @@ const classifications = {
         {name: 'Repairs', alts: ['repairs to the motor vehicle', 'fixing vehicles']},
         {name: 'Advertising', alts: ['advertising', 'advertisement']},
         {name: 'Telephone', alts: ['telephone account', 'cellphone bill']},
-        {name: 'Stationery', alts: ['stationery', 'pencils and pens', 'paper']},
+        {name: 'Stationery', alts: ['stationery', 'pencils and pens', 'paper', 'books']},
         {name: 'Water and electricity', alts: ['rates bill', 'water and electricity']},
-        {name: 'Insurance', alts: ['insurance']},
+        {name: 'Insurance', alts: ['insurance', 'business vehicle coverage']},
         {name: 'Packing material', alts: ['packing material', 'cardboard for packing']},
         {name: 'Fuel', alts: ['petrol', 'diesel', 'fuel']},
         {name: 'Bank charges', alts: ['bank fees', 'bank charges']},
@@ -181,11 +186,23 @@ const dates = [];
 let firstDay = 1;
 let lastDay = 28;
 switch (month) {
-    case 'January': case 'March': case 'May': case 'July': case 'August': case 'October': case 'December': lastDay = 31;
-    break;
-    case 'April': case 'June': case 'September': case 'November': lastDay = 30;
-    break;
-    case 'February': lastDay = 28;
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+        lastDay = 31;
+        break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+        lastDay = 30;
+        break;
+    case 'February':
+        lastDay = 28;
 }
 
 for (let i = firstDay; i <= lastDay; i++) {
@@ -210,6 +227,30 @@ class Transaction {
         this._analyse = true;
         this._debit = 'Debit account';
         this._credit = 'Credit account';
+    }
+
+    setPaymentOption(option) {
+        if (option === 'cash' || option === '') {
+            this._folio = 'CPJ';
+            this._debit = this.accountName;
+            this._credit = 'Bank';
+        } else {
+            this._folio = 'CJ';
+            this._debit = this.accountName;
+            this._credit = 'Creditors control';
+        }
+    }
+
+    setReceiveOption(option) {
+        if (option === 'cash' || option === '') {
+            this.folio = 'CRJ';
+            this.debit = 'Bank';
+            this.credit = this.accountName;
+        } else {
+            this.folio = 'DJ';
+            this.debit = 'Debtors control';
+            this.accountType = classifications.incomes[4];
+        }
     }
 
     get className() {
@@ -265,11 +306,11 @@ class Transaction {
     }
 
     get accountName() {
-        return this.accountType.name;
+        return this._accountType.name;
     }
 
     get accountAlts() {
-        return this.accountType.alts[Math.floor(Math.random() * this.accountType.alts.length)];
+        return this._accountType.alts[Math.floor(Math.random() * this._accountType.alts.length)];
     }
 
     get currentDate() {
@@ -325,16 +366,7 @@ class Expense extends Transaction {
     constructor(paymentMethod, lowNum, highNum) {
         super(classifications.expenses, paymentMethod, lowNum, highNum);
         // Check for option and set the folio
-        if (this.option === 'cash' || this.option === '') {
-            this.folio = 'CPJ';
-            this.debit = this.accountName;
-            this.credit = 'Bank';
-        } else {
-            this.folio = 'CJ';
-            this.debit = this.accountName;
-            this.credit = 'Creditors control';
-        }
-
+        super.setPaymentOption(this.option);
         this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.otherBusiness} for ${this.accountAlts} for the sum of R${this.transactionAmount} ${this.option}.`;
     }
 }
@@ -344,16 +376,7 @@ class Asset extends Transaction {
         super(classifications.assets, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if (this.option === 'cash' || this.option === '') {
-            this.folio = 'CPJ';
-            this.debit = this.accountName;
-            this.credit = 'Bank'
-        } else {
-            this.folio = 'CJ';
-            this.debit = this.accountName;
-            this.credit = 'Creditors control';
-        }
-
+        super.setPaymentOption(this.option);
         this.transactionString = `${this.currentDate}${'&#09;'}${this._businessName} ${this.paymentMethod} ${this.accountAlts} from ${this.otherBusiness} amounting to R${this.transactionAmount} ${this.option}.`;
     }
 }
@@ -363,18 +386,10 @@ class Income extends Transaction {
         super(classifications.incomes, paymentMethod, lowNum, highNum);
 
         // Check for option and set the folio
-        if (this.option === 'cash' || this.option === '') {
-            this.folio = 'CRJ';
-            this.debit = 'Bank';
-            this.credit = this.accountName;
-        } else {
-            this.folio = 'DJ';
-            this.debit = 'Debtors control';
-            this.accountType = classifications.incomes[4];
-        }
+        super.setReceiveOption(this._option);
 
         // Set document based on payment method
-        if ((this.folio === 'CRJ') && this.accountName === 'Current income') {
+        if (this.folio === 'CRJ' && this.accountName === 'Current income') {
             this.documentType = 'CRR'
         } else {
             this.documentType = 'Rec'
@@ -447,7 +462,7 @@ let capital = new Capital('deposited into the businesses bank account', 10000, 1
 let liability1 = new Liability("received", 4000, 140000);
 let liability2 = new Liability("acquired", 50000, 100000);
 // Drawings
-let drawings1 = new Drawings("withdrew", "personal debt payment",5000, 10000);
+let drawings1 = new Drawings("withdrew", "personal debt payment", 5000, 10000);
 let drawings2 = new Drawings("took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
@@ -514,6 +529,7 @@ function createHeading() {
     let transactionHeading = document.querySelector('#transactionListHeading');
     transactionHeading.innerHTML = `Use the following information to complete the template of ${ourBusinessName} for the month of ${month} ${year}`;
 }
+
 createHeading();
 
 // Add transaction to list elements
