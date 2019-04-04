@@ -1,4 +1,4 @@
-'use strict';
+import { transactionList } from './site_content';
 
 // Functions
 const filterJournal = (folio) => {

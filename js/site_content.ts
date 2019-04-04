@@ -1,5 +1,3 @@
-'use strict';
-
 // Different business names
 const businesses = [
     "Rancid Retailers",
@@ -447,7 +445,7 @@ let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal deb
 let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 
 // Transaction list push area
-const transactionList = [];
+export const transactionList = [];
 
 const pushToArray = (array) => {
     array.push(capital);

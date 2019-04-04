@@ -1,4 +1,5 @@
-'use strict';
+import { transactionList } from './site_content';
+
 
 const createInputArray = (array) => {
     for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column

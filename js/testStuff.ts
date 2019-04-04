@@ -1,5 +1,3 @@
-'use strict';
-
 const transactions = {
     incomes: [{name: 'current', alts: ['sasas', 'saass']}, {name: 'rent', alts: ['sasas', 'saas']}],
 };
