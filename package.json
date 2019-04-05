@@ -22,13 +22,15 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
+    "@types/node": "^11.13.0",
+    "awesome-typescript-loader": "^5.2.1",
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
     "moment": "^2.24.0",
     "popper.js": "^1.14.7",
+    "source-map-loader": "^0.2.4",
     "tabulator-tables": "^4.2.0",
     "typescript": "^3.4.1",
-    "awesome-typescript-loader": "^5.2.1",
-    "source-map-loader": "^0.2.4"
+    "tslint": "^5.15.0"
   }
 }
