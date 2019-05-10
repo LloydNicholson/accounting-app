@@ -1,6 +1,6 @@
 import { transactionList } from './site_content';
 import { filteredCJ } from './journals';
-const tabulator = require('tabulator-tables');
+let tabulator = require('tabulator-master');
 const createInputArray = (array) => {
     for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column
         array.push({});

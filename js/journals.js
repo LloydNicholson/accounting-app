@@ -1,5 +1,5 @@
 import { transactionList } from './site_content';
-const tabulator = require('tabulator-tables');
+const tabulator = require('tabulator-master');
 // Functions
 const filterJournal = (folio) => {
     return transactionList.filter((transaction => transaction.folio === folio));

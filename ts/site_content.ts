@@ -1,8 +1,6 @@
 // Different business names
 import { Classification } from './classification.model';
 
-const tabulator = require('tabulator-tables');
-
 const businesses = [
   'Rancid Retailers',
   'Trusted Traders',
@@ -106,27 +104,31 @@ const classifications = {
     new Classification('Trading stock', ['stock', 'goods', 'products', 'trading stock']), // e.g
     new Classification('Vehicles', ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']),
     new Classification('Equipment', ['computers', 'computer', 'printers', 'fax machines']),
-    {name: 'Machinery', alts: ['mechanical drill', 'large jackhammer']},
-    {name: 'Land and buildings', alts: ['property', 'new property', 'storage facility']}
+    new Classification('Machinery', ['mechanical drill', 'large jackhammer']),
+    new Classification('Land and buildings', ['property', 'new property', 'storage facility'])
   ],
   // All liabilities
   liabilities: [
-    {name: 'Loan', alts: ['a loan', 'a substantial loan']},
-    {name: 'Mortgage bond', alts: ['a property loan', 'a bond', 'a mortgage bond']}
+    new Classification('Loan', ['a loan', 'a substantial loan']),
+    new Classification('Mortgage bond', ['a property loan', 'a bond', 'a mortgage bond'])
   ],
-  drawings: [{name: 'Drawings', alts: ['drawings', 'money']}],
-  capital: [{name: 'Capital', alts: ['contribution', 'capital']}],
+  drawings: [
+    new Classification('Drawings', ['drawings', 'money'])
+  ],
+  capital: [
+    new Classification('Capital', ['contribution', 'capital'])
+  ],
   // All expenses
   expenses: [
-    {name: 'Salaries', alts: ['salaries', 'monthly payments to employees']},
-    {name: 'Wages', alts: ['wages', 'employee weekly wages']},
-    {name: 'Repairs', alts: ['repairs to the motor vehicle']},
-    {name: 'Advertising', alts: ['advertising', 'advertisement']},
-    {name: 'Telephone', alts: ['telephone account', 'cellphone bill']},
-    {name: 'Stationery', alts: ['stationery', 'pencils and pens', 'paper']},
-    {name: 'Water and electricity', alts: ['rates bill', 'water and electricity']},
-    {name: 'Insurance', alts: ['insurance']},
-    {name: 'Packing material', alts: ['packing material', 'cardboard for packing']},
+    new Classification('Salaries', ['salaries', 'monthly payments to employees']),
+    new Classification('Wages', ['wages', 'employee weekly wages']),
+    new Classification('Repairs', ['repairs to the motor vehicle']),
+    new Classification('Advertising', ['advertising', 'advertisement']),
+    new Classification('Telephone', ['telephone account', 'cellphone bill']),
+    new Classification('Stationery', ['stationery', 'pencils and pens', 'paper']),
+    new Classification('Water and electricity', ['rates bill', 'water and electricity']),
+    new Classification('Insurance', ['insurance']),
+    new Classification('Packing material', ['packing material', 'cardboard for packing']),
     {name: 'Fuel', alts: ['petrol', 'diesel', 'fuel']},
     {name: 'Bank charges', alts: ['bank fees', 'bank charges']},
     {name: 'Consumable goods', alts: ['food', 'groceries', 'flowers']},
@@ -138,11 +140,11 @@ const classifications = {
   ],
   // All incomes
   incomes: [
-    {name: 'Current income', alts: ['money for services rendered', 'money for a service']},
-    {name: 'Rent', alts: ['rent', 'rental']},
-    {name: 'Donations', alts: ['donations']},
-    {name: 'Commission', alts: ['commission', 'a percentage of sale']},
-    {name: 'Cash sales', alts: ['sales']}
+    new Classification('Current income', ['money for services rendered', 'money for a service']),
+    new Classification('Rent', ['rent', 'rental']),
+    new Classification('Donations', ['donations']),
+    new Classification('Commission', ['commission', 'a percentage of a recent sale']),
+    new Classification('Cash sales', ['sales'])
   ]
 };
 
@@ -225,8 +227,13 @@ export class Transaction {
   }
 }
 
-let transaction = new Transaction('Harry\'s Movers', 1500, 25, 'Trading stock');
-let div = document.querySelector('div');
+export class Drawings extends Transaction {
+  constructor(businessName: string, amount: number, date: number, item: string) {
+    super(businessName, amount, date, item);
+  }
+}
+
+let drawings1 = new Drawings('Harry\'s Traders', 500, 21, 'stock');
 // div = transaction.toTransactionString();
 
 // class Expense extends Transaction {
@@ -363,6 +370,7 @@ let div = document.querySelector('div');
 export const transactionList = [];
 
 const pushToArray = (array) => {
+  array.push(drawings1);
   // array.push(capital);
   // array.push(expense1);
   // array.push(expense2);

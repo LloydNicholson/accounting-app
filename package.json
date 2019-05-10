@@ -29,8 +29,6 @@
     "moment": "^2.24.0",
     "popper.js": "^1.14.7",
     "source-map-loader": "^0.2.4",
-    "tabulator-tables": "^4.2.0",
     "typescript": "^3.4.1",
-    "tslint": "^5.15.0"
   }
 }

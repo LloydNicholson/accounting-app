@@ -1,6 +1,5 @@
 // Different business names
 import { Classification } from './classification.model';
-const tabulator = require('tabulator-tables');
 const businesses = [
     'Rancid Retailers',
     'Trusted Traders',
@@ -204,8 +203,12 @@ export class Transaction {
         return `${this.date}. ${this.businessName} bought ${this.item} for ${this.amount}`;
     }
 }
-let transaction = new Transaction('Harry\'s Movers', 1500, 25, 'Trading stock');
-let div = document.querySelector('div');
+export class Drawings extends Transaction {
+    constructor(businessName, amount, date, item) {
+        super(businessName, amount, date, item);
+    }
+}
+let drawings1 = new Drawings('Harry\'s Traders', 500, 21, 'stock');
 // div = transaction.toTransactionString();
 // class Expense extends Transaction {
 //   constructor() {
@@ -338,6 +341,7 @@ let div = document.querySelector('div');
 // Transaction list push area
 export const transactionList = [];
 const pushToArray = (array) => {
+    array.push(drawings1);
     // array.push(capital);
     // array.push(expense1);
     // array.push(expense2);

@@ -1,6 +1,6 @@
 import { transactionList } from './site_content';
 
-const tabulator = require('tabulator-tables');
+const tabulator = require('tabulator-master');
 
 // Functions
 const filterJournal = (folio) => {
@@ -332,7 +332,7 @@ const checkCJDate = (cell) => {
 // DJ checks
 
 // answerData
-let crjAnswerData: [{}];
+let crjAnswerData: [{}]; // type declaration
 let cpjAnswerData: [{}];
 let cjAnswerData: [{}];
 let djAnswerData: [{}];

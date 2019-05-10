@@ -1,7 +1,7 @@
-import { transactionList } from './site_content';
 import { filteredCJ } from './journals';
+import { transactionList } from './site_content';
 
-const tabulator = require('tabulator-tables');
+let tabulator = require('tabulator-master');
 
 const createInputArray = (array) => {
   for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column
@@ -13,6 +13,7 @@ const createInputArray = (array) => {
     array[i].id = i;
   }
 };
+
 const checkDebit = (cell) => {
   let cellValue = cell.getValue().toLowerCase();
   let cellIndex = cell.getData().id;
