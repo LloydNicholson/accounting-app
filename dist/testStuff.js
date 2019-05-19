@@ -1,13 +1,14 @@
-const transactions = {
+"use strict";
+var transactions = {
     incomes: [{ name: 'current', alts: ['sasas', 'saass'] }, { name: 'rent', alts: ['sasas', 'saas'] }],
 };
-const randomItem = (item) => {
+var randomItem = function (item) {
     return item[Math.floor(Math.random() * item.length)];
 };
-const randomAccountName = (item) => {
+var randomAccountName = function (item) {
     return item.name;
 };
-const randomAccountAlt = (item) => {
+var randomAccountAlt = function (item) {
     return item.alts[Math.floor(Math.random() * item.alts.length)];
 };
 // class Transaction {
@@ -54,3 +55,4 @@ const randomAccountAlt = (item) => {
 // console.log(drawings1.string);
 // console.log(drawings1.accountName);
 // console.log(drawings1.accountType);
+//# sourceMappingURL=testStuff.js.map

@@ -1,25 +1,27 @@
-import { transactionList } from './site_content';
-const tabulator = require('tabulator-master');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var site_content_1 = require("./site_content");
+var tabulator = require('tabulator-master');
 // Functions
-const filterJournal = (folio) => {
-    return transactionList.filter((transaction => transaction.folio === folio));
+var filterJournal = function (folio) {
+    return site_content_1.transactionList.filter((function (transaction) { return transaction.folio === folio; }));
 };
-const createInputJournal = (array, folio) => {
-    for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column
-        if (transactionList[i].folio === folio) {
+var createInputJournal = function (array, folio) {
+    for (var i = 0; i < site_content_1.transactionList.length; i++) { // make sure there is space for final total of column
+        if (site_content_1.transactionList[i].folio === folio) {
             array.push({});
         }
     }
     // Set id for the array
-    for (let i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         array[i].id = i;
     }
 };
 // CRJ checks
-const checkCRJDocument = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJDocument = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -35,10 +37,10 @@ const checkCRJDocument = (cell) => {
     }
     return cellValue;
 };
-const checkCRJDate = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJDate = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -55,10 +57,10 @@ const checkCRJDate = (cell) => {
     }
     return cellValue;
 };
-const checkCRJDetails = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJDetails = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -77,10 +79,10 @@ const checkCRJDetails = (cell) => {
     }
     return cellValue;
 };
-const checkCRJBank = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJBank = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -97,10 +99,10 @@ const checkCRJBank = (cell) => {
     }
     return cellValue;
 };
-const checkCRJCI = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJCI = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -117,10 +119,10 @@ const checkCRJCI = (cell) => {
     }
     return cellValue;
 };
-const checkCRJSundryAmount = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJSundryAmount = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === crjItem.transactionAmount) {
@@ -136,10 +138,10 @@ const checkCRJSundryAmount = (cell) => {
     }
     return cellValue;
 };
-const checkCRJSundryAccount = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let crjItem = filteredCRJ[cellIndex];
+var checkCRJSundryAccount = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var crjItem = exports.filteredCRJ[cellIndex];
     console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === crjItem.accountName.toLowerCase()) {
@@ -155,10 +157,10 @@ const checkCRJSundryAccount = (cell) => {
     return cellValue;
 };
 // CPJ checks
-const checkCPJDocument = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let previousCellIndex = cell.getData().id - 1;
+var checkCPJDocument = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var previousCellIndex = cell.getData().id - 1;
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -176,10 +178,10 @@ const checkCPJDocument = (cell) => {
     }
     return cellValue;
 };
-const checkCPJDate = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJDate = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -196,10 +198,10 @@ const checkCPJDate = (cell) => {
     }
     return cellValue;
 };
-const checkCPJPayee = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJPayee = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -218,10 +220,10 @@ const checkCPJPayee = (cell) => {
     }
     return cellValue;
 };
-const checkCPJBank = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJBank = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -238,10 +240,10 @@ const checkCPJBank = (cell) => {
     }
     return cellValue;
 };
-const checkCPJTradingStock = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJTradingStock = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -258,10 +260,10 @@ const checkCPJTradingStock = (cell) => {
     }
     return cellValue;
 };
-const checkCPJEquipment = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJEquipment = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -278,10 +280,10 @@ const checkCPJEquipment = (cell) => {
     }
     return cellValue;
 };
-const checkCPJSundryAmount = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJSundryAmount = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     console.log(cell.getData());
     if (cellValue !== '') {
         if (parseInt(cellValue) === cpjItem.transactionAmount) {
@@ -297,10 +299,10 @@ const checkCPJSundryAmount = (cell) => {
     }
     return cellValue;
 };
-const checkCPJSundryAccount = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let cpjItem = filteredCPJ[cellIndex];
+var checkCPJSundryAccount = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var cpjItem = exports.filteredCPJ[cellIndex];
     console.log(cell.getData());
     if (cellValue !== '') {
         if (cellValue === cpjItem.accountName.toLowerCase()) {
@@ -316,10 +318,10 @@ const checkCPJSundryAccount = (cell) => {
     return cellValue;
 };
 // CJ checks
-const checkCJDocument = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let cjItem = filteredCJ[cellIndex];
+var checkCJDocument = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var cjItem = exports.filteredCJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -335,10 +337,10 @@ const checkCJDocument = (cell) => {
     }
     return cellValue;
 };
-const checkCJDate = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cjItem = filteredCJ[cellIndex];
+var checkCJDate = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cjItem = exports.filteredCJ[cellIndex];
     //cell - cell component
     console.log(cell.getData());
     if (cellValue !== '') {
@@ -357,22 +359,22 @@ const checkCJDate = (cell) => {
 };
 // DJ checks
 // answerData
-let crjAnswerData;
-let cpjAnswerData;
-let cjAnswerData;
-let djAnswerData;
+var crjAnswerData; // type declaration
+var cpjAnswerData;
+var cjAnswerData;
+var djAnswerData;
 // Create journals
 createInputJournal(crjAnswerData, 'CRJ');
 createInputJournal(cpjAnswerData, 'CPJ');
 createInputJournal(cjAnswerData, 'CJ');
 createInputJournal(djAnswerData, 'DJ');
 // Filter journals
-export const filteredCRJ = filterJournal('CRJ');
-export const filteredCPJ = filterJournal('CPJ');
-export const filteredCJ = filterJournal('CJ');
-export const filteredDJ = filterJournal('DJ');
+exports.filteredCRJ = filterJournal('CRJ');
+exports.filteredCPJ = filterJournal('CPJ');
+exports.filteredCJ = filterJournal('CJ');
+exports.filteredDJ = filterJournal('DJ');
 // CASH RECEIPTS JOURNAL
-let cashReceiptsJournalTable = new tabulator('#CashReceiptsJournalAnswerArea', {
+var cashReceiptsJournalTable = new tabulator('#CashReceiptsJournalAnswerArea', {
     data: crjAnswerData,
     layout: 'fitColumns',
     tooltips: true,
@@ -460,7 +462,7 @@ let cashReceiptsJournalTable = new tabulator('#CashReceiptsJournalAnswerArea', {
     ],
 });
 // CASH PAYMENTS JOURNAL
-let cashPaymentsJournalTable = new tabulator('#CashPaymentsJournalAnswerArea', {
+var cashPaymentsJournalTable = new tabulator('#CashPaymentsJournalAnswerArea', {
     data: cpjAnswerData,
     layout: 'fitColumns',
     tooltips: true,
@@ -541,7 +543,7 @@ let cashPaymentsJournalTable = new tabulator('#CashPaymentsJournalAnswerArea', {
     ],
 });
 // CREDITORS JOURNAL
-let creditorsJournalTable = new tabulator('#CreditorsJournalAnswerArea', {
+var creditorsJournalTable = new tabulator('#CreditorsJournalAnswerArea', {
     data: cjAnswerData,
     layout: 'fitColumns',
     tooltips: true,
@@ -608,7 +610,7 @@ let creditorsJournalTable = new tabulator('#CreditorsJournalAnswerArea', {
     ],
 });
 // DEBTORS JOURNAL
-let debtorsJournalTable = new tabulator('#DebtorsJournalAnswerArea', {
+var debtorsJournalTable = new tabulator('#DebtorsJournalAnswerArea', {
     data: djAnswerData,
     layout: 'fitColumns',
     tooltips: true,
@@ -632,14 +634,15 @@ let debtorsJournalTable = new tabulator('#DebtorsJournalAnswerArea', {
         { title: 'Cost of Sales', field: 'amount', editor: 'input', validator: ['integer', 'min:1'], headerSort: false },
     ],
 });
-const sheets = {
+var sheets = {
     'Cash Receipts Journal': true,
     'Cash Payments Journal': '#CashPaymentsJournalAnswerArea',
     'Creditors Journal': '#CreditorsJournalAnswerArea',
     'Debtors Journal': '#DebtorsJournalAnswerArea'
 };
-const downloadJournalsButton = document.querySelector('#journalDownloadButton');
-console.log('Cash Receipts Journal', filteredCRJ);
-console.log('Cash Payments Journal', filteredCPJ);
-console.log('Creditors Journal', filteredCJ);
-console.log('Debtors Journal', filteredDJ);
+var downloadJournalsButton = document.querySelector('#journalDownloadButton');
+console.log('Cash Receipts Journal', exports.filteredCRJ);
+console.log('Cash Payments Journal', exports.filteredCPJ);
+console.log('Creditors Journal', exports.filteredCJ);
+console.log('Debtors Journal', exports.filteredDJ);
+//# sourceMappingURL=journals.js.map

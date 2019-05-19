@@ -1,6 +1,21 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
 // Different business names
-import { Classification } from './classification.model';
-const businesses = [
+var classification_model_1 = require("./classification.model");
+var businesses = [
     'Rancid Retailers',
     'Trusted Traders',
     'Lawdy Lawnmowers',
@@ -22,7 +37,7 @@ const businesses = [
     'Advocates for Animals',
 ];
 // Different owners names
-const owners = [
+var owners = [
     'Douglas',
     'Evelyn',
     'Alice',
@@ -46,7 +61,7 @@ const owners = [
     'Herbie'
 ];
 // Month array
-const months = [
+var months = [
     'January',
     'February',
     'March',
@@ -61,11 +76,11 @@ const months = [
     'December'
 ];
 // Initialise year array
-const years = [];
-for (let i = 2005; i < 2020; i++) {
+var years = [];
+for (var i = 2005; i < 2020; i++) {
     years.push(i);
 }
-const payersOfMoney = [
+var payersOfMoney = [
     'Joe\'s Traders',
     'Mitchell\'s Manufacturers',
     'Levine\'s Loggers',
@@ -81,7 +96,7 @@ const payersOfMoney = [
     'Made in China Manufacturers',
     'Protecting People'
 ];
-const banks = [
+var banks = [
     'Nedbank',
     'ABSA',
     'FNB',
@@ -91,33 +106,37 @@ const banks = [
     'Bidvest Bank'
 ];
 // Different account types and sub-accounts
-const classifications = {
+var classifications = {
     // All assets
     assets: [
-        new Classification('Trading stock', ['stock', 'goods', 'products', 'trading stock']),
-        new Classification('Vehicles', ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']),
-        new Classification('Equipment', ['computers', 'computer', 'printers', 'fax machines']),
-        { name: 'Machinery', alts: ['mechanical drill', 'large jackhammer'] },
-        { name: 'Land and buildings', alts: ['property', 'new property', 'storage facility'] }
+        new classification_model_1.Classification('Trading stock', ['stock', 'goods', 'products', 'trading stock']),
+        new classification_model_1.Classification('Vehicles', ['motor vehicle', 'motorbike', 'bicycle', 'vehicle']),
+        new classification_model_1.Classification('Equipment', ['computers', 'computer', 'printers', 'fax machines']),
+        new classification_model_1.Classification('Machinery', ['mechanical drill', 'large jackhammer']),
+        new classification_model_1.Classification('Land and buildings', ['property', 'new property', 'storage facility'])
     ],
     // All liabilities
     liabilities: [
-        { name: 'Loan', alts: ['a loan', 'a substantial loan'] },
-        { name: 'Mortgage bond', alts: ['a property loan', 'a bond', 'a mortgage bond'] }
+        new classification_model_1.Classification('Loan', ['a loan', 'a substantial loan']),
+        new classification_model_1.Classification('Mortgage bond', ['a property loan', 'a bond', 'a mortgage bond'])
     ],
-    drawings: [{ name: 'Drawings', alts: ['drawings', 'money'] }],
-    capital: [{ name: 'Capital', alts: ['contribution', 'capital'] }],
+    drawings: [
+        new classification_model_1.Classification('Drawings', ['drawings', 'money'])
+    ],
+    capital: [
+        new classification_model_1.Classification('Capital', ['contribution', 'capital'])
+    ],
     // All expenses
     expenses: [
-        { name: 'Salaries', alts: ['salaries', 'monthly payments to employees'] },
-        { name: 'Wages', alts: ['wages', 'employee weekly wages'] },
-        { name: 'Repairs', alts: ['repairs to the motor vehicle'] },
-        { name: 'Advertising', alts: ['advertising', 'advertisement'] },
-        { name: 'Telephone', alts: ['telephone account', 'cellphone bill'] },
-        { name: 'Stationery', alts: ['stationery', 'pencils and pens', 'paper'] },
-        { name: 'Water and electricity', alts: ['rates bill', 'water and electricity'] },
-        { name: 'Insurance', alts: ['insurance'] },
-        { name: 'Packing material', alts: ['packing material', 'cardboard for packing'] },
+        new classification_model_1.Classification('Salaries', ['salaries', 'monthly payments to employees']),
+        new classification_model_1.Classification('Wages', ['wages', 'employee weekly wages']),
+        new classification_model_1.Classification('Repairs', ['repairs to the motor vehicle']),
+        new classification_model_1.Classification('Advertising', ['advertising', 'advertisement']),
+        new classification_model_1.Classification('Telephone', ['telephone account', 'cellphone bill']),
+        new classification_model_1.Classification('Stationery', ['stationery', 'pencils and pens', 'paper']),
+        new classification_model_1.Classification('Water and electricity', ['rates bill', 'water and electricity']),
+        new classification_model_1.Classification('Insurance', ['insurance']),
+        new classification_model_1.Classification('Packing material', ['packing material', 'cardboard for packing']),
         { name: 'Fuel', alts: ['petrol', 'diesel', 'fuel'] },
         { name: 'Bank charges', alts: ['bank fees', 'bank charges'] },
         { name: 'Consumable goods', alts: ['food', 'groceries', 'flowers'] },
@@ -129,15 +148,15 @@ const classifications = {
     ],
     // All incomes
     incomes: [
-        { name: 'Current income', alts: ['money for services rendered', 'money for a service'] },
-        { name: 'Rent', alts: ['rent', 'rental'] },
-        { name: 'Donations', alts: ['donations'] },
-        { name: 'Commission', alts: ['commission', 'a percentage of sale'] },
-        { name: 'Cash sales', alts: ['sales'] }
+        new classification_model_1.Classification('Current income', ['money for services rendered', 'money for a service']),
+        new classification_model_1.Classification('Rent', ['rent', 'rental']),
+        new classification_model_1.Classification('Donations', ['donations']),
+        new classification_model_1.Classification('Commission', ['commission', 'a percentage of a recent sale']),
+        new classification_model_1.Classification('Cash sales', ['sales'])
     ]
 };
-const options = ['cash', '', 'on credit'];
-const randomItem = (item) => {
+var options = ['cash', '', 'on credit'];
+var randomItem = function (item) {
     return item[Math.floor(Math.random() * item.length)];
 };
 // const incomeAccountType = randomItem(classifications.incomes);
@@ -147,12 +166,12 @@ const randomItem = (item) => {
 // console.log('account name', incomeAccountName);
 // console.log('account alt: ', incomeAccountAlt);
 // Set business name to randomise
-let ourBusinessName = randomItem(businesses);
+var ourBusinessName = randomItem(businesses);
 // Set ourOwner name to randomise every time
-let ourOwner = randomItem(owners);
-let month = randomItem(months);
-let year = randomItem(years);
-let randomBank = randomItem(banks);
+var ourOwner = randomItem(owners);
+var month = randomItem(months);
+var year = randomItem(years);
+var randomBank = randomItem(banks);
 // const randomItem1 = randomItem(classifications.incomes);
 // const randomAlt = randomItem1.alts[Math.floor(Math.random() * randomItem1.alts.length)];
 // TODO - Randomise on click
@@ -160,13 +179,13 @@ let randomBank = randomItem(banks);
 //
 // };
 // Create random values between two points
-function randomisedNum(low_num, high_num) {
-    return Math.floor(Math.random() * high_num) + Math.floor(low_num);
+function randomisedNum(lowNum, highNum) {
+    return Math.floor(Math.random() * highNum) + Math.floor(lowNum);
 }
 // Randomised date
-const dates = [];
-let firstDay = 1;
-let lastDay = 28;
+var dates = [];
+var firstDay = 1;
+var lastDay = 28;
 switch (month) {
     case 'January':
     case 'March':
@@ -186,29 +205,34 @@ switch (month) {
     case 'February':
         lastDay = 28;
 }
-for (let i = firstDay; i <= lastDay; i++) {
+for (var i = firstDay; i <= lastDay; i++) {
     dates.push(i);
 }
 function matchedNumber(currentString, testString) {
     return currentString.match(testString);
 }
-export class Transaction {
-    constructor(businessName, amount, date, item) {
+var Transaction = /** @class */ (function () {
+    function Transaction(businessName, amount, date, item) {
         this.businessName = businessName;
         this.amount = amount;
         this.date = date;
         this.item = item;
     }
-    toTransactionString() {
-        return `${this.date}. ${this.businessName} bought ${this.item} for ${this.amount}`;
+    Transaction.prototype.toTransactionString = function () {
+        return this.date + ". " + this.businessName + " bought " + this.item + " for " + this.amount;
+    };
+    return Transaction;
+}());
+exports.Transaction = Transaction;
+var Drawings = /** @class */ (function (_super) {
+    __extends(Drawings, _super);
+    function Drawings(businessName, amount, date, item) {
+        return _super.call(this, businessName, amount, date, item) || this;
     }
-}
-export class Drawings extends Transaction {
-    constructor(businessName, amount, date, item) {
-        super(businessName, amount, date, item);
-    }
-}
-let drawings1 = new Drawings('Harry\'s Traders', 500, 21, 'stock');
+    return Drawings;
+}(Transaction));
+exports.Drawings = Drawings;
+var drawings1 = new Drawings('Harry\'s Traders', 500, 21, 'stock');
 // div = transaction.toTransactionString();
 // class Expense extends Transaction {
 //   constructor() {
@@ -339,8 +363,8 @@ let drawings1 = new Drawings('Harry\'s Traders', 500, 21, 'stock');
 // let drawings1 = new Drawings(classifications.drawings, "withdrew", "personal debt payment", 5000, 10000);
 // let drawings2 = new Drawings(classifications.drawings, "took out", "buying small personal items", 100, 1000);
 // Transaction list push area
-export const transactionList = [];
-const pushToArray = (array) => {
+exports.transactionList = [];
+var pushToArray = function (array) {
     array.push(drawings1);
     // array.push(capital);
     // array.push(expense1);
@@ -356,15 +380,15 @@ const pushToArray = (array) => {
     // array.push(income2);
 };
 // Push area
-pushToArray(transactionList);
+pushToArray(exports.transactionList);
 // Sorting the array
-const sortArray = (array) => {
-    array.sort((a, b) => {
+var sortArray = function (array) {
+    array.sort(function (a, b) {
         return a.currentDate - b.currentDate;
     });
 };
 // Sort area
-sortArray(transactionList);
+sortArray(exports.transactionList);
 // const replaceDateWithBlankSpace = array => {
 //     for (let i = 0; i < array.length-1; i++) {
 //         if (array[i].currentDate === array[i+1].currentDate) {
@@ -382,18 +406,19 @@ sortArray(transactionList);
 // replaceDateWithBlankSpace(transactionList);
 // DOM implementation
 // Where the transaction list is created in the DOM
-let ulString = '<ul class="list-group">';
-transactionList.forEach((index) => {
+var ulString = '<ul class="list-group">';
+exports.transactionList.forEach(function (index) {
     ulString += '<li class="list-group-item" style="white-space: pre-wrap">' + index.transactionString + '</li>';
 });
 ulString += '</ul>';
 // DOM
 // Create heading for entire transaction list
 function createHeading() {
-    let transactionHeading = document.querySelector('#transactionListHeading');
-    transactionHeading.innerHTML = `Use the following information to complete the template of ${ourBusinessName} for the month of ${month} ${year}`;
+    var transactionHeading = document.querySelector('#transactionListHeading');
+    transactionHeading.innerHTML = "Use the following information to complete the template of " + ourBusinessName + " for the month of " + month + " " + year;
 }
 createHeading();
 // Add transaction to list elements
-let transactionArea = document.querySelector('#transactionList');
+var transactionArea = document.querySelector('#transactionList');
 transactionArea.innerHTML = ulString;
+//# sourceMappingURL=site_content.js.map

@@ -1,3 +1,4 @@
+"use strict";
 // // When the user scrolls the page, execute myFunction
 // window.onscroll = function() {myFunction()};
 //
@@ -15,3 +16,4 @@
 //         header.classList.remove(".sticky");
 //     }
 // }
+//# sourceMappingURL=site_aesthetics.js.map

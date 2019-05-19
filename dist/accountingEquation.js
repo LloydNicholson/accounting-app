@@ -1,19 +1,21 @@
-import { transactionList } from './site_content';
-import { filteredCJ } from './journals';
-let tabulator = require('tabulator-master');
-const createInputArray = (array) => {
-    for (let i = 0; i < transactionList.length; i++) { // make sure there is space for final total of column
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var journals_1 = require("./journals");
+var site_content_1 = require("./site_content");
+var tabulator = require('tabulator-master');
+var createInputArray = function (array) {
+    for (var i = 0; i < site_content_1.transactionList.length; i++) { // make sure there is space for final total of column
         array.push({});
     }
     // Set id for the array
-    for (let i = 0; i < array.length; i++) {
+    for (var i = 0; i < array.length; i++) {
         array[i].id = i;
     }
 };
-const checkDebit = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let transactionListItem = transactionList[cellIndex];
+var checkDebit = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var transactionListItem = site_content_1.transactionList[cellIndex];
     if (cellValue !== '') {
         if (cellValue === transactionListItem.debit.toLowerCase()) {
             cell.getElement().style.backgroundColor = '#caffaa';
@@ -27,10 +29,10 @@ const checkDebit = (cell) => {
     }
     return cellValue;
 };
-const checkCredit = (cell) => {
-    let cellValue = cell.getValue().toLowerCase();
-    let cellIndex = cell.getData().id;
-    let transactionListItem = transactionList[cellIndex];
+var checkCredit = function (cell) {
+    var cellValue = cell.getValue().toLowerCase();
+    var cellIndex = cell.getData().id;
+    var transactionListItem = site_content_1.transactionList[cellIndex];
     if (cellValue !== '') {
         if (cellValue === transactionListItem.credit.toLowerCase()) {
             cell.getElement().style.backgroundColor = '#caffaa';
@@ -44,10 +46,10 @@ const checkCredit = (cell) => {
     }
     return cellValue;
 };
-const checkPlus = (cell) => {
-    let cellValue = cell.getValue();
-    let cellIndex = cell.getData().id;
-    let cjItem = filteredCJ[cellIndex];
+var checkPlus = function (cell) {
+    var cellValue = cell.getValue();
+    var cellIndex = cell.getData().id;
+    var cjItem = journals_1.filteredCJ[cellIndex];
     if (cellValue !== '') {
         if (cjItem.debit === cjItem.accountName && cellValue === cjItem.transactionAmount) {
             cell.getElement().style.backgroundColor = '#caffaa';
@@ -61,18 +63,18 @@ const checkPlus = (cell) => {
     }
     return cellValue;
 };
-const checkOwnerEquity = (cell) => {
+var checkOwnerEquity = function (cell) {
 };
-const checkLiability = (cell) => {
+var checkLiability = function (cell) {
 };
-const accountingEquationAnswerData = [{}];
+var accountingEquationAnswerData = [{}];
 createInputArray(accountingEquationAnswerData);
-console.log(transactionList);
+console.log(site_content_1.transactionList);
 //TODO - checks for table
 // Assets
 // Owners Equity
 // Liabilities
-let accountingEquationTable = new tabulator('#accountingEquationAnswerArea', {
+var accountingEquationTable = new tabulator('#accountingEquationAnswerArea', {
     data: accountingEquationAnswerData,
     layout: 'fitColumns',
     tooltips: true,
@@ -124,3 +126,4 @@ let accountingEquationTable = new tabulator('#accountingEquationAnswerArea', {
         },
     ],
 });
+//# sourceMappingURL=accountingEquation.js.map

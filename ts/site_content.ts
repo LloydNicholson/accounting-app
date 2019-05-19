@@ -150,7 +150,7 @@ const classifications = {
 
 const options = ['cash', '', 'on credit'];
 
-const randomItem = (item) => {
+const randomItem = (item: any[]) => {
   return item[Math.floor(Math.random() * item.length)];
 };
 
@@ -179,8 +179,8 @@ let randomBank = randomItem(banks);
 // };
 
 // Create random values between two points
-function randomisedNum(low_num, high_num) {
-  return Math.floor(Math.random() * high_num) + Math.floor(low_num);
+function randomisedNum(lowNum: number, highNum: number) {
+  return Math.floor(Math.random() * highNum) + Math.floor(lowNum);
 }
 
 // Randomised date
@@ -210,7 +210,7 @@ for (let i = firstDay; i <= lastDay; i++) {
   dates.push(i);
 }
 
-function matchedNumber(currentString, testString) {
+function matchedNumber(currentString: string, testString: string) {
   return currentString.match(testString);
 }
 
